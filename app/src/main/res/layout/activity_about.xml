@@ -32,7 +32,7 @@
         android:layout_centerVertical="true"
         android:textAlignment="center"
         android:id="@+id/names"
-        android:text="NIKHIL PRATAP SINGH \n AMAN CHATURVEDI \n NIKHIL MEEL \n SAGNIK BANERJEE"
+        android:text="NIKHIL PRATAP SINGH"
         android:textSize="30sp"
         android:textColor="@color/textColor"
         android:fontFamily="@font/mbold"
@@ -41,7 +41,7 @@
     <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="We are final year B.Tech students and we have also faced these issues in our lives"
+        android:text="Software Engineer in OLX India"
         android:textAlignment="center"
         android:layout_below="@id/names"
         android:layout_marginTop="50dp"
