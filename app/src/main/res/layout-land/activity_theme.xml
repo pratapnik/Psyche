@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".themeActivity">
+
+
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_info_outline_24dp"/>
+
+    <ImageView
+        android:id="@+id/circleOne"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/circle"
+        android:layout_marginTop="60dp"
+        />
+    <TextView
+        android:id="@+id/timeManagement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TIME \n MANAGEMENT"
+        android:layout_marginTop="68dp"
+        android:layout_alignBottom="@+id/circleOne"
+        android:layout_alignTop="@+id/circleOne"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/mregular"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="68dp"/>
+
+    <ImageView
+        android:id="@+id/circletwo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/circle"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/anxiety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANXIETY"
+        android:layout_centerVertical="true"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:fontFamily="@font/mregular"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:id="@+id/circleThree"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/circle"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        />
+
+    <TextView
+        android:id="@+id/internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/circleThree"
+        android:layout_alignBottom="@+id/circleThree"
+        android:text="INTERNET\nADDICTION"
+        android:textSize="20dp"
+        android:fontFamily="@font/mregular"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="68dp"/>
+
+
+
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="signout"
+        android:layout_alignParentBottom="true"
+        android:text="Log Out"
+        tools:ignore="OnClick" />
+</RelativeLayout>

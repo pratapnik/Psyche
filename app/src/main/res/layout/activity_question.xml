@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".question">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/rlone"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/question_num_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/mbold"
+            android:text="Question"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/question_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/question_num_text"
+            android:layout_toRightOf="@+id/question_num_text"
+            android:fontFamily="@font/mbold"
+            android:paddingLeft="6dp"
+            android:text="1"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/question_number"
+            android:layout_toRightOf="@+id/question_number"
+            android:fontFamily="@font/mbold"
+            android:paddingLeft="3dp"
+            android:text=":"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/rlone"
+        android:fontFamily="@font/mregular"
+        android:padding="8dp"
+        android:text="Loading.."
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/options_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/question"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp">
+
+        <RadioButton
+            android:id="@+id/choice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/mregular"
+            android:padding="8dp"
+            android:text="Never"
+            android:textSize="20sp"
+            android:buttonTint="@color/endColor"
+            />
+
+        <RadioButton
+            android:id="@+id/choice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/mregular"
+            android:padding="8dp"
+            android:text="Rarely"
+            android:textSize="20sp"
+            android:buttonTint="@color/endColor"
+            />
+
+        <RadioButton
+            android:id="@+id/choice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/mregular"
+            android:padding="8dp"
+            android:text="Sometimes"
+            android:textSize="20sp"
+            android:buttonTint="@color/endColor"
+            />
+
+        <RadioButton
+            android:id="@+id/choice4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/mregular"
+            android:padding="8dp"
+            android:text="Often"
+            android:textSize="20sp"
+            android:buttonTint="@color/endColor"
+            />
+
+        <RadioButton
+            android:id="@+id/choice5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mregular"
+            android:padding="8dp"
+            android:text="Always"
+            android:textSize="20sp"
+            android:buttonTint="@color/endColor"
+            />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/options_rg"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/custom_button"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/mbold"
+        android:layout_centerHorizontal="true"
+        android:text="NEXT" />
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="233dp"-->
+    <!--        >-->
+    <!--        <Button-->
+    <!--            android:id="@+id/next"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="#B71C1C"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:text="NEXT"-->
+    <!--            android:layout_alignParentBottom="true"-->
+    <!--            android:textColor="#fff" />-->
+    <!--    </RelativeLayout>-->
+
+</RelativeLayout>

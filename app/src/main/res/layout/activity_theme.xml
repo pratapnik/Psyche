@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".themeActivity">
+
+
+
+        <TextView
+            android:id="@+id/q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What seems the most likely issues based on your experiences?"
+            android:textSize="22sp"
+            android:fontFamily="@font/mbold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            />
+        <Button
+            android:id="@+id/anxiety"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_below="@+id/timeManagement"
+            android:text="ANXIETY"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="@font/mbold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/theme_button"
+            />
+
+        <Button
+            android:id="@+id/timeManagement"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_below="@+id/q"
+            android:text="TIME \n MANAGEMENT"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="@font/mbold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/theme_button"
+            />
+        <Button
+            android:id="@+id/internet"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:text="INTERNET \n ADDICTION"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/mbold"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/anxiety"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/theme_button"
+            />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/bottomnavigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/mymenu"
+        app:itemIconTint="#FFFFFF"
+        app:itemIconSize="30dp"
+        app:itemTextColor="#FFFFFF"
+        />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/signout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/signout"
+            android:layout_alignParentRight="true"
+            android:contentDescription="Logout"
+            android:layout_marginTop="630dp"
+            android:backgroundTint="@color/subtleRed"
+            android:layout_marginRight="20dp"
+
+             />
+
+
+
+</RelativeLayout>

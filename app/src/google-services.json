@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "114479171885",
+    "firebase_url": "https://mental-health-tracker-bb023.firebaseio.com",
+    "project_id": "mental-health-tracker-bb023",
+    "storage_bucket": "mental-health-tracker-bb023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114479171885:android:3d3178bbb3f1a630",
+        "android_client_info": {
+          "package_name": "com.first.myapplication.mht"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114479171885-64fa1isj0snrv1qjeb14rakjni322a3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3m3ihbgxvxxyXxk7HF2TdwbJKZuq-ALA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114479171885-64fa1isj0snrv1qjeb14rakjni322a3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

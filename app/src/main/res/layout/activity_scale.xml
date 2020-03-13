@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scale">
+
+    <ImageView
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIME MANAGEMENT"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/mbold"
+                android:textColor="@color/textColor"
+                />
+
+            <ImageView
+                android:id="@+id/tmimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tmimage"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tm"
+                />
+            <TextView
+                android:id="@+id/anx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ANXIETY"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/mbold"
+                android:textColor="@color/textColor"
+                android:layout_below="@+id/tmimg"
+                />
+            <ImageView
+                android:id="@+id/anximg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/anx"
+                android:layout_below="@+id/anx"
+                />
+            <TextView
+                android:id="@+id/iadtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNET ADDICTION"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/anximg"
+                android:fontFamily="@font/mbold"
+                android:textColor="@color/textColor"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/iad"
+                android:layout_below="@+id/iadtext"
+                />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
