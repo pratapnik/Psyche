@@ -9,4 +9,5 @@
     <color name="red">#ff0033</color>
     <color name="subtleRed">#E74C3C</color>
     <color name="endColor">#009EFD</color>
+    <color name="text_color_grey">#666666</color>
 </resources>

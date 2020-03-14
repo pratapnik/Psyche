@@ -30,7 +30,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class loginActivity extends AppCompatActivity {
 
     ImageView imageView;
-    TextView textView;
+    TextView textView, textViewEmail;
 
     SignInButton button;
     FirebaseAuth mAuth;
@@ -43,14 +43,15 @@ public class loginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        imageView = findViewById(R.id.d);
-        textView = findViewById(R.id.a);
+        imageView = findViewById(R.id.iv_did_you_know);
+        textView = findViewById(R.id.tv_fact);
+        textViewEmail = findViewById(R.id.tv_email_login);
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         imageView.startAnimation(animation);
         textView.startAnimation(animation);
 
-        button = findViewById(R.id.google);
+        button = findViewById(R.id.btn_google_sign_in);
         mAuth = FirebaseAuth.getInstance();
 
         button.setSize(SignInButton.SIZE_WIDE);
@@ -68,6 +69,14 @@ public class loginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        textViewEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(loginActivity.this, EmailPasswordLoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
