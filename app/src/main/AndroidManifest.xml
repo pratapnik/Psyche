@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".about"></activity>
+        <activity android:name=".AboutUsActivity"/>
         <activity android:name=".scale" />
         <activity android:name=".profile" />
         <activity android:name=".score" />
