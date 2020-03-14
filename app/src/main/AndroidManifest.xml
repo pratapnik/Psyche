@@ -9,16 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutUsActivity"/>
-        <activity android:name=".scale" />
-        <activity android:name=".profile" />
-        <activity android:name=".score" />
-        <activity android:name=".question" />
-        <activity android:name=".timeManagement" />
-        <activity android:name=".themeActivity" />
-        <activity android:name=".loginActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".AboutUsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scale"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".profile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".score"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".question"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".timeManagement"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".themeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".loginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

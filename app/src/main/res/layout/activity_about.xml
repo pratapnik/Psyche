@@ -82,6 +82,6 @@
         app:layout_constraintTop_toTopOf="@id/tv_linkedin"
         app:layout_constraintStart_toEndOf="@id/tv_linkedin"
         app:layout_constraintBottom_toBottomOf="@id/tv_linkedin"
-         />
+        />
 
 </android.support.constraint.ConstraintLayout>
