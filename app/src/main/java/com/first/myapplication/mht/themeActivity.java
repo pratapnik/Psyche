@@ -62,7 +62,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                         startActivity(in);
                         return true;
                     case R.id.about:
-                        Intent inte = new Intent(themeActivity.this,about.class);
+                        Intent inte = new Intent(themeActivity.this, AboutUsActivity.class);
                         startActivity(inte);
                         return true;
 //                    case R.id.nav_notifications:
