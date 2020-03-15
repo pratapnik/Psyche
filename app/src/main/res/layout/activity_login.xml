@@ -59,21 +59,18 @@
         app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
          />
 
-    <TextView
-        android:id="@+id/tv_email_login"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_eighty_dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:fontFamily="@font/mbold"
-        android:text="Use Email instead"
-        android:textAlignment="center"
-        android:textColor="@color/text_color_grey"
+        android:text="SIGN IN USING YOUR EMAIL"
+        android:textColor="@color/color_blue"
         android:textSize="@dimen/text_sixteen_sp"
-        android:layout_marginBottom="@dimen/margin_twelve_dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
-
+        app:layout_constraintStart_toStartOf="parent"
+         />
 
 </android.support.constraint.ConstraintLayout>
