@@ -11,4 +11,5 @@
     <color name="endColor">#009EFD</color>
     <color name="text_color_grey">#666666</color>
     <color name="color_white">#FFFFFF</color>
+    <color name="color_blue">#304FFE</color>
 </resources>

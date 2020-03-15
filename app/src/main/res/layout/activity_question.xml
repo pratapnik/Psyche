@@ -137,24 +137,12 @@
         android:layout_below="@+id/options_rg"
         android:layout_marginTop="50dp"
         android:background="@drawable/custom_button"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_twenty_sp"
+        android:tooltipText="Go to next question"
+        android:textColor="@color/color_white"
         android:fontFamily="@font/mbold"
         android:layout_centerHorizontal="true"
         android:text="NEXT" />
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="233dp"-->
-    <!--        >-->
-    <!--        <Button-->
-    <!--            android:id="@+id/next"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:background="#B71C1C"-->
-    <!--            android:padding="8dp"-->
-    <!--            android:text="NEXT"-->
-    <!--            android:layout_alignParentBottom="true"-->
-    <!--            android:textColor="#fff" />-->
-    <!--    </RelativeLayout>-->
+
 
 </RelativeLayout>

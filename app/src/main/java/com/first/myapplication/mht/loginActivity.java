@@ -45,7 +45,7 @@ public class loginActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.iv_did_you_know);
         textView = findViewById(R.id.tv_fact);
-        textViewEmail = findViewById(R.id.tv_email_login);
+        textViewEmail = findViewById(R.id.btn_sign_up);
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         imageView.startAnimation(animation);
