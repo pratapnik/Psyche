@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,88 +8,99 @@
 
 
 
-        <TextView
-            android:id="@+id/q"
-            android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_theme_description"
+        android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="What seems the most likely issues based on your experiences?"
-            android:textSize="22sp"
+            android:text="SELECT AN ISSUE"
+            android:textSize="@dimen/text_thirty_two_sp"
             android:fontFamily="@font/mbold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
             android:textAlignment="center"
+            android:textColor="@color/color_gradient_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/timeManagement"
             />
-        <Button
+
+    <Button
+        android:id="@+id/timeManagement"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="TIME \n MANAGEMENT"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:fontFamily="@font/mbold"
+        android:background="@drawable/theme_button"
+        android:backgroundTint="@color/color_purple"
+        app:layout_constraintTop_toBottomOf="@id/tv_theme_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/anxiety"
+        />
+
+    <Button
             android:id="@+id/anxiety"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_below="@+id/timeManagement"
             android:text="ANXIETY"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_sixteen_sp"
             android:fontFamily="@font/mbold"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/theme_button"
+        android:backgroundTint="@color/color_yellow"
+        app:layout_constraintTop_toBottomOf="@id/timeManagement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/internet"
             />
 
-        <Button
-            android:id="@+id/timeManagement"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_below="@+id/q"
-            android:text="TIME \n MANAGEMENT"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:fontFamily="@font/mbold"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/theme_button"
-            />
+
         <Button
             android:id="@+id/internet"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:text="INTERNET \n ADDICTION"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_sixteen_sp"
             android:textAlignment="center"
             android:fontFamily="@font/mbold"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/anxiety"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/theme_button"
+            android:backgroundTint="@color/color_light_green"
+            android:layout_marginBottom="@dimen/margin_twenty_four_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom"
+            app:layout_constraintTop_toBottomOf="@id/anxiety"
             />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
         android:background="@drawable/bottomnavigation"
-        android:layout_alignParentBottom="true"
         app:menu="@menu/mymenu"
-        app:itemIconTint="#FFFFFF"
-        app:itemIconSize="30dp"
-        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="@color/color_white"
+        app:itemIconSize="@dimen/margin_twenty_eight_dp"
+        app:itemTextColor="@color/color_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
-        <android.support.design.widget.FloatingActionButton
+    <android.support.design.widget.FloatingActionButton
             android:id="@+id/signout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
             android:src="@drawable/signout"
-            android:layout_alignParentRight="true"
             android:contentDescription="Logout"
-            android:layout_marginTop="630dp"
-            android:backgroundTint="@color/subtleRed"
-            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/color_maroon"
+            app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom"
+        app:layout_constraintStart_toEndOf="@id/internet"
+        android:layout_marginBottom="@dimen/margin_twelve_dp"
+        />
 
-             />
 
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
