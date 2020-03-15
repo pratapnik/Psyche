@@ -12,4 +12,11 @@
     <color name="text_color_grey">#666666</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_blue">#304FFE</color>
+    <color name="color_gradient_start">#1e3c72</color>
+    <color name="color_gradient_end">#2a5298</color>
+    <color name="color_maroon">#B00020</color>
+    <color name="color_purple">#512DA8</color>
+    <color name="color_yellow">#FFCA28</color>
+    <color name="color_black">#000000</color>
+    <color name="color_light_green">#4CAF50</color>
 </resources>

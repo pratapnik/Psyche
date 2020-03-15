@@ -22,8 +22,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:fontFamily="@font/mbold"
-            android:text="Question"
-            android:textSize="30sp" />
+            android:text="QUESTION"
+            android:textSize="30sp"
+            android:textColor="@color/textColor"/>
 
         <TextView
             android:id="@+id/question_number"
@@ -33,6 +34,7 @@
             android:layout_toEndOf="@+id/question_num_text"
             android:layout_toRightOf="@+id/question_num_text"
             android:fontFamily="@font/mbold"
+            android:textColor="@color/textColor"
             android:paddingLeft="6dp"
             android:text="1"
             android:textSize="30sp" />
@@ -45,6 +47,7 @@
             android:fontFamily="@font/mbold"
             android:paddingLeft="3dp"
             android:text=":"
+            android:textColor="@color/textColor"
             android:textSize="30sp" />
 
 
@@ -60,7 +63,8 @@
         android:fontFamily="@font/mregular"
         android:padding="8dp"
         android:text="Loading.."
-        android:textSize="20sp" />
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/margin_twenty_four_dp" />
 
     <RadioGroup
         android:id="@+id/options_rg"
@@ -78,7 +82,7 @@
             android:fontFamily="@font/mregular"
             android:padding="8dp"
             android:text="Never"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_sixteen_sp"
             android:buttonTint="@color/endColor"
             />
 
@@ -90,7 +94,7 @@
             android:fontFamily="@font/mregular"
             android:padding="8dp"
             android:text="Rarely"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_sixteen_sp"
             android:buttonTint="@color/endColor"
             />
 
@@ -102,7 +106,7 @@
             android:fontFamily="@font/mregular"
             android:padding="8dp"
             android:text="Sometimes"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_sixteen_sp"
             android:buttonTint="@color/endColor"
             />
 
@@ -114,7 +118,7 @@
             android:fontFamily="@font/mregular"
             android:padding="8dp"
             android:text="Often"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_sixteen_sp"
             android:buttonTint="@color/endColor"
             />
 
@@ -125,7 +129,7 @@
             android:fontFamily="@font/mregular"
             android:padding="8dp"
             android:text="Always"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_sixteen_sp"
             android:buttonTint="@color/endColor"
             />
     </RadioGroup>
