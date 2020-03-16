@@ -6,38 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/login2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:fontFamily="@font/mbold"
-        android:onClick="loginpage"
-        android:text="Log in"
-        android:textColor="@color/textColor"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/dotlayout"
-        app:layout_constraintEnd_toStartOf="@+id/dotlayout"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="@+id/slideViewPager"
-        app:layout_constraintTop_toTopOf="@+id/dotlayout"
-        app:layout_constraintVertical_bias="0.0" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/slideViewPager"
-        android:layout_width="380dp"
-        android:layout_height="658dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/dotlayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/margin_twelve_dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -46,58 +22,56 @@
     <LinearLayout
         android:id="@+id/dotlayout"
         android:layout_width="wrap_content"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_twelve_dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline">
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/login"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_background_themes"
+        android:backgroundTint="@color/color_purple"
         android:fontFamily="@font/mbold"
         android:onClick="loginpage"
+        android:padding="@dimen/padding_eight_dp"
+        android:layout_margin="@dimen/margin_twelve_dp"
         android:text="Log in"
-        android:textColor="@color/textColor"
-        android:textSize="20dp"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_twenty_sp"
         app:layout_constraintBottom_toBottomOf="@+id/dotlayout"
-        app:layout_constraintEnd_toStartOf="@+id/dotlayout"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="@+id/slideViewPager"
-        app:layout_constraintTop_toTopOf="@+id/dotlayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@id/slideViewPager"
+        app:layout_constraintTop_toTopOf="@+id/dotlayout" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:background="@drawable/custom_background_themes"
+        android:backgroundTint="@color/color_maroon"
         android:fontFamily="@font/mbold"
         android:onClick="exit"
+        android:layout_margin="@dimen/margin_twelve_dp"
+        android:padding="@dimen/padding_eight_dp"
         android:text="Exit"
-        android:textColor="@color/textColor"
-        android:textSize="20dp"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_twenty_sp"
         app:layout_constraintBottom_toBottomOf="@+id/dotlayout"
         app:layout_constraintEnd_toEndOf="@+id/slideViewPager"
-        app:layout_constraintHorizontal_bias="0.893"
-        app:layout_constraintStart_toEndOf="@+id/dotlayout"
-        app:layout_constraintTop_toTopOf="@+id/dotlayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/dotlayout" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
 
 </android.support.constraint.ConstraintLayout>
