@@ -3,9 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/color_gradient_start</item>
+        <item name="colorPrimaryDark">@color/color_gradient_start</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="mBoldAppearnace">
+        <item name="android:fontFamily">@font/mbold</item>
+        <item name="android:textSize">@dimen/text_twenty_four_sp</item>
+    </style>
+
 
 </resources>

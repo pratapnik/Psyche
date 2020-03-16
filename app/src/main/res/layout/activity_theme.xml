@@ -8,21 +8,6 @@
 
 
 
-    <TextView
-        android:id="@+id/tv_theme_description"
-        android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="SELECT AN ISSUE"
-            android:textSize="@dimen/text_thirty_two_sp"
-            android:fontFamily="@font/mbold"
-            android:textAlignment="center"
-            android:textColor="@color/color_gradient_start"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/timeManagement"
-            />
-
     <Button
         android:id="@+id/timeManagement"
         android:layout_width="160dp"
@@ -33,7 +18,7 @@
         android:fontFamily="@font/mbold"
         android:background="@drawable/theme_button"
         android:backgroundTint="@color/color_purple"
-        app:layout_constraintTop_toBottomOf="@id/tv_theme_description"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/anxiety"
@@ -99,6 +84,19 @@
         app:layout_constraintBottom_toTopOf="@id/bottom"
         app:layout_constraintStart_toEndOf="@id/internet"
         android:layout_marginBottom="@dimen/margin_twelve_dp"
+        />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="SELECT AN ISSUE"
+        app:titleTextColor="@color/color_white"
+        app:titleTextAppearance="@style/mBoldAppearnace"
+        android:background="@drawable/bottomnavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 

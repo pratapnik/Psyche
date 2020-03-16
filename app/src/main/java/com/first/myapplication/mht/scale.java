@@ -7,19 +7,10 @@ import android.widget.ImageView;
 
 public class scale extends AppCompatActivity {
 
-    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
 
-        back = findViewById(R.id.b);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
     }
 }
