@@ -12,8 +12,6 @@ class AboutUsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        b.setOnClickListener { onBackPressed() }
-
         iv_linked_in_logo.setOnClickListener {
             var intent :Intent
             intent = Intent()
@@ -21,6 +19,17 @@ class AboutUsActivity: AppCompatActivity() {
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
             intent.setData(Uri.parse("https://www.linkedin.com/in/nikhilpsingh17/"))
             startActivity(intent)
+        }
+
+        btn_click_here.setOnClickListener {
+            var i: Intent
+            i = Intent()
+            i.action = Intent.ACTION_SEND
+            i.setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"), "message/rfc822")
+            i.putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
+
+
+            startActivity(Intent.createChooser(i, "Choose an Email client :"));
         }
 
     }
