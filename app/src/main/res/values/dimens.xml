@@ -11,4 +11,5 @@
     <dimen name="text_thirty_two_sp">32sp</dimen>
     <dimen name="padding_eight_dp">8dp</dimen>
     <dimen name="padding_four_dp">4dp</dimen>
+    <dimen name="text_twelve_sp">12sp</dimen>
 </resources>
