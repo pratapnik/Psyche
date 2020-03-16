@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,39 +17,21 @@ public class score extends AppCompatActivity {
     private Intent mIntent = new Intent();
     private Intent thIntent = new Intent();
     private int mScore,active;
-    ImageView homeButton;
-    TextView homeText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
-        scoreTV = findViewById(R.id.tv_score);
+
+        scoreTV = findViewById(R.id.tv_score_data);
         details = findViewById(R.id.details);
-        homeButton = findViewById(R.id.homeButton);
-        homeText = findViewById(R.id.homeText);
+
 
         mIntent = getIntent();
         thIntent = getIntent();
         mScore = mIntent.getIntExtra("score", 0);
         active = thIntent.getIntExtra("type",1);
         scoreTV.setText("" + mScore);
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(score.this, themeActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        homeText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(score.this, themeActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
 
 
         if(active==0){
@@ -57,7 +41,7 @@ public class score extends AppCompatActivity {
             }
             else{
                 details.setText("Alert! Your Score suggests you are addicted to the internet. Start with limiting and monitoring your internet usage");
-                details.setTextColor(Color.RED);
+                details.setTextColor(Color.parseColor("#E74C3C"));
             }
         }
         else if(active==1){
@@ -68,10 +52,11 @@ public class score extends AppCompatActivity {
             }
             else if(mScore>=47 && mScore<=57){
                 details.setText("Caution! You are doing okay but you need to focus on improving your time management");
+                details.setTextColor(Color.WHITE);
             }
             else{
                 details.setText("Alert! Poor time management is a likely reason behind your mental health issues");
-                details.setTextColor(Color.RED);
+                details.setTextColor(Color.parseColor("#E74C3C"));
 
             }
         }
@@ -83,11 +68,11 @@ public class score extends AppCompatActivity {
             }
             else if(mScore>=45 && mScore<=81){
                 details.setText("Caution! You are doing okay but it will be better to keep your stress and anxiety levels in check");
+                details.setTextColor(Color.WHITE);
             }
             else{
                 details.setText("Alert! High Anxiety levels is likely reason behind your stress");
-                details.setTextColor(Color.RED);
-
+                details.setTextColor(Color.parseColor("#E74C3C"));
             }
         }
 

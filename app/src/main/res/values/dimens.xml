@@ -12,4 +12,5 @@
     <dimen name="padding_eight_dp">8dp</dimen>
     <dimen name="padding_four_dp">4dp</dimen>
     <dimen name="text_twelve_sp">12sp</dimen>
+    <dimen name="text_hundred_sp">100sp</dimen>
 </resources>
