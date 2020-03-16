@@ -1,91 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottomnavigation"
     tools:context=".score">
 
-    <ImageView
-        android:id="@+id/circle"
-        android:layout_width="wrap_content"
-        android:layout_height="233dp"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/circle"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomnavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="YOUR SCORE"
+        app:titleTextAppearance="@style/mBoldAppearnace"
+        app:titleTextColor="@color/color_white" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
         />
-    <TextView
-        android:id="@+id/your"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="95dp"
-        android:fontFamily="@font/mregular"
-        android:textColor="#FFFFFF"
-        android:layout_centerHorizontal="true"
-        android:text="YOUR SCORE"
-        android:textAlignment="center"
-        android:textSize="15dp" />
-    <TextView
-        android:id="@+id/tv_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:fontFamily="@font/mbold"
-        android:textColor="#FFFFFF"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/your"
-        android:text="25"
-        android:textAlignment="center"
-        android:textSize="100sp" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout_score"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/custom_background_themes"
+        android:backgroundTint="@color/color_white"
+        android:layout_margin="@dimen/margin_twenty_eight_dp"
+        android:elevation="@dimen/margin_twenty_four_dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_your_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mbold"
+            android:text="YOUR SCORE"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_sixteen_sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_score_data"
+            />
+        <TextView
+            android:id="@+id/tv_score_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mbold"
+            android:textColor="@color/textColor"
+            android:text="25"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_hundred_sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_your_score"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/details"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/circle"
-        android:text="XYZ"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:text="Result Data"
         android:textAlignment="center"
         android:fontFamily="@font/mbold"
-        android:textSize="26sp"
+        android:padding="@dimen/padding_eight_dp"
+        android:textSize="@dimen/text_twenty_four_sp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
-        <ImageView
-            android:id="@+id/homeButton"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:src="@drawable/ic_home_black_24dp"
-            android:padding="8dp"
-            android:layout_marginLeft="100dp"
-            />
-
-        <TextView
-            android:id="@+id/homeText"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Back to Home"
-            android:layout_toRightOf="@+id/homeButton"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:layout_centerVertical="true"
-            android:paddingTop="29dp"
-            android:layout_alignBottom="@+id/homeButton"
-            android:fontFamily="@font/mregular"
-
-            />
-
-    </RelativeLayout>
 
 
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

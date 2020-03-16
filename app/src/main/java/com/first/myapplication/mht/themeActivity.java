@@ -44,7 +44,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
         bottomNavigationView = findViewById(R.id.bottom);
 
-        Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.rotate);
+        Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.righttoleft);
         internet.setAnimation(animation);
         timeManagement.setAnimation(animation);
         anxiety.setAnimation(animation);
