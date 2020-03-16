@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -41,6 +43,12 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         internet = findViewById(R.id.internet);
 
         bottomNavigationView = findViewById(R.id.bottom);
+
+        Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.rotate);
+        internet.setAnimation(animation);
+        timeManagement.setAnimation(animation);
+        anxiety.setAnimation(animation);
+
 
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
