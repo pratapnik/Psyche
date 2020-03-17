@@ -12,12 +12,23 @@ class AboutUsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
+        //To go to developer's linkedin profile
         iv_linked_in_logo.setOnClickListener {
             var intent :Intent
             intent = Intent()
             intent.action =Intent.ACTION_VIEW
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
             intent.setData(Uri.parse("https://www.linkedin.com/in/nikhilpsingh17/"))
+            startActivity(intent)
+        }
+
+        //To go to developer's Github profile
+        iv_github_logo.setOnClickListener {
+            var intent :Intent
+            intent = Intent()
+            intent.action =Intent.ACTION_VIEW
+            intent.addCategory(Intent.CATEGORY_BROWSABLE)
+            intent.setData(Uri.parse("https://github.com/pratapnik"))
             startActivity(intent)
         }
 
@@ -29,7 +40,7 @@ class AboutUsActivity: AppCompatActivity() {
             i.putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
 
 
-            startActivity(Intent.createChooser(i, "Choose an Email client :"));
+            startActivity(Intent.createChooser(i, "Choose an Email client:"));
         }
 
     }
