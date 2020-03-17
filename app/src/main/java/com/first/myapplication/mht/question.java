@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ import com.firebase.client.ValueEventListener;
 
 public class question extends AppCompatActivity {
 
-    private TextView mQuestionNoText, mQuestion;
+    private TextView mQuestion;
     private Button mChoice1, mChoice2, mChoice3, mChoice4, mChoice5, mNext;
     private RadioGroup mOptionsRG;
     private Firebase mQuestionRef;
@@ -31,15 +33,14 @@ public class question extends AppCompatActivity {
         setContentView(R.layout.activity_question);
         Firebase.setAndroidContext(this);
 
-        mQuestionNoText = findViewById(R.id.question_number);
-        mQuestion = findViewById(R.id.question);
+        mQuestion = findViewById(R.id.tv_question);
         mChoice1 = findViewById(R.id.choice1);
         mChoice2 = findViewById(R.id.choice2);
         mChoice3 = findViewById(R.id.choice3);
         mChoice4 = findViewById(R.id.choice4);
         mChoice5 = findViewById(R.id.choice5);
-        mOptionsRG = findViewById(R.id.options_rg);
-        mNext = findViewById(R.id.next);
+        mOptionsRG = findViewById(R.id.rg_five_options);
+        mNext = findViewById(R.id.btn_next);
 
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,10 @@ public class question extends AppCompatActivity {
                 nextButton();
             }
         });
+
+        Animation animation = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
+        mOptionsRG.startAnimation(animation);
+
 
         mIntent = getIntent();
         type = mIntent.getIntExtra("type", 0);
@@ -123,7 +128,6 @@ public class question extends AppCompatActivity {
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
                 updateQuestion();
-                mQuestionNoText.setText("" + mQuestionNo);
             }
         } else if (type == 1 && mOptionsRG.getCheckedRadioButtonId() != -1) {
             if (mQuestionNo == 18) {
@@ -138,7 +142,6 @@ public class question extends AppCompatActivity {
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
                 updateQuestion();
-                mQuestionNoText.setText("" + mQuestionNo);
             }
         } else if (type == 2 && mOptionsRG.getCheckedRadioButtonId() != -1) {
             if (mQuestionNo == 23) {
@@ -152,7 +155,6 @@ public class question extends AppCompatActivity {
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
                 updateQuestion();
-                mQuestionNoText.setText("" + mQuestionNo);
             }
         }
     }

@@ -80,6 +80,7 @@
             android:src="@drawable/signout"
             android:contentDescription="Logout"
             android:backgroundTint="@color/color_maroon"
+        android:tooltipText="LOG OUT"
             app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         app:layout_constraintStart_toEndOf="@id/internet"
