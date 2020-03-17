@@ -18,13 +18,16 @@ public class score extends AppCompatActivity {
     private Intent thIntent = new Intent();
     private int mScore,active;
 
+    Button buttonGoToHome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
         scoreTV = findViewById(R.id.tv_score_data);
-        details = findViewById(R.id.details);
+        details = findViewById(R.id.tv_details);
+        buttonGoToHome = findViewById(R.id.btn_go_to_home);
 
 
         mIntent = getIntent();
@@ -32,6 +35,17 @@ public class score extends AppCompatActivity {
         mScore = mIntent.getIntExtra("score", 0);
         active = thIntent.getIntExtra("type",1);
         scoreTV.setText("" + mScore);
+
+
+        buttonGoToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(score.this, themeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         if(active==0){
