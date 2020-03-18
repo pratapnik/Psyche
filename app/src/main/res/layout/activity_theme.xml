@@ -20,7 +20,6 @@
         app:titleTextColor="@color/color_white"
         />
 
-
     <Button
         android:id="@+id/timeManagement"
         android:layout_width="160dp"
