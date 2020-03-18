@@ -66,7 +66,6 @@ public class score extends AppCompatActivity {
             }
             else if(mScore>=47 && mScore<=57){
                 details.setText("Caution! You are doing okay but you need to focus on improving your time management");
-                details.setTextColor(Color.WHITE);
             }
             else{
                 details.setText("Alert! Poor time management is a likely reason behind your mental health issues");
@@ -82,7 +81,6 @@ public class score extends AppCompatActivity {
             }
             else if(mScore>=45 && mScore<=81){
                 details.setText("Caution! You are doing okay but it will be better to keep your stress and anxiety levels in check");
-                details.setTextColor(Color.WHITE);
             }
             else{
                 details.setText("Alert! High Anxiety levels is likely reason behind your stress");
