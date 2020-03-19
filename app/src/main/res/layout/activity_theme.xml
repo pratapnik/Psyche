@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".themeActivity">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_theme_vertical_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_theme_vertical_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"
+        />
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_theme"
@@ -22,40 +38,58 @@
 
     <Button
         android:id="@+id/timeManagement"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/theme_button"
         android:backgroundTint="@color/color_purple"
         android:fontFamily="@font/mbold"
         android:text="TIME \n MANAGEMENT"
         android:textColor="@color/color_white"
         android:textSize="@dimen/text_sixteen_sp"
-        app:layout_constraintBottom_toTopOf="@id/anxiety"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_theme" />
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
+        app:layout_constraintStart_toStartOf="@id/guideline_theme_vertical_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_theme_vertical_right"
+        app:layout_constraintBottom_toTopOf="@id/guideline_theme_horizontal_one"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_theme_horizontal_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"
+        />
 
     <Button
         android:id="@+id/anxiety"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/theme_button"
         android:backgroundTint="@color/color_yellow"
         android:fontFamily="@font/mbold"
         android:text="ANXIETY"
         android:textColor="@color/color_black"
         android:textSize="@dimen/text_sixteen_sp"
-        app:layout_constraintBottom_toTopOf="@id/internet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timeManagement" />
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_theme_horizontal_one"
+        app:layout_constraintStart_toStartOf="@id/guideline_theme_vertical_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_theme_vertical_right"
+        app:layout_constraintBottom_toTopOf="@id/guideline_theme_horizontal_two" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_theme_horizontal_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.625"
+        />
 
 
     <Button
         android:id="@+id/internet"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="@dimen/margin_twenty_four_dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/theme_button"
         android:backgroundTint="@color/color_light_green"
         android:fontFamily="@font/mbold"
@@ -63,10 +97,19 @@
         android:textAlignment="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/text_sixteen_sp"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/anxiety" />
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_theme_horizontal_two"
+        app:layout_constraintStart_toStartOf="@id/guideline_theme_vertical_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_theme_vertical_right"
+        app:layout_constraintBottom_toTopOf="@id/guideline_theme_horizontal_three" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_theme_horizontal_three"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"
+        />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom"
@@ -92,7 +135,9 @@
         android:tooltipText="LOG OUT"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/internet" />
+        app:layout_constraintStart_toStartOf="@id/guideline_theme_vertical_right" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>

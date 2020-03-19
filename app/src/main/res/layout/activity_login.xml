@@ -8,35 +8,43 @@
 
     <ImageView
         android:id="@+id/iv_did_you_know"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/didyouknow"
-        android:layout_centerHorizontal="true" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_login_above"
+    />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_login_above"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"
+        />
     <TextView
         android:id="@+id/tv_fact"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_fourty_dp"
-        android:layout_marginLeft="@dimen/margin_twenty_four_dp"
-        android:layout_marginRight="@dimen/margin_twenty_four_dp"
+        android:padding="@dimen/margin_twelve_dp"
         android:fontFamily="@font/mbold"
         android:text="Upto 50% of Mental and Psychological problems have their onset during adolescence"
         android:textAlignment="center"
         android:textColor="@color/subtleRed"
         android:textSize="@dimen/text_twenty_sp"
-        app:layout_constraintTop_toBottomOf="@id/iv_did_you_know"
+        app:layout_constraintTop_toBottomOf="@id/guideline_login_above"
         app:layout_constraintStart_toStartOf="@id/iv_did_you_know"
         app:layout_constraintEnd_toEndOf="@id/iv_did_you_know"
+        app:layout_constraintBottom_toTopOf="@id/tv_sign_in_message"
          />
 
 
     <TextView
         android:id="@+id/tv_sign_in_message"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_eighty_dp"
         android:fontFamily="@font/mregular"
         android:text="Sign in to a healthy lifestyle"
         android:textAlignment="center"
@@ -45,29 +53,39 @@
         app:layout_constraintTop_toBottomOf="@id/tv_fact"
         app:layout_constraintStart_toStartOf="@id/tv_fact"
         app:layout_constraintEnd_toEndOf="@id/tv_fact"
-
+        app:layout_constraintBottom_toTopOf="@id/btn_google_sign_in"
         />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_google_sign_in"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:padding="@dimen/padding_four_dp"
         app:layout_constraintTop_toBottomOf="@id/tv_sign_in_message"
         app:layout_constraintStart_toStartOf="@id/tv_sign_in_message"
         app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
+        app:layout_constraintBottom_toTopOf="@id/guideline_login"
          />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"
+        />
 
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:fontFamily="@font/mbold"
         android:text="SIGN IN USING YOUR EMAIL"
-        android:textColor="@color/color_blue"
-        android:textSize="@dimen/text_sixteen_sp"
+        android:textColor="@color/color_white"
+        android:elevation="@dimen/margin_twelve_dp"
+        android:layout_margin="@dimen/padding_eight_dp"
+        android:background="@drawable/reddish_button_background"
+        android:padding="@dimen/padding_eight_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
