@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bottomnavigation"
     tools:context=".loginActivity">
+
 
 
     <TextView
@@ -13,15 +15,33 @@
         android:layout_height="wrap_content"
         android:text="DID YOU KNOW?"
         android:fontFamily="@font/mbold"
-        android:textColor="@color/textColor"
+        android:textColor="@color/color_white"
         android:textAlignment="center"
         android:padding="@dimen/margin_sixteen_dp"
         android:textSize="@dimen/text_fourty_sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline_login_above"
+        app:layout_constraintBottom_toTopOf="@id/tv_fact"
         />
+
+    <TextView
+        android:id="@+id/tv_fact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_twelve_dp"
+        android:fontFamily="@font/mbold"
+        android:text="Studies show that people with mental health problems get better and many recover completely"
+        android:textAlignment="center"
+        android:textColor="@color/color_yellow_lime"
+        android:textSize="@dimen/text_twenty_sp"
+        android:elevation="@dimen/margin_twelve_dp"
+        android:lineSpacingExtra="@dimen/margin_two_dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_did_you_know"
+        app:layout_constraintStart_toStartOf="@id/tv_did_you_know"
+        app:layout_constraintEnd_toEndOf="@id/tv_did_you_know"
+        app:layout_constraintBottom_toTopOf="@id/guideline_login_above"
+         />
 
 
     <android.support.constraint.Guideline
@@ -29,74 +49,83 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"
-        />
-    <TextView
-        android:id="@+id/tv_fact"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/margin_twelve_dp"
-        android:fontFamily="@font/mbold"
-        android:text="Upto 50% of Mental and Psychological problems have their onset during adolescence"
-        android:textAlignment="center"
-        android:textColor="@color/subtleRed"
-        android:textSize="@dimen/text_twenty_sp"
-        android:lineSpacingExtra="@dimen/margin_two_dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_login_above"
-        app:layout_constraintStart_toStartOf="@id/tv_did_you_know"
-        app:layout_constraintEnd_toEndOf="@id/tv_did_you_know"
-         />
-
-
-    <TextView
-        android:id="@+id/tv_sign_in_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/mregular"
-        android:text="Sign in to a healthy lifestyle"
-        android:textAlignment="center"
-        android:textColor="@color/textColor"
-        android:textSize="@dimen/text_sixteen_sp"
-        android:layout_marginBottom="@dimen/margin_twelve_dp"
-        app:layout_constraintStart_toStartOf="@id/tv_fact"
-        app:layout_constraintEnd_toEndOf="@id/tv_fact"
-        app:layout_constraintBottom_toTopOf="@id/btn_google_sign_in"
+        app:layout_constraintGuide_percent="0.4"
         />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btn_google_sign_in"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_four_dp"
-        android:layout_marginBottom="@dimen/margin_fourty_dp"
-        app:layout_constraintStart_toStartOf="@id/tv_sign_in_message"
-        app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
-        app:layout_constraintBottom_toTopOf="@id/guideline_login"
-         />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline_login"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_login_screen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75"
-        />
-
-    <Button
-        android:id="@+id/btn_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/mbold"
-        android:text="SIGN IN USING YOUR EMAIL"
-        android:textColor="@color/color_white"
-        android:elevation="@dimen/margin_twelve_dp"
-        android:layout_margin="@dimen/padding_eight_dp"
-        android:background="@drawable/reddish_button_background"
-        android:padding="@dimen/padding_eight_dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_login"
+        android:layout_height="0dp"
+        android:padding="@dimen/margin_fourty_dp"
+        android:background="@drawable/top_radius_only"
+        android:backgroundTint="@color/color_white"
+        app:layout_constraintTop_toBottomOf="@id/guideline_login_above"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tv_sign_in_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mbold"
+            android:text="Sign in to a healthy lifestyle"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_sixteen_sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_google_sign_in"
+            />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_google_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_four_dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_in_message"
+            app:layout_constraintStart_toStartOf="@id/tv_sign_in_message"
+            app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
+            app:layout_constraintBottom_toTopOf="@id/tv_or"
+            />
+
+        <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_sixteen_sp"
+            android:fontFamily="@font/mbold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/btn_google_sign_in"
+            app:layout_constraintStart_toStartOf="@id/btn_google_sign_in"
+            app:layout_constraintEnd_toEndOf="@id/btn_google_sign_in"
+            app:layout_constraintBottom_toTopOf="@id/btn_sign_up"
+            />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mbold"
+            android:text="SIGN IN USING YOUR EMAIL"
+            android:textColor="@color/color_white"
+            android:elevation="@dimen/margin_twelve_dp"
+            android:background="@drawable/custom_background_themes"
+            android:backgroundTint="@color/color_gradient_start"
+            android:padding="@dimen/margin_twelve_dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
 
 </android.support.constraint.ConstraintLayout>
