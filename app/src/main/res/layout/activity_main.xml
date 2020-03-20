@@ -25,53 +25,45 @@
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/margin_twelve_dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_above_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline">
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/login"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_above_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_purple"
-        android:fontFamily="@font/mbold"
-        android:onClick="loginpage"
-        android:padding="@dimen/padding_eight_dp"
-        android:layout_margin="@dimen/margin_twelve_dp"
-        android:text="Log in"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/text_twenty_sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dotlayout"
-        app:layout_constraintStart_toStartOf="@id/slideViewPager"
-        app:layout_constraintTop_toTopOf="@+id/dotlayout" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_get_started"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_maroon"
-        android:fontFamily="@font/mbold"
-        android:onClick="exit"
-        android:layout_margin="@dimen/margin_twelve_dp"
-        android:padding="@dimen/padding_eight_dp"
-        android:text="Exit"
+        android:backgroundTint="@color/color_gradient_start"
+        android:text="GET STARTED"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:layout_margin="@dimen/margin_twenty_dp"
         android:textColor="@color/color_white"
-        android:textSize="@dimen/text_twenty_sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dotlayout"
-        app:layout_constraintEnd_toEndOf="@+id/slideViewPager"
-        app:layout_constraintTop_toTopOf="@+id/dotlayout" />
+        android:fontFamily="@font/mbold"
+        android:elevation="@dimen/margin_twelve_dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_above_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.8" />
 
 
 </android.support.constraint.ConstraintLayout>

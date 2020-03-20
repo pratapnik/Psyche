@@ -29,8 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class loginActivity extends AppCompatActivity {
 
-    ImageView imageView;
-    TextView textView, textViewEmail;
+    TextView textView, textViewEmail, textViewDidYouKnow;
 
     SignInButton button;
     FirebaseAuth mAuth;
@@ -43,12 +42,12 @@ public class loginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        imageView = findViewById(R.id.iv_did_you_know);
+        textViewDidYouKnow = findViewById(R.id.tv_did_you_know);
         textView = findViewById(R.id.tv_fact);
         textViewEmail = findViewById(R.id.btn_sign_up);
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
-        imageView.startAnimation(animation);
+        textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
 
         button = findViewById(R.id.btn_google_sign_in);

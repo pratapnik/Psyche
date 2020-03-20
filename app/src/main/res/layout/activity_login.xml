@@ -6,23 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".loginActivity">
 
-    <ImageView
-        android:id="@+id/iv_did_you_know"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/didyouknow"
-        app:layout_constraintTop_toTopOf="parent"
+
+    <TextView
+        android:id="@+id/tv_did_you_know"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DID YOU KNOW?"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:padding="@dimen/margin_sixteen_dp"
+        android:textSize="@dimen/text_fourty_sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/guideline_login_above"
-    />
+        />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_login_above"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35"
+        app:layout_constraintGuide_percent="0.25"
         />
     <TextView
         android:id="@+id/tv_fact"
@@ -34,10 +41,10 @@
         android:textAlignment="center"
         android:textColor="@color/subtleRed"
         android:textSize="@dimen/text_twenty_sp"
+        android:lineSpacingExtra="@dimen/margin_two_dp"
         app:layout_constraintTop_toBottomOf="@id/guideline_login_above"
-        app:layout_constraintStart_toStartOf="@id/iv_did_you_know"
-        app:layout_constraintEnd_toEndOf="@id/iv_did_you_know"
-        app:layout_constraintBottom_toTopOf="@id/tv_sign_in_message"
+        app:layout_constraintStart_toStartOf="@id/tv_did_you_know"
+        app:layout_constraintEnd_toEndOf="@id/tv_did_you_know"
          />
 
 
@@ -50,7 +57,7 @@
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/text_sixteen_sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_fact"
+        android:layout_marginBottom="@dimen/margin_twelve_dp"
         app:layout_constraintStart_toStartOf="@id/tv_fact"
         app:layout_constraintEnd_toEndOf="@id/tv_fact"
         app:layout_constraintBottom_toTopOf="@id/btn_google_sign_in"
@@ -61,7 +68,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_four_dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_sign_in_message"
+        android:layout_marginBottom="@dimen/margin_fourty_dp"
         app:layout_constraintStart_toStartOf="@id/tv_sign_in_message"
         app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
         app:layout_constraintBottom_toTopOf="@id/guideline_login"
@@ -72,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintGuide_percent="0.75"
         />
 
     <Button
@@ -86,6 +93,7 @@
         android:layout_margin="@dimen/padding_eight_dp"
         android:background="@drawable/reddish_button_background"
         android:padding="@dimen/padding_eight_dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -15,4 +15,7 @@
     <dimen name="text_hundred_sp">100sp</dimen>
     <dimen name="margin_sixteen_dp">16dp</dimen>
     <dimen name="text_twenty_eight_sp">28sp</dimen>
+    <dimen name="text_fourty_sp">40sp</dimen>
+    <dimen name="margin_two_dp">2dp</dimen>
+    <dimen name="margin_twenty_dp">20dp</dimen>
 </resources>
