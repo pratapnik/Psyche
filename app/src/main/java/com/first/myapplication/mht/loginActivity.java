@@ -2,6 +2,7 @@ package com.first.myapplication.mht;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +35,7 @@ public class loginActivity extends AppCompatActivity {
     SignInButton button;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
+    ConstraintLayout constraintLayout;
 
     private final static int RC_SIGN_IN = 2;
 
@@ -45,10 +47,14 @@ public class loginActivity extends AppCompatActivity {
         textViewDidYouKnow = findViewById(R.id.tv_did_you_know);
         textView = findViewById(R.id.tv_fact);
         textViewEmail = findViewById(R.id.btn_sign_up);
+        constraintLayout = findViewById(R.id.cl_login_screen);
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
+
+        Animation slideUpAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.slide_up);
+        constraintLayout.startAnimation(slideUpAnimation);
 
         button = findViewById(R.id.btn_google_sign_in);
         mAuth = FirebaseAuth.getInstance();
