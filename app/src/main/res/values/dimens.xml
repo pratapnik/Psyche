@@ -18,4 +18,5 @@
     <dimen name="text_fourty_sp">40sp</dimen>
     <dimen name="margin_two_dp">2dp</dimen>
     <dimen name="margin_twenty_dp">20dp</dimen>
+    <dimen name="text_eight_sp">8sp</dimen>
 </resources>
