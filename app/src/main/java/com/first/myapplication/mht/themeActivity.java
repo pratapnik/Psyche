@@ -120,7 +120,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             FirebaseAuth.getInstance().signOut();
-                            Intent i = new Intent(themeActivity.this, MainActivity.class);
+                            Intent i = new Intent(themeActivity.this, loginActivity.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(i);
                             finish();
