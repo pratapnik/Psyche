@@ -13,4 +13,8 @@
         android:title="About us"
         android:icon="@drawable/ic_info_outline_24dp"/>
 
+    <item android:id="@+id/signout"
+        android:title="Sign out"
+        android:icon="@drawable/signout"/>
+
 </menu>

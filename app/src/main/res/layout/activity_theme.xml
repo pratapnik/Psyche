@@ -17,9 +17,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="SELECT AN ISSUE"
-        app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_white" />
 
+        app:titleTextAppearance="@style/mBoldAppearnace"
+        app:titleTextColor="@color/color_white"/>
+
+<!--    <android.support.design.widget.FloatingActionButton-->
+<!--        android:id="@+id/signout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="@dimen/margin_twelve_dp"-->
+<!--        android:backgroundTint="@color/color_maroon"-->
+<!--        android:contentDescription="Logout"-->
+<!--        android:src="@drawable/signout"-->
+<!--        android:tooltipText="LOG OUT"-->
+<!--        android:layout_margin="@dimen/margin_twelve_dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/bottom"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_time_management"
@@ -226,32 +240,19 @@
     </android.support.v7.widget.CardView>
 
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bottomnavigation"
-        app:itemIconSize="@dimen/margin_twenty_eight_dp"
-        app:itemIconTint="@color/color_white"
-        app:itemTextColor="@color/color_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/mymenu" />
+<!--    <android.support.design.widget.BottomNavigationView-->
+<!--        android:id="@+id/bottom"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/bottomnavigation"-->
+<!--        app:itemIconSize="@dimen/margin_twenty_eight_dp"-->
+<!--        app:itemIconTint="@color/color_white"-->
+<!--        app:itemTextColor="@color/color_white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:menu="@menu/mymenu" />-->
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/signout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_twelve_dp"
-        android:backgroundTint="@color/color_maroon"
-        android:contentDescription="Logout"
-        android:src="@drawable/signout"
-        android:tooltipText="LOG OUT"
-        android:layout_margin="@dimen/margin_twelve_dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 
 
 </android.support.constraint.ConstraintLayout>

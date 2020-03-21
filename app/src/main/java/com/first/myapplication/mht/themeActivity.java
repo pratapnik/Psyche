@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,9 +30,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button timeManagement,anxiety,internet;
-    FloatingActionButton signout;
-    BottomNavigationView bottomNavigationView;
-
+    //FloatingActionButton signout;
+   // BottomNavigationView bottomNavigationView;
+    Toolbar toolbarTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,10 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
 
-        bottomNavigationView = findViewById(R.id.bottom);
+      //  bottomNavigationView = findViewById(R.id.bottom);
+        toolbarTheme = findViewById(R.id.toolbar_theme);
+
+        toolbarTheme.inflateMenu(R.menu.mymenu);
 
         Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
         internet.setAnimation(animation);
@@ -54,44 +58,78 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
 
-        signout = findViewById(R.id.signout);
+        //signout = findViewById(R.id.signout);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.profile:
 
-                        Intent i = new Intent(themeActivity.this,profile.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.scale:
-                        Intent in = new Intent(themeActivity.this,scale.class);
-                        startActivity(in);
-                        return true;
-                    case R.id.about:
-                        Intent inte = new Intent(themeActivity.this, AboutUsActivity.class);
-                        startActivity(inte);
-                        return true;
-//                    case R.id.nav_notifications:
+
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                switch (menuItem.getItemId()){
+//                    case R.id.profile:
+//
+//                        Intent i = new Intent(themeActivity.this,profile.class);
+//                        startActivity(i);
 //                        return true;
+//                    case R.id.scale:
+//                        Intent in = new Intent(themeActivity.this,scale.class);
+//                        startActivity(in);
+//                        return true;
+//                    case R.id.about:
+//                        Intent inte = new Intent(themeActivity.this, AboutUsActivity.class);
+//                        startActivity(inte);
+//                        return true;
+////                    case R.id.nav_notifications:
+////                        return true;
+//                }
+//                return false;
+//            }
+//
+//        });
+
+        toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if(menuItem.getItemId()==R.id.profile)
+                {
+                    Intent i = new Intent(themeActivity.this,profile.class);
+                    startActivity(i);
+                    return true;
+                }
+                else if(menuItem.getItemId()== R.id.about)
+                {
+                    Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
+                    startActivity(i);
+                    return true;
+                }
+                else if(menuItem.getItemId()==R.id.scale){
+                    Intent i = new Intent(themeActivity.this,scale.class);
+                    startActivity(i);
+                    return true;
+                }
+                else if(menuItem.getItemId()==R.id.signout){
+                    FirebaseAuth.getInstance().signOut();
+                    Intent i = new Intent(themeActivity.this, MainActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+                    finish();
+                    return true;
                 }
                 return false;
             }
-
         });
 
 
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(themeActivity.this, MainActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
-                finish();
-            }
-        });
+//        signout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth.getInstance().signOut();
+//                Intent i = new Intent(themeActivity.this, MainActivity.class);
+//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
 
     }
@@ -122,8 +160,5 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
-
-
 
 }
