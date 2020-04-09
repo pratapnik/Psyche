@@ -5,17 +5,15 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bottomnavigation"
     tools:context=".question">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_question_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="QUESTION"
-        app:titleTextColor="@color/color_white"
+        app:title="@string/label_question_title"
+        app:titleTextColor="@color/textColor"
         app:titleTextAppearance="@style/mBoldAppearnace"
-        android:background="@drawable/bottomnavigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,27 +25,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mregular"
-        android:text="Loading.."
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/text_twenty_four_sp"
+        android:text="@string/label_question_description"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/text_twenty_sp"
         android:layout_margin="@dimen/margin_twenty_four_dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar_question_activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rg_five_options"
         />
 
     <RadioGroup
         android:id="@+id/rg_five_options"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_white"
+        android:background="@drawable/custom_button"
         android:padding="@dimen/padding_eight_dp"
-        android:layout_marginTop="@dimen/margin_sixteen_dp"
+        android:layout_marginTop="@dimen/margin_twenty_four_dp"
         android:elevation="@dimen/margin_sixteen_dp"
         app:layout_constraintTop_toBottomOf="@id/tv_question"
         app:layout_constraintStart_toStartOf="@id/tv_question"
         app:layout_constraintEnd_toEndOf="@id/tv_question"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
         >
 
         <RadioButton
@@ -58,7 +57,8 @@
             android:padding="@dimen/padding_eight_dp"
             android:text="Never"
             android:textSize="@dimen/text_sixteen_sp"
-            android:buttonTint="@color/color_gradient_end"
+            android:textColor="@color/color_white"
+            android:buttonTint="@color/color_white"
             />
 
         <RadioButton
@@ -69,7 +69,8 @@
             android:padding="@dimen/padding_eight_dp"
             android:text="Rarely"
             android:textSize="@dimen/text_sixteen_sp"
-            android:buttonTint="@color/color_gradient_end"
+            android:textColor="@color/color_white"
+            android:buttonTint="@color/color_white"
             />
 
         <RadioButton
@@ -80,7 +81,8 @@
             android:padding="@dimen/padding_eight_dp"
             android:text="Sometimes"
             android:textSize="@dimen/text_sixteen_sp"
-            android:buttonTint="@color/color_gradient_end"
+            android:textColor="@color/color_white"
+            android:buttonTint="@color/color_white"
             />
 
         <RadioButton
@@ -91,7 +93,8 @@
             android:text="Often"
             android:textSize="@dimen/text_sixteen_sp"
             android:padding="@dimen/padding_eight_dp"
-            android:buttonTint="@color/color_gradient_end"
+            android:textColor="@color/color_white"
+            android:buttonTint="@color/color_white"
             />
 
         <RadioButton
@@ -100,9 +103,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/mregular"
             android:text="Always"
+            android:textColor="@color/color_white"
             android:textSize="@dimen/text_sixteen_sp"
             android:padding="@dimen/padding_eight_dp"
-            android:buttonTint="@color/color_gradient_end"
+            android:buttonTint="@color/color_white"
             />
     </RadioGroup>
 
@@ -110,10 +114,10 @@
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/reddish_button_background"
+        android:background="@drawable/button_hollow_stroke"
         android:textSize="@dimen/text_twenty_sp"
         android:tooltipText="Go to next question"
-        android:textColor="@color/color_white"
+        android:textColor="@color/color_gradient_start"
         android:fontFamily="@font/mbold"
         android:text="NEXT"
         android:elevation="@dimen/margin_sixteen_dp"

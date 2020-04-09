@@ -1,6 +1,8 @@
 package com.first.myapplication.mht;
 
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -111,11 +113,11 @@ public class question extends AppCompatActivity {
                 }
                 break;
             case -1:
-                Toast.makeText(this, "Please make a selection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "MARK ATLEAST ONE CHOICE", Toast.LENGTH_LONG).show();
                 break;
         }
 
-        Intent i = new Intent(question.this, score.class);
+        Intent i = new Intent(question.this, FinalScoreActivity.class);
         if (type == 0 && mOptionsRG.getCheckedRadioButtonId() != -1) {
             if (mQuestionNo == 8) {
                 i.putExtra("score", mScore);
@@ -124,6 +126,8 @@ public class question extends AppCompatActivity {
             } else {
                 if (mQuestionNo == 7) {
                     mNext.setText("SUBMIT");
+                    mNext.setTextColor(getResources().getColor(R.color.color_white));
+                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -138,6 +142,8 @@ public class question extends AppCompatActivity {
             } else {
                 if (mQuestionNo == 17) {
                     mNext.setText("SUBMIT");
+                    mNext.setTextColor(getResources().getColor(R.color.color_white));
+                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -151,6 +157,8 @@ public class question extends AppCompatActivity {
             } else {
                 if (mQuestionNo == 22) {
                     mNext.setText("SUBMIT");
+                    mNext.setTextColor(getResources().getColor(R.color.color_white));
+                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();

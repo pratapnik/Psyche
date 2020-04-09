@@ -1,9 +1,9 @@
 package com.first.myapplication.mht;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,9 +13,9 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class themeActivity extends AppCompatActivity implements View.OnClickListener{
+public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button timeManagement,anxiety,internet;
+    Button timeManagement, anxiety, internet;
     Toolbar toolbarTheme;
 
     @Override
@@ -42,24 +42,19 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                if(menuItem.getItemId()==R.id.profile)
-                {
-                    Intent i = new Intent(themeActivity.this,profile.class);
+                if (menuItem.getItemId() == R.id.profile) {
+                    Intent i = new Intent(themeActivity.this, profile.class);
                     startActivity(i);
                     return true;
-                }
-                else if(menuItem.getItemId()== R.id.about)
-                {
+                } else if (menuItem.getItemId() == R.id.about) {
                     Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
                     startActivity(i);
                     return true;
-                }
-                else if(menuItem.getItemId()==R.id.scale){
-                    Intent i = new Intent(themeActivity.this,scale.class);
+                } else if (menuItem.getItemId() == R.id.scale) {
+                    Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
                     startActivity(i);
                     return true;
-                }
-                else if(menuItem.getItemId()==R.id.signout){
+                } else if (menuItem.getItemId() == R.id.signout) {
                     logoutOrCancel();
                     return true;
 
@@ -67,8 +62,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-
-
     }
 
     @Override
@@ -77,10 +70,11 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);
     }
+
     @Override
     public void onClick(View v) {
         Intent i = new Intent(themeActivity.this, question.class);
-        switch(v.getId()) {
+        switch (v.getId()) {
 
             case R.id.internet:
                 i.putExtra("type", 0);
@@ -97,7 +91,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void logoutOrCancel(){
+    public void logoutOrCancel() {
         View view = getLayoutInflater().inflate(R.layout.jarvis_log_out_alert_dialog, null);
         Button buttonLogout = view.findViewById(R.id.btnLogout);
         Button buttonCancel = view.findViewById(R.id.btnCancel);

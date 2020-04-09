@@ -17,23 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="SELECT AN ISSUE"
-
         app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_white"/>
-
-<!--    <android.support.design.widget.FloatingActionButton-->
-<!--        android:id="@+id/signout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="@dimen/margin_twelve_dp"-->
-<!--        android:backgroundTint="@color/color_maroon"-->
-<!--        android:contentDescription="Logout"-->
-<!--        android:src="@drawable/signout"-->
-<!--        android:tooltipText="LOG OUT"-->
-<!--        android:layout_margin="@dimen/margin_twelve_dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/bottom"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        />-->
+        app:titleTextColor="@color/color_white" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_time_management"
@@ -42,45 +27,42 @@
         android:layout_margin="@dimen/margin_twelve_dp"
         app:cardCornerRadius="@dimen/padding_eight_dp"
         app:cardElevation="@dimen/padding_eight_dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_theme">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/tvTimeManagement"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTimeManagement"
                 android:layout_margin="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mbold"
-                android:text="TIME MANAGEMENT"
                 android:padding="@dimen/padding_eight_dp"
+                android:text="TIME MANAGEMENT"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_twenty_four_sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/tvTimeManagementDescription"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tvTimeManagementDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTimeManagementDescription"
+                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mregular"
+                android:padding="@dimen/padding_eight_dp"
                 android:text="Check where you stand in Time Management"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_twelve_sp"
-                android:padding="@dimen/padding_eight_dp"
-                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTimeManagement"
-                app:layout_constraintStart_toStartOf="@id/tvTimeManagement"
                 app:layout_constraintEnd_toStartOf="@id/timeManagement"
-                />
+                app:layout_constraintStart_toStartOf="@id/tvTimeManagement"
+                app:layout_constraintTop_toBottomOf="@id/tvTimeManagement" />
 
 
             <Button
@@ -89,17 +71,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_twelve_dp"
                 android:backgroundTint="@color/color_gradient_start"
+                android:drawableRight="@drawable/ic_arrow_forward"
                 android:fontFamily="@font/mbold"
                 android:text="START"
-                android:drawableRight="@drawable/ic_arrow_forward"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twelve_sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                 />
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
-
 
 
     </android.support.v7.widget.CardView>
@@ -111,63 +91,59 @@
         android:layout_margin="@dimen/margin_twelve_dp"
         app:cardCornerRadius="@dimen/padding_eight_dp"
         app:cardElevation="@dimen/padding_eight_dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_time_management"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_time_management">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvAnxiety"
-            android:layout_margin="@dimen/margin_sixteen_dp"
-            android:fontFamily="@font/mbold"
-            android:text="ANXIETY"
-            android:padding="@dimen/padding_eight_dp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/text_twenty_four_sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvAnxietyDescription"
-            />
+            <TextView
+                android:id="@+id/tvAnxiety"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_sixteen_dp"
+                android:fontFamily="@font/mbold"
+                android:padding="@dimen/padding_eight_dp"
+                android:text="ANXIETY"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_twenty_four_sp"
+                app:layout_constraintBottom_toTopOf="@id/tvAnxietyDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvAnxietyDescription"
-            android:fontFamily="@font/mregular"
-            android:text="Check where you stand in Anxiety (Anxieties related to Student life)"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/text_twelve_sp"
-            android:padding="@dimen/padding_eight_dp"
-            android:layout_marginBottom="@dimen/margin_sixteen_dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAnxiety"
-            app:layout_constraintStart_toStartOf="@id/tvAnxiety"
-            app:layout_constraintEnd_toStartOf="@id/anxiety"
-            />
+            <TextView
+                android:id="@+id/tvAnxietyDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_sixteen_dp"
+                android:fontFamily="@font/mregular"
+                android:padding="@dimen/padding_eight_dp"
+                android:text="Check where you stand in Anxiety (Anxieties related to Student life)"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_twelve_sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/anxiety"
+                app:layout_constraintStart_toStartOf="@id/tvAnxiety"
+                app:layout_constraintTop_toBottomOf="@id/tvAnxiety" />
 
 
-        <Button
-            android:id="@+id/anxiety"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_twelve_dp"
-            android:backgroundTint="@color/color_gradient_start"
-            android:fontFamily="@font/mbold"
-            android:text="START"
-            android:drawableRight="@drawable/ic_arrow_forward"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/text_twelve_sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            <Button
+                android:id="@+id/anxiety"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_twelve_dp"
+                android:backgroundTint="@color/color_gradient_start"
+                android:drawableRight="@drawable/ic_arrow_forward"
+                android:fontFamily="@font/mbold"
+                android:text="START"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_twelve_sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
 
@@ -179,45 +155,42 @@
         android:layout_margin="@dimen/margin_twelve_dp"
         app:cardCornerRadius="@dimen/padding_eight_dp"
         app:cardElevation="@dimen/padding_eight_dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_anxiety"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_anxiety">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/tvInternet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvInternet"
                 android:layout_margin="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mbold"
-                android:text="INTERNET ADDICTION"
                 android:padding="@dimen/padding_eight_dp"
+                android:text="INTERNET ADDICTION"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_twenty_four_sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/tvInternetDescription"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tvInternetDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvInternetDescription"
+                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mregular"
+                android:padding="@dimen/padding_eight_dp"
                 android:text="Check how much addicted are you to the Internet"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_twelve_sp"
-                android:padding="@dimen/padding_eight_dp"
-                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvInternet"
-                app:layout_constraintStart_toStartOf="@id/tvInternet"
                 app:layout_constraintEnd_toStartOf="@id/internet"
-                />
+                app:layout_constraintStart_toStartOf="@id/tvInternet"
+                app:layout_constraintTop_toBottomOf="@id/tvInternet" />
 
 
             <Button
@@ -226,33 +199,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_twelve_dp"
                 android:backgroundTint="@color/color_gradient_start"
+                android:drawableRight="@drawable/ic_arrow_forward"
                 android:fontFamily="@font/mbold"
                 android:text="START"
-                android:drawableRight="@drawable/ic_arrow_forward"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twelve_sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                />
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
-
-
-<!--    <android.support.design.widget.BottomNavigationView-->
-<!--        android:id="@+id/bottom"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/bottomnavigation"-->
-<!--        app:itemIconSize="@dimen/margin_twenty_eight_dp"-->
-<!--        app:itemIconTint="@color/color_white"-->
-<!--        app:itemTextColor="@color/color_white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/mymenu" />-->
-
-
 
 </android.support.constraint.ConstraintLayout>
