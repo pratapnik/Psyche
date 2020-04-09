@@ -7,5 +7,8 @@
     <string name="label_are_you_sure">Are you sure?</string>
     <string name="label_cancel_button_title">Naah, Just Kidding</string>
     <string name="label_logout_button_title">Yes, Log Me Out</string>
+    <string name="label_sign_in_with_email_button_title">SIGN IN USING YOUR EMAIL</string>
+    <string name="label_signup_button_title">Sign up</string>
+    <string name="label_signin_button_title">Sign in</string>
 
 </resources>
