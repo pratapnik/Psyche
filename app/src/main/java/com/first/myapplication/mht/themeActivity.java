@@ -143,18 +143,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         });
 
 
-//        signout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FirebaseAuth.getInstance().signOut();
-//                Intent i = new Intent(themeActivity.this, MainActivity.class);
-//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
-
-
     }
 
 
