@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_fourty_dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivLogoutIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvLogoutDescription"
+        />
+
+    <TextView
+        android:id="@+id/tvLogoutDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_logout_description"
+        android:layout_marginTop="@dimen/margin_fourty_dp"
+        android:textSize="@dimen/text_twenty_sp"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toBottomOf="@id/ivLogoutIcon"
+        app:layout_constraintStart_toStartOf="@id/ivLogoutIcon"
+        app:layout_constraintEnd_toEndOf="@id/ivLogoutIcon"
+        app:layout_constraintBottom_toTopOf="@id/tvLogoutDescriptionSecond"
+        />
+
+    <TextView
+        android:id="@+id/tvLogoutDescriptionSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_are_you_sure"
+        android:layout_marginTop="@dimen/padding_eight_dp"
+        android:textSize="@dimen/text_twenty_sp"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLogoutDescription"
+        app:layout_constraintStart_toStartOf="@id/tvLogoutDescription"
+        app:layout_constraintEnd_toEndOf="@id/tvLogoutDescription"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_cancel_button_title"
+        android:layout_marginTop="@dimen/margin_sixteen_dp"
+        android:background="@drawable/custom_button"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/mregular"
+        android:textColor="@color/color_white"
+        app:layout_constraintTop_toBottomOf="@id/tvLogoutDescriptionSecond"
+        app:layout_constraintStart_toStartOf="@id/tvLogoutDescriptionSecond"
+        app:layout_constraintEnd_toEndOf="@id/tvLogoutDescriptionSecond"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_logout_button_title"
+        android:layout_marginTop="@dimen/margin_sixteen_dp"
+        android:background="@drawable/button_hollow_stroke"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/mregular"
+        android:textColor="@color/color_gradient_start"
+        app:layout_constraintTop_toBottomOf="@id/btnCancel"
+        app:layout_constraintStart_toStartOf="@id/btnCancel"
+        app:layout_constraintEnd_toEndOf="@id/btnCancel"
+        />
+
 
 </android.support.constraint.ConstraintLayout>
