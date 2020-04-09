@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +33,11 @@ public class loginActivity extends AppCompatActivity {
 
     TextView textView, textViewEmail, textViewDidYouKnow;
 
-    SignInButton button;
+    SignInButton btnGoogleSign;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     ConstraintLayout constraintLayout;
+    ProgressBar pbSignIn;
 
     private final static int RC_SIGN_IN = 2;
 
@@ -48,6 +50,7 @@ public class loginActivity extends AppCompatActivity {
         textView = findViewById(R.id.tv_fact);
         textViewEmail = findViewById(R.id.btn_sign_up);
         constraintLayout = findViewById(R.id.cl_login_screen);
+        pbSignIn = findViewById(R.id.pbSignIn);
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
@@ -56,14 +59,15 @@ public class loginActivity extends AppCompatActivity {
         Animation slideUpAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.slide_up);
         constraintLayout.startAnimation(slideUpAnimation);
 
-        button = findViewById(R.id.btn_google_sign_in);
+        btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
         mAuth = FirebaseAuth.getInstance();
 
-        button.setSize(SignInButton.SIZE_WIDE);
-        button.setColorScheme(SignInButton.COLOR_DARK);
-        button.setOnClickListener(new View.OnClickListener() {
+        btnGoogleSign.setSize(SignInButton.SIZE_WIDE);
+        btnGoogleSign.setColorScheme(SignInButton.COLOR_DARK);
+        btnGoogleSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pbSignIn.setVisibility(View.VISIBLE);
                 signIn();
             }
         });
@@ -100,7 +104,6 @@ public class loginActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
-                Toast.makeText(loginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
@@ -110,8 +113,6 @@ public class loginActivity extends AppCompatActivity {
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d("tag", "firebaseAuthWithGoogle:" + acct.getId());
-
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -143,6 +144,7 @@ public class loginActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user){
         if(user != null){
+            pbSignIn.setVisibility(View.GONE);
             Intent i = new Intent(loginActivity.this, themeActivity.class);
             startActivity(i);
         }
