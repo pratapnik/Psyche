@@ -3,5 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_logout_description">Oh no! You\'re leaving...</string>
+    <string name="label_are_you_sure">Are you sure?</string>
+    <string name="label_cancel_button_title">Naah, Just Kidding</string>
+    <string name="label_logout_button_title">Yes, Log Me Out</string>
 
 </resources>
