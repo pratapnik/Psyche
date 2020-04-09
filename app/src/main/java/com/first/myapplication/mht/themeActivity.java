@@ -33,8 +33,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button timeManagement,anxiety,internet;
-    //FloatingActionButton signout;
-   // BottomNavigationView bottomNavigationView;
     Toolbar toolbarTheme;
 
     @Override
@@ -45,10 +43,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement = findViewById(R.id.timeManagement);
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
-
-      //  bottomNavigationView = findViewById(R.id.bottom);
         toolbarTheme = findViewById(R.id.toolbar_theme);
-
         toolbarTheme.inflateMenu(R.menu.mymenu);
 
         Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
@@ -60,35 +55,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
-
-        //signout = findViewById(R.id.signout);
-
-
-
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                switch (menuItem.getItemId()){
-//                    case R.id.profile:
-//
-//                        Intent i = new Intent(themeActivity.this,profile.class);
-//                        startActivity(i);
-//                        return true;
-//                    case R.id.scale:
-//                        Intent in = new Intent(themeActivity.this,scale.class);
-//                        startActivity(in);
-//                        return true;
-//                    case R.id.about:
-//                        Intent inte = new Intent(themeActivity.this, AboutUsActivity.class);
-//                        startActivity(inte);
-//                        return true;
-////                    case R.id.nav_notifications:
-////                        return true;
-//                }
-//                return false;
-//            }
-//
-//        });
 
         toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -144,7 +110,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
-
 
     @Override
     public void onBackPressed() {
