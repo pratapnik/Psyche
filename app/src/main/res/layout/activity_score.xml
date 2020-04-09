@@ -4,45 +4,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bottomnavigation"
-    tools:context=".score">
+    tools:context=".FinalScoreActivity">
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_score"
+        android:id="@+id/tbScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottomnavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutScore"
         app:title="YOUR SCORE"
+        android:layout_marginBottom="@dimen/margin_twenty_four_dp"
         app:titleTextAppearance="@style/mBoldAppearnace"
         app:titleTextColor="@color/color_white" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline_horizontal"
+        android:id="@+id/guidelineScore"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"
+        app:layout_constraintGuide_percent="0.43"
         />
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraint_layout_score"
+        android:id="@+id/constraintLayoutScore"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_white"
+        android:background="@drawable/button_hollow_stroke"
         android:layout_margin="@dimen/margin_twenty_eight_dp"
         android:elevation="@dimen/margin_twenty_four_dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_score"
+        app:layout_constraintTop_toBottomOf="@id/tbScore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintBottom_toTopOf="@id/guidelineScore"
         >
 
         <TextView
-            android:id="@+id/tv_your_score"
+            android:id="@+id/tvYourScoreTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mbold"
@@ -53,10 +53,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_score_data"
+            app:layout_constraintEnd_toStartOf="@id/tvScoreValue"
             />
         <TextView
-            android:id="@+id/tv_score_data"
+            android:id="@+id/tvScoreValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mbold"
@@ -66,7 +66,7 @@
             android:textSize="@dimen/text_hundred_sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_your_score"
+            app:layout_constraintStart_toEndOf="@id/tvYourScoreTitle"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
@@ -74,37 +74,57 @@
 
 
     <TextView
-        android:id="@+id/tv_details"
+        android:id="@+id/tvResultDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Result Data"
-        android:textColor="@color/color_white"
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:fontFamily="@font/mbold"
         android:padding="@dimen/padding_eight_dp"
         android:textSize="@dimen/text_twenty_four_sp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal"
-        app:layout_constraintStart_toStartOf="@id/constraint_layout_score"
-        app:layout_constraintEnd_toEndOf="@id/constraint_layout_score"
-        app:layout_constraintBottom_toTopOf="@id/btn_go_to_home"
+        app:layout_constraintTop_toBottomOf="@id/guidelineScore"
+        app:layout_constraintStart_toStartOf="@id/constraintLayoutScore"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayoutScore"
+        app:layout_constraintBottom_toTopOf="@id/btnHome"
         />
 
     <Button
-        android:id="@+id/btn_go_to_home"
+        android:id="@+id/btnHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO TO HOME"
+        android:text="HOME"
         android:fontFamily="@font/mbold"
-        android:textColor="@color/color_white"
-        android:background="@drawable/reddish_button_background"
+        android:textColor="@color/color_gradient_start"
+        android:background="@drawable/button_hollow_stroke"
         android:textSize="@dimen/text_sixteen_sp"
-        android:padding="@dimen/margin_twelve_dp"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
+        android:paddingLeft="@dimen/margin_twenty_four_dp"
+        android:paddingStart="@dimen/margin_twenty_four_dp"
+        android:paddingRight="@dimen/margin_twenty_four_dp"
+        android:paddingEnd="@dimen/margin_twenty_four_dp"
         android:drawableLeft="@drawable/ic_home_black_24dp"
         android:drawablePadding="@dimen/padding_four_dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_details"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnCheckScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCALE"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/color_white"
+        android:background="@drawable/custom_button"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
+        android:paddingLeft="@dimen/margin_twenty_four_dp"
+        android:paddingStart="@dimen/margin_twenty_four_dp"
+        android:paddingRight="@dimen/margin_twenty_four_dp"
+        android:paddingEnd="@dimen/margin_twenty_four_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 

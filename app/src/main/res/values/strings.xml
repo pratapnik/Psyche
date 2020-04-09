@@ -10,5 +10,27 @@
     <string name="label_sign_in_with_email_button_title">SIGN IN USING YOUR EMAIL</string>
     <string name="label_signup_button_title">Sign up</string>
     <string name="label_signin_button_title">Sign in</string>
+    <string name="label_question_title">QUESTION</string>
+    <string name="label_question_description">Loading..</string>
+
+<!--    Score Result messages-->
+    <string name="label_internet_addiction_good_score_description">Good News! Your Score is in the safe zone.
+        You are great at monitoring the amount of time you spend online</string>
+    <string name="label_internet_addiction_bad_score_description">Alert! Your Score suggests you are
+        addicted to the internet. Start with limiting and monitoring your internet usage</string>
+    <string name="label_time_management_good_score_description">Good News! Your Score is in the safe
+        zone. Your are great at managing your time</string>
+    <string name="label_time_management_average_score_description">Caution! You are doing okay but
+        you need to focus on improving your time management</string>
+    <string name="label_time_management_bad_score_description">Alert! Poor time management is a
+        likely reason behind your mental health issues</string>
+    <string name="label_anxiety_good_score_description">Good News! Your Score is in the safe zone.</string>
+    <string name="label_anxiety_average_score_description">Caution! You are doing okay but it will
+        be better to keep your stress and anxiety levels in check</string>
+    <string name="label_anxiety_bad_score_description">Alert! High Anxiety levels is likely reason
+        behind your stress</string>
+
+
+
 
 </resources>

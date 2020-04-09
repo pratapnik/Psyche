@@ -6,7 +6,7 @@
 
             <solid android:color="@color/color_light_blue"/>
 
-            <corners android:radius="@dimen/margin_sixteen_dp"/>
+            <corners android:radius="@dimen/padding_eight_dp"/>
 
         </shape>
 
@@ -19,7 +19,7 @@
             <solid android:color="@color/color_light_blue"/>
 
 
-            <corners android:radius="@dimen/margin_sixteen_dp"/>
+            <corners android:radius="@dimen/padding_eight_dp"/>
 
         </shape>
     </item>
@@ -30,7 +30,7 @@
             <gradient android:startColor="@color/color_gradient_start" android:endColor="@color/color_gradient_end" android:type="linear"
                 />
 
-            <corners android:radius="@dimen/margin_sixteen_dp"/>
+            <corners android:radius="@dimen/padding_eight_dp"/>
 
         </shape>
     </item>

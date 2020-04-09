@@ -8,7 +8,7 @@
 
         <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
 
-        <corners android:radius="@dimen/margin_sixteen_dp"/>
+        <corners android:radius="@dimen/padding_eight_dp"/>
 
     </shape>
 
@@ -22,7 +22,7 @@
 
         <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
 
-        <corners android:radius="@dimen/margin_sixteen_dp"/>
+        <corners android:radius="@dimen/padding_eight_dp"/>
 
     </shape>
 </item>
@@ -34,7 +34,7 @@
 
         <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
 
-        <corners android:radius="@dimen/margin_sixteen_dp"/>
+        <corners android:radius="@dimen/padding_eight_dp"/>
 
     </shape>
 </item>
