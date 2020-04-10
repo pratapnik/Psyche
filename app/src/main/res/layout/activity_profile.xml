@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bottomnavigation"
     tools:context=".profile">
 
 
@@ -12,13 +11,12 @@
         android:id="@+id/toolbar_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottomnavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="YOUR PROFILE"
         app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_white" />
+        />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile_photo"
@@ -27,6 +25,8 @@
         android:src="@drawable/defaultpic"
         android:layout_margin="@dimen/margin_twelve_dp"
         android:elevation="@dimen/margin_twelve_dp"
+        app:civ_border_width="@dimen/padding_four_dp"
+        app:civ_border_color="@color/color_gradient_start"
         app:layout_constraintBottom_toTopOf="@id/guideline_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_profile"
@@ -47,7 +47,7 @@
         android:fontFamily="@font/mbold"
         android:text="Name"
         android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/color_white"
+        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
         app:layout_constraintStart_toStartOf="@id/guideline_profile_vertical"
         app:layout_constraintTop_toTopOf="@id/iv_profile_photo"
@@ -62,7 +62,7 @@
         android:fontFamily="@font/mbold"
         android:text="E-Mail"
         android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/color_white"
+        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
         app:layout_constraintTop_toBottomOf="@id/tv_user_name"
         app:layout_constraintStart_toStartOf="@id/tv_user_name"
@@ -87,7 +87,7 @@
         android:fontFamily="@font/mbold"
         android:text="Location"
         android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/color_white"
+        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
         app:layout_constraintTop_toTopOf="@id/iv_location_symbol"
         app:layout_constraintBottom_toBottomOf="@id/iv_location_symbol"
@@ -106,8 +106,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/custom_background_themes"
+        android:backgroundTint="@color/color_gradient_start"
         android:layout_margin="@dimen/margin_twenty_eight_dp"
-        android:backgroundTint="@color/color_white"
         android:elevation="@dimen/margin_twenty_eight_dp"
         app:layout_constraintTop_toTopOf="@id/guideline_profile"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,7 +121,7 @@
          android:layout_height="wrap_content"
          android:text="YOUR PREVIOUS SCORES"
          android:fontFamily="@font/mbold"
-         android:textColor="@color/color_gradient_start"
+         android:textColor="@color/color_white"
          android:padding="@dimen/margin_twelve_dp"
          android:textSize="@dimen/text_twenty_four_sp"
          android:textAlignment="center"

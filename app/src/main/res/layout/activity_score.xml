@@ -11,16 +11,13 @@
         android:id="@+id/tbScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottomnavigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/constraintLayoutScore"
         app:title="YOUR SCORE"
         android:layout_marginBottom="@dimen/margin_twenty_four_dp"
         app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_white" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <android.support.constraint.Guideline
         android:id="@+id/guidelineScore"
         android:layout_width="match_parent"
@@ -89,9 +86,17 @@
         app:layout_constraintBottom_toTopOf="@id/btnHome"
         />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/glYourScoreVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
     <Button
         android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="HOME"
         android:fontFamily="@font/mbold"
@@ -107,11 +112,12 @@
         android:drawablePadding="@dimen/padding_four_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glYourScoreVertical"
         />
 
     <Button
         android:id="@+id/btnCheckScale"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="SCALE"
         android:fontFamily="@font/mbold"
@@ -123,8 +129,11 @@
         android:paddingStart="@dimen/margin_twenty_four_dp"
         android:paddingRight="@dimen/margin_twenty_four_dp"
         android:paddingEnd="@dimen/margin_twenty_four_dp"
+        android:drawableLeft="@drawable/ic_scale_icon"
+        android:drawablePadding="@dimen/padding_four_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/glYourScoreVertical"
         />
 
 
