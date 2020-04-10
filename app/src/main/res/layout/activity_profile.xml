@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile">
+    tools:context=".ProfileActivity">
 
 
     <android.support.v7.widget.Toolbar
@@ -15,23 +15,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="YOUR PROFILE"
-        app:titleTextAppearance="@style/mBoldAppearnace"
-        />
+        app:titleTextAppearance="@style/mBoldAppearnace" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profile_photo"
+        android:id="@+id/ivProfilePhoto"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/defaultpic"
         android:layout_margin="@dimen/margin_twelve_dp"
         android:elevation="@dimen/margin_twelve_dp"
-        app:civ_border_width="@dimen/padding_four_dp"
+        android:src="@drawable/defaultpic"
         app:civ_border_color="@color/color_gradient_start"
+        app:civ_border_width="@dimen/padding_four_dp"
         app:layout_constraintBottom_toTopOf="@id/guideline_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_profile"
         app:layout_constraintEnd_toEndOf="@id/guideline_profile_vertical"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_profile" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_profile_vertical"
@@ -41,58 +39,54 @@
         app:layout_constraintGuide_percent="0.4" />
 
     <TextView
-        android:id="@+id/tv_user_name"
+        android:id="@+id/tvProfileName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mbold"
-        android:text="Name"
-        android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
-        app:layout_constraintStart_toStartOf="@id/guideline_profile_vertical"
-        app:layout_constraintTop_toTopOf="@id/iv_profile_photo"
-        app:layout_constraintBottom_toTopOf="@id/tv_email"
+        android:text="Name"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/text_sixteen_sp"
+        app:layout_constraintBottom_toTopOf="@id/tvProfileEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="@id/guideline_profile_vertical"
+        app:layout_constraintTop_toTopOf="@id/ivProfilePhoto" />
 
     <TextView
-        android:id="@+id/tv_email"
+        android:id="@+id/tvProfileEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mbold"
-        android:text="E-Mail"
-        android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_name"
-        app:layout_constraintStart_toStartOf="@id/tv_user_name"
+        android:text="E-Mail"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/text_sixteen_sp"
+        app:layout_constraintBottom_toTopOf="@id/ivLocationIcon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/iv_location_symbol"
-         />
+        app:layout_constraintStart_toStartOf="@id/tvProfileName"
+        app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
 
     <ImageView
-        android:id="@+id/iv_location_symbol"
+        android:id="@+id/ivLocationIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_location_on"
-        app:layout_constraintTop_toBottomOf="@id/tv_email"
-        app:layout_constraintStart_toStartOf="@id/tv_email"
-        app:layout_constraintBottom_toBottomOf="@id/iv_profile_photo"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/ivProfilePhoto"
+        app:layout_constraintStart_toStartOf="@id/tvProfileEmail"
+        app:layout_constraintTop_toBottomOf="@id/tvProfileEmail" />
 
     <TextView
-        android:id="@+id/tv_location_data"
+        android:id="@+id/tvLocationDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mbold"
-        android:text="Location"
-        android:textSize="@dimen/text_sixteen_sp"
-        android:textColor="@color/textColor"
         android:padding="@dimen/padding_four_dp"
-        app:layout_constraintTop_toTopOf="@id/iv_location_symbol"
-        app:layout_constraintBottom_toBottomOf="@id/iv_location_symbol"
-        app:layout_constraintStart_toEndOf="@id/iv_location_symbol"
-        />
+        android:text="Location"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/text_sixteen_sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivLocationIcon"
+        app:layout_constraintStart_toEndOf="@id/ivLocationIcon"
+        app:layout_constraintTop_toTopOf="@id/ivLocationIcon" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_profile"
@@ -101,35 +95,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <LinearLayout
-        android:id="@+id/linearlayout_profile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_gradient_start"
-        android:layout_margin="@dimen/margin_twenty_eight_dp"
-        android:elevation="@dimen/margin_twenty_eight_dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/tvLastScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
+        android:textColor="@color/textColor"
+        android:fontFamily="@font/mbold"
+        tools:text="Last Score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@id/guideline_profile"
+        />
 
-     <TextView
-         android:id="@+id/tv_score_title"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="YOUR PREVIOUS SCORES"
-         android:fontFamily="@font/mbold"
-         android:textColor="@color/color_white"
-         android:padding="@dimen/margin_twelve_dp"
-         android:textSize="@dimen/text_twenty_four_sp"
-         android:textAlignment="center"
-         />
-
-    </LinearLayout>
-
-
+    <Button
+        android:id="@+id/btnPreviousScores"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_check_previous_scores"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/color_gradient_start"
+        android:textSize="@dimen/text_sixteen_sp"
+        android:background="@drawable/button_hollow_stroke"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </android.support.constraint.ConstraintLayout>
