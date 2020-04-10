@@ -67,6 +67,8 @@ public class question extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String question = dataSnapshot.getValue(String.class);
                 mQuestion.setText(question);
+                mOptionsRG.setVisibility(View.VISIBLE);
+                mNext.setVisibility(View.VISIBLE);
             }
 
             @Override

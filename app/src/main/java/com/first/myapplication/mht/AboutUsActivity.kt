@@ -12,7 +12,7 @@ class AboutUsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        //To go to developer's linkedin profile
+        //To go to developer's linkedin profilepage
         iv_linked_in_logo.setOnClickListener {
             var intent :Intent
             intent = Intent()
@@ -22,7 +22,7 @@ class AboutUsActivity: AppCompatActivity() {
             startActivity(intent)
         }
 
-        //To go to developer's Github profile
+        //To go to developer's Github profilepage
         iv_github_logo.setOnClickListener {
             var intent :Intent
             intent = Intent()

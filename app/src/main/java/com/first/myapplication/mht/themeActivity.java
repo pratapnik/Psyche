@@ -43,7 +43,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.profile) {
-                    Intent i = new Intent(themeActivity.this, profile.class);
+                    Intent i = new Intent(themeActivity.this, ProfileActivity.class);
                     startActivity(i);
                     return true;
                 } else if (menuItem.getItemId() == R.id.about) {

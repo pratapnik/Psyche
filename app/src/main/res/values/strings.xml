@@ -29,8 +29,7 @@
         be better to keep your stress and anxiety levels in check</string>
     <string name="label_anxiety_bad_score_description">Alert! High Anxiety levels is likely reason
         behind your stress</string>
-
-
+    <string name="label_check_previous_scores">Check Previous Scores</string>
 
 
 </resources>
