@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -51,6 +52,8 @@ public class loginActivity extends AppCompatActivity {
         textViewEmail = findViewById(R.id.btn_sign_up);
         constraintLayout = findViewById(R.id.cl_login_screen);
         pbSignIn = findViewById(R.id.pbSignIn);
+        btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
+        mAuth = FirebaseAuth.getInstance();
 
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
@@ -59,11 +62,8 @@ public class loginActivity extends AppCompatActivity {
         Animation slideUpAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.slide_up);
         constraintLayout.startAnimation(slideUpAnimation);
 
-        btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
-        mAuth = FirebaseAuth.getInstance();
-
-        btnGoogleSign.setSize(SignInButton.SIZE_WIDE);
         btnGoogleSign.setColorScheme(SignInButton.COLOR_DARK);
+        btnGoogleSign.setSize(SignInButton.SIZE_WIDE);
         btnGoogleSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

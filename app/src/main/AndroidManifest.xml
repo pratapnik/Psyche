@@ -28,9 +28,6 @@
             android:name=".question"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".timeManagement"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".themeActivity"
             android:screenOrientation="portrait"
              />

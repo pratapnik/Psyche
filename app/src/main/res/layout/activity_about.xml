@@ -11,9 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="ABOUT US"
-        app:titleTextColor="@color/color_white"
         app:titleTextAppearance="@style/mBoldAppearnace"
-        android:background="@drawable/bottomnavigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -110,8 +108,9 @@
         android:padding="@dimen/padding_four_dp"
         android:fontFamily="@font/mregular"
         android:textColor="@color/textColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_click_here"
+        app:layout_constraintTop_toTopOf="@id/btn_click_here"
+        app:layout_constraintEnd_toStartOf="@id/btn_click_here"
         />
 
     <Button
@@ -120,14 +119,13 @@
         android:layout_height="wrap_content"
         android:text="CLICK HERE"
         android:textSize="@dimen/text_twelve_sp"
+        android:padding="@dimen/padding_eight_dp"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
         android:textColor="@color/color_maroon"
         android:fontFamily="@font/mbold"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:background="@drawable/custom_background_themes"
-        android:backgroundTint="@color/color_maroon"
-        app:layout_constraintStart_toEndOf="@id/tv_trouble"
-        app:layout_constraintTop_toTopOf="@id/tv_trouble"
-        app:layout_constraintBottom_toBottomOf="@id/tv_trouble"
+        android:background="@drawable/button_hollow_stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 
