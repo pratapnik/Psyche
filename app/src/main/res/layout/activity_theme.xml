@@ -18,6 +18,21 @@
         app:titleTextAppearance="@style/mBoldAppearnace"
         app:titleTextColor="@color/color_gradient_start" />
 
+    <TextView
+        android:id="@+id/tvGreetingMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_twelve_dp"
+        tools:text="Hello"
+        android:textSize="@dimen/text_twenty_eight_sp"
+        android:fontFamily="@font/mbold"
+        android:textColor="@color/color_gradient_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
+        app:layout_constraintBottom_toTopOf="@id/cv_time_management"
+        />
+
     <android.support.v7.widget.CardView
         android:id="@+id/cv_time_management"
         android:layout_width="0dp"
@@ -28,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/cv_anxiety"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_theme">
+        app:layout_constraintTop_toBottomOf="@id/tvGreetingMessage">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
