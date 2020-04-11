@@ -51,7 +51,7 @@ class FinalScoreActivity : AppCompatActivity() {
     }
 
     fun setTextAndColor(score: Int, themeType: Int): String {
-        var theme: String = "No theme"
+        var theme = "No theme"
         when (themeType) {
             0 -> if (score >= 8 && score <= 24) {
                 tvResultDescription.text = resources.getText(R.string.label_internet_addiction_good_score_description)

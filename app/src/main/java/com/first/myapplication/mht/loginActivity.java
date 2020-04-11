@@ -99,7 +99,6 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -107,15 +106,12 @@ public class loginActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
                 Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
                 btnGoogleSign.setVisibility(View.VISIBLE);
                 pbSignIn.setVisibility(View.GONE);
@@ -143,15 +139,12 @@ public class loginActivity extends AppCompatActivity {
                             pbSignIn.setVisibility(View.GONE);
                             updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }
 
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
@@ -170,6 +163,5 @@ public class loginActivity extends AppCompatActivity {
                 setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"),"message/rfc822")
                 .putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
         startActivity(Intent.createChooser(problemIntent, "Choose an Email client:"));
-
     }
 }

@@ -23,7 +23,7 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/margin_twelve_dp"
         android:elevation="@dimen/margin_twelve_dp"
-        android:src="@drawable/defaultpic"
+        tools:src="@drawable/nikhilprofileimage"
         app:civ_border_color="@color/color_gradient_start"
         app:civ_border_width="@dimen/padding_four_dp"
         app:layout_constraintBottom_toTopOf="@id/guideline_profile"

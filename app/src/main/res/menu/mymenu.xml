@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/ic_person_black_24dp"/>
+        />
 
     <item android:id="@+id/scale"
         android:title="Scale"
-        android:icon="@drawable/ic_scale_black_24dp"/>
+        />
 
     <item android:id="@+id/about"
         android:title="About us"
-        android:icon="@drawable/ic_info_outline_24dp"/>
+        />
 
     <item android:id="@+id/signout"
         android:title="Sign out"
-        android:icon="@drawable/signout"/>
+        />
 </menu>

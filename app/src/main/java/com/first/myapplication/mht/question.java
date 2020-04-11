@@ -56,11 +56,6 @@ public class question extends AppCompatActivity {
             }
         });
 
-//        Animation animation = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
-//        mOptionsRG.startAnimation(animation);
-//        mNext.startAnimation(animation);
-
-
         mIntent = getIntent();
         type = mIntent.getIntExtra("type", 0);
 
@@ -68,7 +63,9 @@ public class question extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        mQuestionRef = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/" + type + "/questions/" + (mQuestionNo - 1) + "/question");
+        mQuestionRef = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/" +
+                type + "/questions/" + (mQuestionNo - 1) + "/question");
+
         mQuestionRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -85,7 +82,9 @@ public class question extends AppCompatActivity {
             }
         });
 
-        reverse = (type == 1 && (mQuestionNo == 8 || mQuestionNo == 10 || mQuestionNo == 12 || mQuestionNo == 14)) || (type == 2 && (mQuestionNo == 14 || mQuestionNo == 16 || mQuestionNo == 18));
+        reverse = (type == 1 && (mQuestionNo == 8 || mQuestionNo == 10 || mQuestionNo == 12 ||
+                mQuestionNo == 14)) || (type == 2 && (mQuestionNo == 14 || mQuestionNo == 16 ||
+                mQuestionNo == 18));
     }
 
     private void nextButton() {
