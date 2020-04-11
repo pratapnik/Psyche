@@ -1,6 +1,7 @@
 package com.first.myapplication.mht;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,8 @@ public class loginActivity extends AppCompatActivity {
     ConstraintLayout constraintLayout;
     ProgressBar pbSignIn;
 
+    ImageView ivProblem;
+
     private final static int RC_SIGN_IN = 2;
 
     @Override
@@ -53,8 +56,9 @@ public class loginActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.cl_login_screen);
         pbSignIn = findViewById(R.id.pbSignIn);
         btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
-        mAuth = FirebaseAuth.getInstance();
+        ivProblem = findViewById(R.id.ivFacingProblem);
 
+        mAuth = FirebaseAuth.getInstance();
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
@@ -68,7 +72,15 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pbSignIn.setVisibility(View.VISIBLE);
+                btnGoogleSign.setVisibility(View.INVISIBLE);
                 signIn();
+            }
+        });
+
+        ivProblem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendProblem();
             }
         });
 
@@ -107,6 +119,8 @@ public class loginActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
+                btnGoogleSign.setVisibility(View.VISIBLE);
+                pbSignIn.setVisibility(View.GONE);
                 // ...
             }
         }
@@ -125,8 +139,10 @@ public class loginActivity extends AppCompatActivity {
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(loginActivity.this, "Couldn't Sign in", Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(loginActivity.this, "Couldn't Sign in",
+                                    Toast.LENGTH_SHORT).show();
+                            btnGoogleSign.setVisibility(View.VISIBLE);
+                            pbSignIn.setVisibility(View.GONE);
                             updateUI(null);
                         }
 
@@ -148,5 +164,14 @@ public class loginActivity extends AppCompatActivity {
             Intent i = new Intent(loginActivity.this, themeActivity.class);
             startActivity(i);
         }
+    }
+
+    private void sendProblem(){
+        Intent problemIntent = new Intent();
+        problemIntent.setAction(Intent.ACTION_SEND).
+                setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"),"message/rfc822")
+                .putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
+        startActivity(Intent.createChooser(problemIntent, "Choose an Email client:"));
+
     }
 }

@@ -11,119 +11,103 @@
         android:id="@+id/toolbar_scale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="SCALE"
-        app:titleTextAppearance="@style/mBoldAppearnace"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
-
+        app:title="SCALE"
+        app:titleTextAppearance="@style/mBoldAppearnace" />
 
 
     <ScrollView
         android:id="@+id/sv_scale"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fadeScrollbars="false"
         android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:fadeScrollbars="false"
         android:scrollbarSize="@dimen/padding_eight_dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_scale"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_scale">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/padding_eight_dp"
-            >
+            android:padding="@dimen/padding_eight_dp">
+
             <TextView
                 android:id="@+id/tv_time_management_scale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TIME MANAGEMENT"
-                android:textSize="@dimen/text_twenty_sp"
+                android:background="@drawable/button_hollow_stroke"
                 android:fontFamily="@font/mbold"
-                android:textColor="@color/color_white"
-                android:background="@drawable/custom_background_themes"
-                android:backgroundTint="@color/color_purple"
                 android:padding="@dimen/padding_eight_dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="TIME MANAGEMENT"
+                android:textColor="@color/color_gradient_start"
+                android:textSize="@dimen/text_twenty_sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_time_management_scale_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/tmimage"
-                app:layout_constraintTop_toBottomOf="@id/tv_time_management_scale"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_time_management_scale" />
+
             <TextView
                 android:id="@+id/tv_anxiety_scale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ANXIETY"
-                android:textSize="@dimen/text_twenty_sp"
+                android:background="@drawable/button_hollow_stroke"
                 android:fontFamily="@font/mbold"
-                android:textColor="@color/textColor"
-                android:background="@drawable/custom_background_themes"
-                android:backgroundTint="@color/color_yellow"
                 android:padding="@dimen/padding_eight_dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_time_management_scale_image"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="ANXIETY"
+                android:textColor="@color/color_gradient_start"
+                android:textSize="@dimen/text_twenty_sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_time_management_scale_image" />
 
             <ImageView
                 android:id="@+id/iv_anxiety_scale_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/anx"
-                app:layout_constraintTop_toBottomOf="@id/tv_anxiety_scale"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_anxiety_scale" />
+
             <TextView
                 android:id="@+id/tv_internet_addiction_scale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="INTERNET ADDICTION"
-                android:textSize="@dimen/text_twenty_sp"
+                android:background="@drawable/button_hollow_stroke"
                 android:fontFamily="@font/mbold"
-                android:textColor="@color/color_white"
-                android:background="@drawable/custom_background_themes"
-                android:backgroundTint="@color/color_light_green"
                 android:padding="@dimen/padding_eight_dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_anxiety_scale_image"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="INTERNET ADDICTION"
+                android:textColor="@color/color_gradient_start"
+                android:textSize="@dimen/text_twenty_sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_anxiety_scale_image" />
 
             <ImageView
                 android:id="@+id/iv_internet_addiction_scale_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/iad"
-                app:layout_constraintTop_toBottomOf="@id/tv_internet_addiction_scale"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_internet_addiction_scale" />
 
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
-
-
-
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>

@@ -54,7 +54,6 @@
         android:id="@+id/cl_login_screen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="@dimen/margin_fourty_dp"
         android:background="@drawable/top_radius_only"
         android:backgroundTint="@color/color_white"
         app:layout_constraintTop_toBottomOf="@id/guideline_login_above"
@@ -131,6 +130,17 @@
             app:layout_constraintTop_toBottomOf="@id/tv_or"
             app:layout_constraintEnd_toEndOf="@id/btnGoogleSignIn"
             app:layout_constraintStart_toStartOf="@id/btnGoogleSignIn"
+            app:layout_constraintBottom_toTopOf="@id/ivFacingProblem"
+            />
+
+        <ImageView
+            android:id="@+id/ivFacingProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tooltipText="@string/label_facing_problem"
+            android:src="@drawable/ic_problem"
+            android:layout_margin="@dimen/padding_eight_dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 

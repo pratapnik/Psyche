@@ -2,6 +2,9 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_fourty_dp"
+    android:background="@drawable/custom_background_themes"
+    android:elevation="@dimen/margin_twenty_dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -22,16 +25,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/mbold"
         android:text="Be Positive"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/textColor"
+        android:textColor="@color/color_white"
         android:textSize="26dp"
         android:typeface="normal"
-        android:textAllCaps="true"
         app:layout_constraintBottom_toTopOf="@+id/about"
         app:layout_constraintEnd_toEndOf="@+id/slideimage"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="@+id/slideimage"
-        app:layout_constraintTop_toBottomOf="@+id/slideimage"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/slideimage" />
 
     <TextView
         android:id="@+id/about"
@@ -41,7 +44,7 @@
         android:text="It is not primarily our physical selves that limit us but rather our mindset about our physical limits"
         android:textAlignment="center"
         android:padding="@dimen/margin_twenty_four_dp"
-        android:textColor="@color/text_color_grey"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/text_sixteen_sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
