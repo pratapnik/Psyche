@@ -49,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
             mDots[i].setTextSize(35);
-            mDots[i].setTextColor(getResources().getColor(R.color.normalTextColor));
+            mDots[i].setTextColor(getResources().getColor(R.color.color_light_blue));
             mDotLayout.addView(mDots[i]);
         }
 
         if(mDots.length > 0){
-            mDots[position].setTextColor(getResources().getColor(R.color.red));
+            mDots[position].setTextColor(getResources().getColor(R.color.color_gradient_start));
         }
     }
 

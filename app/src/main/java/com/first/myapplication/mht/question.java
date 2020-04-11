@@ -29,6 +29,8 @@ public class question extends AppCompatActivity {
     private Intent mIntent = new Intent();
     private int type;
     private boolean reverse = false;
+
+    Animation animationLeave, animationLeftToRight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,9 @@ public class question extends AppCompatActivity {
         mOptionsRG = findViewById(R.id.rg_five_options);
         mNext = findViewById(R.id.btn_next);
 
+        animationLeave = AnimationUtils.loadAnimation(question.this, R.anim.jarvis_leave_left_to_right);
+        animationLeftToRight = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
+
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,8 +56,9 @@ public class question extends AppCompatActivity {
             }
         });
 
-        Animation animation = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
-        mOptionsRG.startAnimation(animation);
+//        Animation animation = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
+//        mOptionsRG.startAnimation(animation);
+//        mNext.startAnimation(animation);
 
 
         mIntent = getIntent();
@@ -60,6 +66,7 @@ public class question extends AppCompatActivity {
 
         updateQuestion();
     }
+
     private void updateQuestion() {
         mQuestionRef = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/" + type + "/questions/" + (mQuestionNo - 1) + "/question");
         mQuestionRef.addValueEventListener(new ValueEventListener() {
@@ -69,6 +76,7 @@ public class question extends AppCompatActivity {
                 mQuestion.setText(question);
                 mOptionsRG.setVisibility(View.VISIBLE);
                 mNext.setVisibility(View.VISIBLE);
+                setLeftToRightAnimation();
             }
 
             @Override
@@ -89,6 +97,7 @@ public class question extends AppCompatActivity {
                 } else {
                     mScore = mScore + 1;
                 }
+                setLeaveAnimation();
                 break;
             case R.id.choice2:
                 if (reverse) {
@@ -96,9 +105,11 @@ public class question extends AppCompatActivity {
                 } else {
                     mScore = mScore + 2;
                 }
+                setLeaveAnimation();
                 break;
             case R.id.choice3:
                 mScore = mScore + 3;
+                setLeaveAnimation();
                 break;
             case R.id.choice4:
                 if (reverse) {
@@ -106,6 +117,7 @@ public class question extends AppCompatActivity {
                 } else {
                     mScore = mScore + 4;
                 }
+                setLeaveAnimation();
                 break;
             case R.id.choice5:
                 if (reverse) {
@@ -113,6 +125,7 @@ public class question extends AppCompatActivity {
                 } else {
                     mScore = mScore + 5;
                 }
+                setLeaveAnimation();
                 break;
             case -1:
                 Toast.makeText(this, "MARK ATLEAST ONE CHOICE", Toast.LENGTH_LONG).show();
@@ -139,7 +152,6 @@ public class question extends AppCompatActivity {
             if (mQuestionNo == 18) {
                 i.putExtra("score", mScore);
                 i.putExtra("type",type);
-
                 startActivity(i);
             } else {
                 if (mQuestionNo == 17) {
@@ -167,6 +179,18 @@ public class question extends AppCompatActivity {
                 updateQuestion();
             }
         }
+    }
+
+    private void setLeaveAnimation(){
+        mQuestion.startAnimation(animationLeave);
+        mOptionsRG.startAnimation(animationLeave);
+        mNext.startAnimation(animationLeave);
+    }
+
+    private void setLeftToRightAnimation(){
+        mQuestion.startAnimation(animationLeftToRight);
+        mOptionsRG.startAnimation(animationLeftToRight);
+        mNext.startAnimation(animationLeftToRight);
     }
 }
 

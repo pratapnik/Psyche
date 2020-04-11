@@ -20,4 +20,6 @@
     <dimen name="margin_twenty_dp">20dp</dimen>
     <dimen name="text_eight_sp">8sp</dimen>
     <dimen name="image_size_sixty_dp">60dp</dimen>
+    <dimen name="margin_fourty_eight_dp">48dp</dimen>
+    <dimen name="margin_thirty_two_dp">32dp</dimen>
 </resources>

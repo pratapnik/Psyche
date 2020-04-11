@@ -30,6 +30,8 @@
     <string name="label_anxiety_bad_score_description">Alert! High Anxiety levels is likely reason
         behind your stress</string>
     <string name="label_check_previous_scores">Check Previous Scores</string>
+    <string name="label_facing_problem">Facing problem?</string>
+    <string name="label_forgot_password">Forgot Password?</string>
 
 
 </resources>

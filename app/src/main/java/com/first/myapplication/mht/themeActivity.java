@@ -10,13 +10,27 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.first.myapplication.mht.classes.GoogleAccountInfo;
+import com.first.myapplication.mht.data.GoogleAccountInfoData;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Calendar;
 
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button timeManagement, anxiety, internet;
     Toolbar toolbarTheme;
+    TextView tvGreetingMessage;
+
+    GoogleSignInAccount googleSignInAccount;
+    GoogleAccountInfo googleAccountInfo;
+    GoogleAccountInfoData googleAccountInfoData;
+
+    private int hourOfTheDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +41,18 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
         toolbarTheme = findViewById(R.id.toolbar_theme);
+        tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
+
         toolbarTheme.inflateMenu(R.menu.mymenu);
+
+        hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        googleAccountInfo = new GoogleAccountInfo();
+
+        googleAccountInfoData = googleAccountInfo.getGoogleAccountInfo(googleSignInAccount);
+
+        updateGreetingMessage(googleAccountInfoData, hourOfTheDay);
 
         Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
         internet.setAnimation(animation);
@@ -118,5 +143,17 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 dialog.dismiss();
             }
         });
+    }
+
+    private void updateGreetingMessage(GoogleAccountInfoData googleAccountInfoData, int hour){
+          String greetingMessage;
+          if(hour<12 && hour>=5)
+              greetingMessage = "Good Morning, "+ googleAccountInfoData.getGivenName();
+          else if(hour>=12 && hour<16)
+              greetingMessage = "Good Afternoon, "+ googleAccountInfoData.getGivenName();
+          else
+              greetingMessage = "Good Evening, "+ googleAccountInfoData.getGivenName();
+
+          tvGreetingMessage.setText(greetingMessage);
     }
 }
