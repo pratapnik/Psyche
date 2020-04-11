@@ -5,14 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_email_password_login.*
 
-class EmailPasswordLoginActivity : AppCompatActivity() {
+class EmailPasswordSignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_email_password_login)
 
         val animation = AnimationUtils.loadAnimation(this, R.anim.slide_up)
-
-        cl_email_login.startAnimation(animation)
-
+        clEmailLogin.startAnimation(animation)
     }
 }
