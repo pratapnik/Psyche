@@ -13,7 +13,7 @@
     <string name="label_question_title">QUESTION</string>
     <string name="label_question_description">Wait, QUESTION is getting Loaded...</string>
 
-<!--    Score Result messages-->
+    <!--    Score Result messages-->
     <string name="label_internet_addiction_good_score_description">Good News! Your Score is in the safe zone.
         You are great at monitoring the amount of time you spend online</string>
     <string name="label_internet_addiction_bad_score_description">Alert! Your Score suggests you are
@@ -32,6 +32,7 @@
     <string name="label_check_previous_scores">Check Previous Scores</string>
     <string name="label_facing_problem">Facing problem?</string>
     <string name="label_forgot_password">Forgot Password?</string>
+    <string name="label_log_in_title">Log in</string>
 
 
 </resources>

@@ -13,8 +13,10 @@
         android:roundIcon="@drawable/psychosplash"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmailPasswordSignUpActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".EmailPasswordLoginActivity"></activity>
+        <activity
+            android:name=".EmailPasswordSignUpActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUsActivity"
             android:screenOrientation="portrait" />

@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 updateUI(user);
             }
-        },3000);
+        },2000);
 
     }
     public void updateUI(FirebaseUser user){
@@ -43,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
             Intent i = new Intent(SplashActivity.this, themeActivity.class);
             startActivity(i);
         }
-        else if(user==null){
+        else{
             Intent i = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(i);
             finish();
