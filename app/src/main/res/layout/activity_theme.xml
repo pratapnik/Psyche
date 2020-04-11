@@ -25,6 +25,7 @@
         android:layout_margin="@dimen/margin_twelve_dp"
         tools:text="Hello"
         android:textSize="@dimen/text_twenty_eight_sp"
+        android:textAlignment="center"
         android:fontFamily="@font/mbold"
         android:textColor="@color/color_gradient_start"
         app:layout_constraintStart_toStartOf="parent"
