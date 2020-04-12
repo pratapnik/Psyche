@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mDotLayout;
     private SliderAdapter sliderAdapter;
     private TextView[] mDots;
+    private int c;
 
     Button buttonGetStarted;
 
