@@ -11,11 +11,14 @@
         android:id="@+id/toolbar_scale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:title="SCALE"
+        android:background="@color/color_gradient_start"
+        app:titleTextColor="@color/color_toolbar_title"
+        app:titleTextAppearance="@style/mBoldAppearnace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="SCALE"
-        app:titleTextAppearance="@style/mBoldAppearnace" />
+        />
 
 
     <ScrollView

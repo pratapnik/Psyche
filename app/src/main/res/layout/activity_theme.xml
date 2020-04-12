@@ -15,8 +15,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="SELECT AN ISSUE"
+        android:background="@color/color_gradient_start"
+        app:titleTextColor="@color/color_toolbar_title"
         app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_gradient_start" />
+        />
 
     <TextView
         android:id="@+id/tvGreetingMessage"
@@ -24,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_twelve_dp"
         tools:text="Hello"
-        android:textSize="@dimen/text_twenty_eight_sp"
+        android:textSize="@dimen/text_sixteen_sp"
         android:textAlignment="center"
         android:fontFamily="@font/mbold"
-        android:textColor="@color/color_gradient_start"
+        android:textColor="@color/textColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
@@ -61,7 +63,7 @@
                 android:text="TIME MANAGEMENT"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twenty_four_sp"
-                app:layout_constraintBottom_toTopOf="@id/tvTimeManagementDescription"
+                app:layout_constraintBottom_toTopOf="@id/timeManagement"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,16 +71,15 @@
                 android:id="@+id/tvTimeManagementDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mregular"
                 android:padding="@dimen/padding_eight_dp"
                 android:text="Check where you stand in Time Management"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twelve_sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/timeManagement"
                 app:layout_constraintEnd_toStartOf="@id/timeManagement"
                 app:layout_constraintStart_toStartOf="@id/tvTimeManagement"
-                app:layout_constraintTop_toBottomOf="@id/tvTimeManagement" />
+                app:layout_constraintTop_toTopOf="@id/timeManagement" />
 
 
             <Button
@@ -91,6 +92,8 @@
                 android:text="START"
                 android:textColor="@color/color_gradient_start"
                 android:textSize="@dimen/text_twelve_sp"
+                app:layout_constraintStart_toEndOf="@id/tvTimeManagementDescription"
+                app:layout_constraintTop_toBottomOf="@id/tvTimeManagement"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -127,7 +130,7 @@
                 android:text="ANXIETY"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twenty_four_sp"
-                app:layout_constraintBottom_toTopOf="@id/tvAnxietyDescription"
+                app:layout_constraintBottom_toTopOf="@id/anxiety"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,16 +138,15 @@
                 android:id="@+id/tvAnxietyDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mregular"
                 android:padding="@dimen/padding_eight_dp"
                 android:text="Check where you stand in Anxiety (Anxieties related to Student life)"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twelve_sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/anxiety"
                 app:layout_constraintEnd_toStartOf="@id/anxiety"
                 app:layout_constraintStart_toStartOf="@id/tvAnxiety"
-                app:layout_constraintTop_toBottomOf="@id/tvAnxiety" />
+                app:layout_constraintTop_toTopOf="@id/anxiety" />
 
 
             <Button
@@ -157,6 +159,8 @@
                 android:text="START"
                 android:textColor="@color/color_gradient_start"
                 android:textSize="@dimen/text_twelve_sp"
+                app:layout_constraintStart_toEndOf="@id/tvAnxietyDescription"
+                app:layout_constraintTop_toBottomOf="@id/tvAnxiety"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -192,7 +196,7 @@
                 android:text="INTERNET ADDICTION"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twenty_four_sp"
-                app:layout_constraintBottom_toTopOf="@id/tvInternetDescription"
+                app:layout_constraintBottom_toTopOf="@id/internet"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -200,16 +204,15 @@
                 android:id="@+id/tvInternetDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_sixteen_dp"
                 android:fontFamily="@font/mregular"
                 android:padding="@dimen/padding_eight_dp"
                 android:text="Check how much addicted are you to the Internet"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/text_twelve_sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/internet"
                 app:layout_constraintEnd_toStartOf="@id/internet"
                 app:layout_constraintStart_toStartOf="@id/tvInternet"
-                app:layout_constraintTop_toBottomOf="@id/tvInternet" />
+                app:layout_constraintTop_toTopOf="@id/internet" />
 
 
             <Button
@@ -222,6 +225,8 @@
                 android:text="START"
                 android:textColor="@color/color_gradient_start"
                 android:textSize="@dimen/text_twelve_sp"
+                app:layout_constraintTop_toBottomOf="@id/tvInternet"
+                app:layout_constraintStart_toEndOf="@id/tvInternetDescription"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 

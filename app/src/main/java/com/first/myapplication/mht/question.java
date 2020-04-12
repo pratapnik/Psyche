@@ -1,5 +1,6 @@
 package com.first.myapplication.mht;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
@@ -30,6 +31,10 @@ public class question extends AppCompatActivity {
     private int type;
     private boolean reverse = false;
 
+    loginActivity loginActivity = new loginActivity();
+
+    ProgressDialog progressDialog;
+
     Animation animationLeave, animationLeftToRight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,9 @@ public class question extends AppCompatActivity {
         mOptionsRG = findViewById(R.id.rg_five_options);
         mNext = findViewById(R.id.btn_next);
 
+        progressDialog = new ProgressDialog(this);
+        loginActivity.showProgressDialogWithTitle("Loading the questions..", progressDialog);
+
         animationLeave = AnimationUtils.loadAnimation(question.this, R.anim.jarvis_leave_left_to_right);
         animationLeftToRight = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
 
@@ -56,11 +64,6 @@ public class question extends AppCompatActivity {
             }
         });
 
-//        Animation animation = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
-//        mOptionsRG.startAnimation(animation);
-//        mNext.startAnimation(animation);
-
-
         mIntent = getIntent();
         type = mIntent.getIntExtra("type", 0);
 
@@ -68,12 +71,15 @@ public class question extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        mQuestionRef = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/" + type + "/questions/" + (mQuestionNo - 1) + "/question");
+        mQuestionRef = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/" +
+                type + "/questions/" + (mQuestionNo - 1) + "/question");
+
         mQuestionRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String question = dataSnapshot.getValue(String.class);
                 mQuestion.setText(question);
+                loginActivity.hideProgressDialogWithTitle(progressDialog);
                 mOptionsRG.setVisibility(View.VISIBLE);
                 mNext.setVisibility(View.VISIBLE);
                 setLeftToRightAnimation();
@@ -85,7 +91,9 @@ public class question extends AppCompatActivity {
             }
         });
 
-        reverse = (type == 1 && (mQuestionNo == 8 || mQuestionNo == 10 || mQuestionNo == 12 || mQuestionNo == 14)) || (type == 2 && (mQuestionNo == 14 || mQuestionNo == 16 || mQuestionNo == 18));
+        reverse = (type == 1 && (mQuestionNo == 8 || mQuestionNo == 10 || mQuestionNo == 12 ||
+                mQuestionNo == 14)) || (type == 2 && (mQuestionNo == 14 || mQuestionNo == 16 ||
+                mQuestionNo == 18));
     }
 
     private void nextButton() {

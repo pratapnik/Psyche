@@ -1,5 +1,6 @@
 package com.first.myapplication.mht;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -37,7 +38,7 @@ public class loginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     ConstraintLayout constraintLayout;
-    ProgressBar pbSignIn;
+    ProgressDialog progressDialog;
 
     ImageView ivProblem;
 
@@ -52,9 +53,10 @@ public class loginActivity extends AppCompatActivity {
         textView = findViewById(R.id.tv_fact);
         textViewEmail = findViewById(R.id.btn_sign_up);
         constraintLayout = findViewById(R.id.cl_login_screen);
-        pbSignIn = findViewById(R.id.pbSignIn);
         btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
         ivProblem = findViewById(R.id.ivFacingProblem);
+
+        progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
@@ -69,7 +71,7 @@ public class loginActivity extends AppCompatActivity {
         btnGoogleSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pbSignIn.setVisibility(View.VISIBLE);
+                showProgressDialogWithTitle("Logging in..", progressDialog);
                 btnGoogleSign.setVisibility(View.INVISIBLE);
                 signIn();
             }
@@ -99,7 +101,6 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -107,18 +108,15 @@ public class loginActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
                 Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
                 btnGoogleSign.setVisibility(View.VISIBLE);
-                pbSignIn.setVisibility(View.GONE);
+                hideProgressDialogWithTitle(progressDialog);
                 // ...
             }
         }
@@ -140,25 +138,22 @@ public class loginActivity extends AppCompatActivity {
                             Toast.makeText(loginActivity.this, "Couldn't Sign in",
                                     Toast.LENGTH_SHORT).show();
                             btnGoogleSign.setVisibility(View.VISIBLE);
-                            pbSignIn.setVisibility(View.GONE);
+                            hideProgressDialogWithTitle(progressDialog);
                             updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }
 
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
 
     public void updateUI(FirebaseUser user){
         if(user != null){
-            pbSignIn.setVisibility(View.GONE);
+            hideProgressDialogWithTitle(progressDialog);
             Intent i = new Intent(loginActivity.this, themeActivity.class);
             startActivity(i);
         }
@@ -170,6 +165,20 @@ public class loginActivity extends AppCompatActivity {
                 setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"),"message/rfc822")
                 .putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
         startActivity(Intent.createChooser(problemIntent, "Choose an Email client:"));
+    }
 
+    // Method to show Progress bar
+    public void showProgressDialogWithTitle(String substring, ProgressDialog progressDialog) {
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        //Without this user can hide loader by tapping outside screen
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage(substring);
+        progressDialog.show();
+    }
+
+    // Method to hide/ dismiss Progress bar
+    public void hideProgressDialogWithTitle(ProgressDialog progressDialog) {
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.dismiss();
     }
 }

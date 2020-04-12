@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">@null</color>
+    <color name="colorPrimaryDark">#164EB4</color>
     <color name="colorAccent">#D81B60</color>
     <color name="textColor">#333333</color>
     <color name="normalTextColor">#808080</color>
@@ -12,8 +12,12 @@
     <color name="text_color_grey">#666666</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_blue">#304FFE</color>
-    <color name="color_gradient_start">#1e3c72</color>
-    <color name="color_gradient_end">#2a5298</color>
+<!--    <color name="color_gradient_start">#1e3c72</color>-->
+<!--    <color name="color_gradient_end">#2a5298</color>-->
+    <color name="color_gradient_start">#164EB4</color>
+    <color name="color_gradient_end">#226CCB</color>
+    <color name="color_button_pressed">#378EDC</color>
+    <color name="color_kind_of_black">#18130E</color>
     <color name="color_maroon">#B00020</color>
     <color name="color_purple">#512DA8</color>
     <color name="color_yellow">#FFCA28</color>
@@ -23,4 +27,6 @@
     <color name="color_dark_orange">#BF360C</color>
     <color name="color_light_orange">#FF5722</color>
     <color name="color_yellow_lime">#eeff41</color>
+    <color name="color_text_light">#AFC3DC</color>
+    <color name="color_toolbar_title">#FFFFFF</color>
 </resources>
