@@ -46,6 +46,7 @@ public class loginActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     ConstraintLayout constraintLayout;
     ProgressDialog progressDialog;
+    ProgressBar progressBar;
 
     ImageView ivProblem;
 
@@ -54,6 +55,8 @@ public class loginActivity extends AppCompatActivity {
     private final static int RC_SIGN_IN = 2;
 
     String factUrl = "https://mental-health-tracker-bb023.firebaseio.com/facts/";
+
+    Animation leftToRightAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +70,14 @@ public class loginActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.cl_login_screen);
         btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
         ivProblem = findViewById(R.id.ivFacingProblem);
+        progressBar = findViewById(R.id.pbLoginFact);
 
         progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
+
+        leftToRightAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.lefttoright);
+
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
@@ -157,7 +164,8 @@ public class loginActivity extends AppCompatActivity {
                 });
     }
 
-    public void onStart() {
+    @Override
+    protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
@@ -167,6 +175,13 @@ public class loginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateRandomFact(factUrl);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        textView.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     public void updateUI(FirebaseUser user){
@@ -202,7 +217,7 @@ public class loginActivity extends AppCompatActivity {
 
     public void updateRandomFact(String factUrl){
         Random random = new Random();
-        int randomNumber = random.nextInt(6);
+        int randomNumber = random.nextInt(7);
         randomFactsFirebase = new Firebase(factUrl + randomNumber);
 
         randomFactsFirebase.addValueEventListener(new ValueEventListener() {
@@ -210,6 +225,9 @@ public class loginActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String fact = dataSnapshot.getValue(String.class);
                 textView.setText(fact);
+                textView.startAnimation(leftToRightAnimation);
+                textView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -217,6 +235,5 @@ public class loginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "There is some internet error", Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }
