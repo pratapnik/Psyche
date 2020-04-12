@@ -71,7 +71,7 @@ public class loginActivity extends AppCompatActivity {
         btnGoogleSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showProgressDialogWithTitle("Logging in..");
+                showProgressDialogWithTitle("Logging in..", progressDialog);
                 btnGoogleSign.setVisibility(View.INVISIBLE);
                 signIn();
             }
@@ -116,7 +116,7 @@ public class loginActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
                 btnGoogleSign.setVisibility(View.VISIBLE);
-                hideProgressDialogWithTitle();
+                hideProgressDialogWithTitle(progressDialog);
                 // ...
             }
         }
@@ -138,7 +138,7 @@ public class loginActivity extends AppCompatActivity {
                             Toast.makeText(loginActivity.this, "Couldn't Sign in",
                                     Toast.LENGTH_SHORT).show();
                             btnGoogleSign.setVisibility(View.VISIBLE);
-                            hideProgressDialogWithTitle();
+                            hideProgressDialogWithTitle(progressDialog);
                             updateUI(null);
                         }
                     }
@@ -153,7 +153,7 @@ public class loginActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user){
         if(user != null){
-            hideProgressDialogWithTitle();
+            hideProgressDialogWithTitle(progressDialog);
             Intent i = new Intent(loginActivity.this, themeActivity.class);
             startActivity(i);
         }
@@ -168,7 +168,7 @@ public class loginActivity extends AppCompatActivity {
     }
 
     // Method to show Progress bar
-    private void showProgressDialogWithTitle(String substring) {
+    public void showProgressDialogWithTitle(String substring, ProgressDialog progressDialog) {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         //Without this user can hide loader by tapping outside screen
         progressDialog.setCancelable(false);
@@ -177,7 +177,7 @@ public class loginActivity extends AppCompatActivity {
     }
 
     // Method to hide/ dismiss Progress bar
-    private void hideProgressDialogWithTitle() {
+    public void hideProgressDialogWithTitle(ProgressDialog progressDialog) {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.dismiss();
     }
