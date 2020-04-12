@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -35,6 +36,8 @@ public class question extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+    Toolbar toolbarQuestion;
+
     Animation animationLeave, animationLeftToRight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +53,20 @@ public class question extends AppCompatActivity {
         mChoice5 = findViewById(R.id.choice5);
         mOptionsRG = findViewById(R.id.rg_five_options);
         mNext = findViewById(R.id.btn_next);
+        toolbarQuestion = findViewById(R.id.toolbar_question_activity);
 
         progressDialog = new ProgressDialog(this);
         loginActivity.showProgressDialogWithTitle("Loading the questions..", progressDialog);
 
         animationLeave = AnimationUtils.loadAnimation(question.this, R.anim.jarvis_leave_left_to_right);
         animationLeftToRight = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
+
+        toolbarQuestion.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override

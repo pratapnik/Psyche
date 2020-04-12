@@ -19,5 +19,9 @@ class EmailPasswordSignUpActivity : AppCompatActivity() {
             startActivity(loginEmailIntent)
             finish()
         }
+
+        ivBackSignUp.setOnClickListener {
+            onBackPressed()
+        }
     }
 }
