@@ -53,6 +53,7 @@ public class loginActivity extends AppCompatActivity {
     private Firebase randomFactsFirebase;
 
     private final static int RC_SIGN_IN = 2;
+    private int totalNumberOfFacts;
 
     String factUrl = "https://mental-health-tracker-bb023.firebaseio.com/facts/";
 
@@ -217,9 +218,8 @@ public class loginActivity extends AppCompatActivity {
 
     public void updateRandomFact(String factUrl){
         Random random = new Random();
-        int randomNumber = random.nextInt(7);
+        int randomNumber = random.nextInt(10);
         randomFactsFirebase = new Firebase(factUrl + randomNumber);
-
         randomFactsFirebase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
