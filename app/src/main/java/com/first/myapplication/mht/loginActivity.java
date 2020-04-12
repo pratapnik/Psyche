@@ -15,7 +15,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -30,9 +35,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Random;
+
 public class loginActivity extends AppCompatActivity {
 
-    TextView textView, textViewEmail, textViewDidYouKnow;
+    TextView textView, textViewEmail, textViewDidYouKnow, tvFact;
 
     SignInButton btnGoogleSign;
     FirebaseAuth mAuth;
@@ -42,12 +49,17 @@ public class loginActivity extends AppCompatActivity {
 
     ImageView ivProblem;
 
+    private Firebase randomFactsFirebase;
+
     private final static int RC_SIGN_IN = 2;
+
+    String factUrl = "https://mental-health-tracker-bb023.firebaseio.com/facts/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Firebase.setAndroidContext(this);
 
         textViewDidYouKnow = findViewById(R.id.tv_did_you_know);
         textView = findViewById(R.id.tv_fact);
@@ -151,6 +163,12 @@ public class loginActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRandomFact(factUrl);
+    }
+
     public void updateUI(FirebaseUser user){
         if(user != null){
             hideProgressDialogWithTitle(progressDialog);
@@ -180,5 +198,25 @@ public class loginActivity extends AppCompatActivity {
     public void hideProgressDialogWithTitle(ProgressDialog progressDialog) {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.dismiss();
+    }
+
+    public void updateRandomFact(String factUrl){
+        Random random = new Random();
+        int randomNumber = random.nextInt(6);
+        randomFactsFirebase = new Firebase(factUrl + randomNumber);
+
+        randomFactsFirebase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String fact = dataSnapshot.getValue(String.class);
+                textView.setText(fact);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Toast.makeText(getApplicationContext(), "There is some internet error", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }
