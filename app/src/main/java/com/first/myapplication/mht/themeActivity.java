@@ -148,11 +148,11 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     private void updateGreetingMessage(GoogleAccountInfoData googleAccountInfoData, int hour){
           String greetingMessage;
           if(hour<12 && hour>=5)
-              greetingMessage = "Good Morning, "+ googleAccountInfoData.getGivenName();
+              greetingMessage = "Good Morning, "+ googleAccountInfoData.getDisplayName();
           else if(hour>=12 && hour<16)
-              greetingMessage = "Good Afternoon, "+ googleAccountInfoData.getGivenName();
+              greetingMessage = "Good Afternoon, "+ googleAccountInfoData.getDisplayName();
           else
-              greetingMessage = "Good Evening, "+ googleAccountInfoData.getGivenName();
+              greetingMessage = "Good Evening, "+ googleAccountInfoData.getDisplayName();
 
           tvGreetingMessage.setText(greetingMessage);
     }
