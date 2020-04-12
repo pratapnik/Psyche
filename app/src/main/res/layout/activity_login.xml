@@ -13,10 +13,12 @@
         android:layout_height="wrap_content"
         android:text="DID YOU KNOW?"
         android:fontFamily="@font/mbold"
-        android:textColor="@color/color_white"
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:padding="@dimen/margin_sixteen_dp"
         android:textSize="@dimen/text_fourty_sp"
+        android:background="@drawable/button_hollow_stroke"
+        android:backgroundTint="@color/color_white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +33,7 @@
         android:fontFamily="@font/mbold"
         android:text="Studies show that people with mental health problems get better and many recover completely"
         android:textAlignment="center"
-        android:textColor="@color/color_yellow_lime"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/text_twenty_sp"
         android:elevation="@dimen/margin_twelve_dp"
         android:lineSpacingExtra="@dimen/margin_two_dp"
@@ -85,22 +87,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_sign_in_message"
             app:layout_constraintStart_toStartOf="@id/tv_sign_in_message"
             app:layout_constraintEnd_toEndOf="@id/tv_sign_in_message"
-            app:layout_constraintBottom_toTopOf="@id/pbSignIn"/>
+            app:layout_constraintBottom_toTopOf="@id/tv_or"/>
 
-        <ProgressBar
-            android:id="@+id/pbSignIn"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="gone"
-            android:padding="@dimen/padding_eight_dp"
-            android:indeterminateTint="@color/color_gradient_start"
-            app:layout_constraintTop_toBottomOf="@id/btnGoogleSignIn"
-            app:layout_constraintStart_toStartOf="@id/btnGoogleSignIn"
-            app:layout_constraintEnd_toEndOf="@id/btnGoogleSignIn"
-            app:layout_constraintBottom_toTopOf="@id/tv_or"
-            />
 
         <TextView
             android:id="@+id/tv_or"
@@ -111,7 +99,7 @@
             android:textSize="@dimen/text_sixteen_sp"
             android:fontFamily="@font/mbold"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/pbSignIn"
+            app:layout_constraintTop_toBottomOf="@id/btnGoogleSignIn"
             app:layout_constraintStart_toStartOf="@id/btnGoogleSignIn"
             app:layout_constraintEnd_toEndOf="@id/btnGoogleSignIn"
             app:layout_constraintBottom_toTopOf="@id/btn_sign_up"

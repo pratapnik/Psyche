@@ -4,7 +4,7 @@
     <item android:state_focused="true">
         <shape android:shape="rectangle">
 
-            <solid android:color="@color/color_gradient_end"/>
+            <solid android:color="@color/color_button_pressed"/>
 
             <corners android:radius="@dimen/padding_eight_dp"/>
 
@@ -16,7 +16,7 @@
 
         <shape android:shape="rectangle">
 
-            <solid android:color="@color/color_gradient_end"/>
+            <solid android:color="@color/color_button_pressed"/>
 
 
             <corners android:radius="@dimen/padding_eight_dp"/>
