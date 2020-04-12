@@ -28,6 +28,10 @@ class ProfileActivity : AppCompatActivity() {
 
         setUserDetails(googleAccountInfoData)
 
+        toolbar_profile.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     fun setUserDetails(googleSignInAccount: GoogleAccountInfoData){

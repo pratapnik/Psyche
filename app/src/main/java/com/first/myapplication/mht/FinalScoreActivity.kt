@@ -27,6 +27,10 @@ class FinalScoreActivity : AppCompatActivity() {
 
         themeDescription = setTextAndColor(scoreValue, themeType)
 
+        toolbarScore.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
         btnHome.setOnClickListener {
             val themeActivityIntent = Intent(this, themeActivity::class.java)
             startActivity(themeActivityIntent)
