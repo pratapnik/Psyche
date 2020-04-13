@@ -15,7 +15,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -30,24 +35,35 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Random;
+
 public class loginActivity extends AppCompatActivity {
 
-    TextView textView, textViewEmail, textViewDidYouKnow;
+    TextView textView, textViewEmail, textViewDidYouKnow, tvFact;
 
     SignInButton btnGoogleSign;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     ConstraintLayout constraintLayout;
     ProgressDialog progressDialog;
+    ProgressBar progressBar;
 
     ImageView ivProblem;
 
+    private Firebase randomFactsFirebase;
+
     private final static int RC_SIGN_IN = 2;
+    private int totalNumberOfFacts;
+
+    String factUrl = "https://mental-health-tracker-bb023.firebaseio.com/facts/";
+
+    Animation leftToRightAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Firebase.setAndroidContext(this);
 
         textViewDidYouKnow = findViewById(R.id.tv_did_you_know);
         textView = findViewById(R.id.tv_fact);
@@ -55,10 +71,14 @@ public class loginActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.cl_login_screen);
         btnGoogleSign = findViewById(R.id.btnGoogleSignIn);
         ivProblem = findViewById(R.id.ivFacingProblem);
+        progressBar = findViewById(R.id.pbLoginFact);
 
         progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
+
+        leftToRightAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.lefttoright);
+
         Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
@@ -145,10 +165,24 @@ public class loginActivity extends AppCompatActivity {
                 });
     }
 
-    public void onStart() {
+    @Override
+    protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRandomFact(factUrl);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        textView.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     public void updateUI(FirebaseUser user){
@@ -180,5 +214,26 @@ public class loginActivity extends AppCompatActivity {
     public void hideProgressDialogWithTitle(ProgressDialog progressDialog) {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.dismiss();
+    }
+
+    public void updateRandomFact(String factUrl){
+        Random random = new Random();
+        int randomNumber = random.nextInt(10);
+        randomFactsFirebase = new Firebase(factUrl + randomNumber);
+        randomFactsFirebase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String fact = dataSnapshot.getValue(String.class);
+                textView.setText(fact);
+                textView.startAnimation(leftToRightAnimation);
+                textView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Toast.makeText(getApplicationContext(), "There is some internet error", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
