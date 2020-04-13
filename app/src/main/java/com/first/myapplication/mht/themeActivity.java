@@ -12,8 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.first.myapplication.mht.classes.GoogleAccountInfo;
-import com.first.myapplication.mht.data.GoogleAccountInfoData;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,8 +25,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     TextView tvGreetingMessage;
 
     GoogleSignInAccount googleSignInAccount;
-    GoogleAccountInfo googleAccountInfo;
-    GoogleAccountInfoData googleAccountInfoData;
 
     private int hourOfTheDay;
 
@@ -48,11 +44,9 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-        googleAccountInfo = new GoogleAccountInfo();
 
-        googleAccountInfoData = googleAccountInfo.getGoogleAccountInfo(googleSignInAccount);
 
-        updateGreetingMessage(googleAccountInfoData, hourOfTheDay);
+        updateGreetingMessage(hourOfTheDay);
 
         Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
         internet.setAnimation(animation);
@@ -152,14 +146,14 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void updateGreetingMessage(GoogleAccountInfoData googleAccountInfoData, int hour){
+    private void updateGreetingMessage(int hour){
           String greetingMessage;
           if(hour<12 && hour>=5)
-              greetingMessage = "Good Morning, "+ googleAccountInfoData.getDisplayName();
+              greetingMessage = "Hey, Good Morning";
           else if(hour>=12 && hour<16)
-              greetingMessage = "Good Afternoon, "+ googleAccountInfoData.getDisplayName();
+              greetingMessage = "Hey, Good Afternoon";
           else
-              greetingMessage = "Good Evening, "+ googleAccountInfoData.getDisplayName();
+              greetingMessage = "Hey, Good Evening";
 
           tvGreetingMessage.setText(greetingMessage);
     }
