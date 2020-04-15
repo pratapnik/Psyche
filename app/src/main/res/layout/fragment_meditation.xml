@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_white"
+    tools:context=".MeditationFragment">
+
+  <ImageView
+      android:id="@+id/ivMeditationImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/ic_yoga"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/tvCountDownTimer"
+      />
+
+  <TextView
+      android:id="@+id/tvCountDownTimer"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      tools:text="Timer"
+      android:textSize="@dimen/text_thirty_two_sp"
+      android:fontFamily="@font/mbold"
+      android:textColor="@color/color_maroon"
+      app:layout_constraintBottom_toTopOf="@id/btnStartExercise"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/ivMeditationImage"
+      />
+
+  <Button
+      android:id="@+id/btnStartExercise"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="START"
+      android:fontFamily="@font/mbold"
+      android:textColor="@color/color_white"
+      android:textSize="@dimen/text_sixteen_sp"
+      android:background="@drawable/custom_button"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tvCountDownTimer"
+      />
+
+</android.support.constraint.ConstraintLayout>

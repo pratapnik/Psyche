@@ -52,6 +52,7 @@
         app:layout_constraintStart_toEndOf="@id/ivOnlineIcon"
         app:layout_constraintTop_toTopOf="@id/ivOnlineIcon"
         app:layout_constraintBottom_toBottomOf="@id/ivOnlineIcon"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 
