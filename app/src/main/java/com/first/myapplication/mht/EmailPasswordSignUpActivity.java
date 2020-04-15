@@ -95,7 +95,7 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
         }
 
         if (password.length() < PASSWORD_LEN) {
-            showToast("Short password");
+            showToast("Password length should be atleast 8");
             return false;
         }
 
@@ -112,6 +112,6 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
     }
 
     private void showToast(String msg) {
-        Toast.makeText(EmailPasswordSignUpActivity.this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(EmailPasswordSignUpActivity.this, msg, Toast.LENGTH_LONG).show();
     }
 }
