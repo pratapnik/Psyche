@@ -23,4 +23,5 @@
     <dimen name="margin_fourty_eight_dp">48dp</dimen>
     <dimen name="margin_thirty_two_dp">32dp</dimen>
     <dimen name="text_fourty_eight_sp">48sp</dimen>
+    <dimen name="image_width_one_twenty_dp">120dp</dimen>
 </resources>
