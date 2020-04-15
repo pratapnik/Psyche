@@ -17,7 +17,7 @@
         android:background="@color/color_gradient_start"
         app:navigationIcon="@drawable/ic_back"
         app:titleTextColor="@color/color_toolbar_title"
-        app:title="YOUR PROFILE"
+        app:title="Your Profile"
         app:titleTextAppearance="@style/mBoldAppearnace" />
 
     <android.support.constraint.Guideline

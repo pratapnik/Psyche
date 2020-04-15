@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="SELECT AN ISSUE"
+        app:title="Select an Issue"
         app:navigationIcon="@drawable/ic_back"
         android:background="@color/color_gradient_start"
         app:titleTextColor="@color/color_toolbar_title"

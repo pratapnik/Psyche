@@ -10,7 +10,7 @@
     <string name="label_sign_in_with_email_button_title">SIGN IN USING YOUR EMAIL</string>
     <string name="label_signup_button_title">Sign up</string>
     <string name="label_signin_button_title">Sign in</string>
-    <string name="label_question_title">QUESTION</string>
+    <string name="label_question_title">Question</string>
     <string name="label_question_description">Wait, QUESTION is getting Loaded...</string>
 
     <!--    Score Result messages-->
