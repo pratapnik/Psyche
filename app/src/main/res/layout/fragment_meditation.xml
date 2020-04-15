@@ -20,12 +20,14 @@
 
   <TextView
       android:id="@+id/tvCountDownTimer"
-      android:layout_width="wrap_content"
+      android:layout_width="0dp"
       android:layout_height="wrap_content"
       tools:text="Timer"
       android:textSize="@dimen/text_thirty_two_sp"
       android:fontFamily="@font/mbold"
       android:textColor="@color/color_maroon"
+      android:textAlignment="center"
+      android:padding="@dimen/margin_sixteen_dp"
       app:layout_constraintBottom_toTopOf="@id/btnStartExercise"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -40,11 +42,26 @@
       android:fontFamily="@font/mbold"
       android:textColor="@color/color_white"
       android:textSize="@dimen/text_sixteen_sp"
+      android:padding="@dimen/margin_twelve_dp"
       android:background="@drawable/custom_button"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/tvMeditationTip"
       app:layout_constraintTop_toBottomOf="@id/tvCountDownTimer"
+      />
+
+  <TextView
+      android:id="@+id/tvMeditationTip"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Inhale and Exhale for 1 minute"
+      android:textColor="@color/textColor"
+      android:fontFamily="@font/mbolditalic"
+      android:textSize="@dimen/text_twelve_sp"
+      android:layout_marginBottom="@dimen/margin_twelve_dp"
+      app:layout_constraintStart_toStartOf="@id/btnStartExercise"
+      app:layout_constraintEnd_toEndOf="@id/btnStartExercise"
+      app:layout_constraintBottom_toBottomOf="parent"
       />
 
 </android.support.constraint.ConstraintLayout>

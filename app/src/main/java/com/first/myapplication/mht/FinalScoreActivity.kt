@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_score.*
@@ -36,9 +37,9 @@ class FinalScoreActivity : AppCompatActivity() {
             startActivity(themeActivityIntent)
         }
 
-        btnCheckScale.setOnClickListener {
-            val scaleIntent = Intent(this, ScaleDisplayActivity::class.java)
-            startActivity(scaleIntent)
+        btnExercises.setOnClickListener {
+            val excerciseIntent = Intent(this, ExercisesActivity::class.java)
+            startActivity(excerciseIntent)
         }
 
     }
@@ -64,6 +65,7 @@ class FinalScoreActivity : AppCompatActivity() {
             } else {
                 tvResultDescription.text = resources.getText(R.string.label_internet_addiction_bad_score_description)
                 ivScoreDescriptionIcon.setImageResource(R.drawable.ic_dislike)
+                btnExercises.visibility = View.VISIBLE
                 theme = "Internet Addiction"
             }
             1 -> if (score >= 18 && score <= 46) {
@@ -73,10 +75,12 @@ class FinalScoreActivity : AppCompatActivity() {
             } else if (score >= 47 && score <= 57) {
                 tvResultDescription.text = resources.getText(R.string.label_time_management_average_score_description)
                 theme = "Time Management"
+                btnExercises.visibility = View.VISIBLE
             } else {
                 tvResultDescription.text = resources.getText(R.string.label_time_management_bad_score_description)
                 ivScoreDescriptionIcon.setImageResource(R.drawable.ic_dislike)
                 theme = "Time Management"
+                btnExercises.visibility = View.VISIBLE
             }
             2 -> if (score >= 23 && score <= 44) {
                 tvResultDescription.text = resources.getText(R.string.label_anxiety_good_score_description)
@@ -85,10 +89,12 @@ class FinalScoreActivity : AppCompatActivity() {
             } else if (score >= 45 && score <= 81) {
                 tvResultDescription.text = resources.getText(R.string.label_anxiety_average_score_description)
                 theme = "Anxiety"
+                btnExercises.visibility = View.VISIBLE
             } else {
                 tvResultDescription.text = resources.getText(R.string.label_anxiety_bad_score_description)
                 ivScoreDescriptionIcon.setImageResource(R.drawable.ic_dislike)
                 theme = "Anxiety"
+                btnExercises.visibility = View.VISIBLE
             }
             else -> Toast.makeText(this, "Here's Your Previous Score", Toast.LENGTH_LONG).show()
         }
