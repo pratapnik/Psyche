@@ -170,11 +170,6 @@ public class loginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
         updateRandomFact(factUrl);
     }
 
