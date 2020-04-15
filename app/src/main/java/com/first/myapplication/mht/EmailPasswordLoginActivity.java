@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,12 +21,21 @@ public class EmailPasswordLoginActivity extends AppCompatActivity {
     private Button mSignUp, mSignIn;
     private FirebaseAuth mAuth;
     private ProgressDialog mProgDiag;
-
+    private ImageView ivBackLogin ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_password_login);
+
+        ivBackLogin = findViewById(R.id.ivBackLogin);
+
+        ivBackLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         
         mAuth = FirebaseAuth.getInstance();
         initUI();
