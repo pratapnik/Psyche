@@ -10,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +29,7 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private static final int PASSWORD_LEN = 8;
     private ProgressDialog mProgDiag;
+    private ImageView ivSignUp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +38,15 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         initUI();
+
+        ivSignUp = findViewById(R.id.ivBackSignUp);
+
+        ivSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override

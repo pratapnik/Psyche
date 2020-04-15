@@ -17,7 +17,7 @@
         android:background="@color/color_gradient_start"
         app:navigationIcon="@drawable/ic_back"
         app:titleTextColor="@color/color_toolbar_title"
-        app:title="YOUR PROFILE"
+        app:title="Your Profile"
         app:titleTextAppearance="@style/mBoldAppearnace" />
 
     <android.support.constraint.Guideline
@@ -52,6 +52,7 @@
         app:layout_constraintStart_toEndOf="@id/ivOnlineIcon"
         app:layout_constraintTop_toTopOf="@id/ivOnlineIcon"
         app:layout_constraintBottom_toBottomOf="@id/ivOnlineIcon"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 

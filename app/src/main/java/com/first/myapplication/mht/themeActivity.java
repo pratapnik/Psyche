@@ -58,13 +58,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
 
-        toolbarTheme.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
         toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -80,10 +73,14 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                     Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
                     startActivity(i);
                     return true;
+                }
+                else if(menuItem.getItemId() == R.id.menuItemExercise){
+                    Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
+                    startActivity(i);
+                    return true;
                 } else if (menuItem.getItemId() == R.id.signout) {
                     logoutOrCancel();
                     return true;
-
                 }
                 return false;
             }
@@ -146,15 +143,15 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void updateGreetingMessage(int hour){
-          String greetingMessage;
-          if(hour<12 && hour>=5)
-              greetingMessage = "Hey, Good Morning";
-          else if(hour>=12 && hour<16)
-              greetingMessage = "Hey, Good Afternoon";
-          else
-              greetingMessage = "Hey, Good Evening";
+    private void updateGreetingMessage(int hour) {
+        String greetingMessage;
+        if (hour < 12 && hour >= 5)
+            greetingMessage = "Hey, Good Morning";
+        else if (hour >= 12 && hour < 16)
+            greetingMessage = "Hey, Good Afternoon";
+        else
+            greetingMessage = "Hey, Good Evening";
 
-          tvGreetingMessage.setText(greetingMessage);
+        tvGreetingMessage.setText(greetingMessage);
     }
 }

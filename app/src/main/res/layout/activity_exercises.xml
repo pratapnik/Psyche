@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExercisesActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarExercises"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Exercises"
+        app:navigationIcon="@drawable/ic_back"
+        android:background="@color/color_gradient_start"
+        app:titleTextColor="@color/color_toolbar_title"
+        app:titleTextAppearance="@style/mBoldAppearnace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/glHorizontalUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        />
+
+    <LinearLayout
+        android:id="@+id/llMeditation"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:elevation="@dimen/padding_eight_dp"
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        android:background="@drawable/custom_button"
+        android:paddingTop="@dimen/padding_four_dp"
+        android:paddingStart="@dimen/margin_twenty_dp"
+        android:paddingLeft="@dimen/margin_twenty_dp"
+        android:paddingRight="@dimen/margin_twenty_dp"
+        android:paddingEnd="@dimen/margin_twenty_dp"
+        android:paddingBottom="@dimen/padding_four_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercises"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontalUpper"
+        >
+
+        <ImageView
+            android:id="@+id/ivMeditationIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_meditation"
+            />
+
+        <TextView
+            android:id="@+id/tvMeditationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meditation"
+            android:layout_marginTop="@dimen/padding_eight_dp"
+            android:fontFamily="@font/mbold"
+            android:textColor="@color/color_white"
+            />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
