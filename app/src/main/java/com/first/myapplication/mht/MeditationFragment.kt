@@ -29,7 +29,6 @@ class MeditationFragment : Fragment() {
 
         tvTimer = view.findViewById(R.id.tvCountDownTimer)
         startButton = view.findViewById(R.id.btnStartExercise)
-        mediaPlayer = MediaPlayer.create(activity, R.raw.meditationsound)
 
         return view
     }
@@ -38,8 +37,6 @@ class MeditationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         startButton.setOnClickListener {
             mediaPlayer.isLooping = true
-            mediaPlayer.start()
-            mediaPlayer.setVolume(100F, 100F)
             startButton.isClickable = false
             startButton.alpha = 0.5F
             val timer = object : CountDownTimer(60000, 1000) {
@@ -54,18 +51,9 @@ class MeditationFragment : Fragment() {
                     startButton.text = "START AGAIN"
                     tvTimer.textSize = 24F
                     tvTimer.text = "One minute meditation is successfully completed"
-                    mediaPlayer.stop()
-                    mediaPlayer.release()
                 }
             }
             timer.start()
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.stop()
-        mediaPlayer.release()
-    }
-
 }
