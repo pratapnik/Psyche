@@ -16,7 +16,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,14 +42,21 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         toolbarTheme = findViewById(R.id.toolbar_theme);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
 
+        Date calendarDate = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+        SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
+        String formattedDate = dateFormat.format(calendarDate);
+        String formattedDay = dayFormat.format(calendarDate);
+
+        String welcomeMessage = updateGreetingMessage(hourOfTheDay);
+
+        tvGreetingMessage.setText(welcomeMessage+"\nIt's "+formattedDate+", "+formattedDay);
+
         toolbarTheme.inflateMenu(R.menu.mymenu);
 
         hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-
-
-        updateGreetingMessage(hourOfTheDay);
 
         Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
         internet.setAnimation(animation);
@@ -143,7 +153,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void updateGreetingMessage(int hour) {
+    private String updateGreetingMessage(int hour) {
         String greetingMessage;
         if (hour < 12 && hour >= 5)
             greetingMessage = "Hey, Good Morning";
@@ -152,6 +162,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         else
             greetingMessage = "Hey, Good Evening";
 
-        tvGreetingMessage.setText(greetingMessage);
+        return greetingMessage;
     }
 }
