@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 updateUI(user);
             }
-        },2000);
+        },1500);
 
     }
     public void updateUI(FirebaseUser user){
