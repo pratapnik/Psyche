@@ -2,6 +2,7 @@ package com.first.myapplication.mht;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,6 +30,8 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     TextView tvGreetingMessage;
 
     GoogleSignInAccount googleSignInAccount;
+    ImageView ivCloseCovidBar;
+    ConstraintLayout clCovid19;
 
     private int hourOfTheDay;
 
@@ -41,6 +45,8 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         internet = findViewById(R.id.internet);
         toolbarTheme = findViewById(R.id.toolbar_theme);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
+        ivCloseCovidBar = findViewById(R.id.ivCovidClose);
+        clCovid19 = findViewById(R.id.clCovid19);
 
         Date calendarDate = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
@@ -50,7 +56,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
         String welcomeMessage = updateGreetingMessage(hourOfTheDay);
 
-        tvGreetingMessage.setText(welcomeMessage+"\nIt's "+formattedDate+", "+formattedDay);
+        tvGreetingMessage.setText(welcomeMessage + "\nIt's " + formattedDate + ", " + formattedDay);
 
         toolbarTheme.inflateMenu(R.menu.mymenu);
 
@@ -63,6 +69,20 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setAnimation(animation);
         anxiety.setAnimation(animation);
 
+        ivCloseCovidBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clCovid19.setVisibility(View.GONE);
+            }
+        });
+
+        clCovid19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent covidIntent = new Intent(themeActivity.this, Covid.class);
+                startActivity(covidIntent);
+            }
+        });
 
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
@@ -83,8 +103,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                     Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
                     startActivity(i);
                     return true;
-                }
-                else if(menuItem.getItemId() == R.id.menuItemExercise){
+                } else if (menuItem.getItemId() == R.id.menuItemExercise) {
                     Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
                     startActivity(i);
                     return true;
@@ -164,4 +183,29 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
         return greetingMessage;
     }
+
+
+//    public Boolean updateCovidLayout() {
+//        final boolean[] isCovidVisible = {false};
+//        firebase = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/covidFlag");
+//        firebase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                String covidFlag = dataSnapshot.getValue(String.class);
+//                if (covidFlag.equals("1")) {
+//                    isCovidVisible[0] = true;
+//                } else {
+//                    isCovidVisible[0] = false;
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//
+//            }
+//        });
+//        return isCovidVisible[0];
+//    }
+//
+
 }
