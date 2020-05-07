@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ExercisesActivity">
 
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarExercises"
         android:layout_width="match_parent"
@@ -50,7 +49,6 @@
         android:paddingEnd="@dimen/margin_twenty_dp"
         android:paddingRight="@dimen/margin_twenty_dp"
         android:paddingBottom="@dimen/padding_four_dp"
-        app:layout_constraintEnd_toStartOf="@id/llYoga"
         app:layout_constraintBottom_toBottomOf="@id/glHorizontalUpper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarExercises">
@@ -80,6 +78,7 @@
         android:clickable="true"
         android:elevation="@dimen/padding_eight_dp"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_marginStart="@dimen/margin_twelve_dp"
         android:layout_marginEnd="@dimen/margin_twelve_dp"
         android:orientation="vertical"
@@ -120,6 +119,7 @@
         android:elevation="@dimen/padding_eight_dp"
         android:gravity="center"
         android:orientation="vertical"
+        android:visibility="gone"
         android:layout_marginStart="@dimen/margin_twelve_dp"
         android:layout_marginEnd="@dimen/margin_twelve_dp"
         android:paddingStart="@dimen/margin_twenty_dp"
@@ -149,5 +149,18 @@
             android:textColor="@color/color_white" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_exercises_note"
+        android:fontFamily="@font/mregular"
+        android:textSize="@dimen/text_twelve_sp"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.first.myapplication.mht;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +37,8 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
     private int hourOfTheDay;
 
+    private ProfilePopupDialog profilePopupDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         ivCloseCovidBar = findViewById(R.id.ivCovidClose);
         clCovid19 = findViewById(R.id.clCovid19);
 
+        profilePopupDialog = new ProfilePopupDialog();
         Date calendarDate = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
@@ -92,8 +97,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.profile) {
-                    Intent i = new Intent(themeActivity.this, ProfileActivity.class);
-                    startActivity(i);
+                    openProfileDialog();
                     return true;
                 } else if (menuItem.getItemId() == R.id.about) {
                     Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
@@ -182,6 +186,15 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
             greetingMessage = "Hey, Good Evening";
 
         return greetingMessage;
+    }
+
+    public void openProfileDialog(){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.addToBackStack(null);
+        profilePopupDialog.show(
+                fragmentTransaction,
+                getResources().getString(R.string.label_profile_popup_dialog)
+        );
     }
 
 
