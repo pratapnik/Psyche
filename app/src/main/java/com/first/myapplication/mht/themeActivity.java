@@ -2,11 +2,6 @@ package com.first.myapplication.mht;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -14,6 +9,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -188,7 +189,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         return greetingMessage;
     }
 
-    public void openProfileDialog(){
+    public void openProfileDialog() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.addToBackStack(null);
         profilePopupDialog.show(

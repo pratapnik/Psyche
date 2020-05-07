@@ -3,15 +3,13 @@ package com.first.myapplication.mht.widgets
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
-import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import com.first.myapplication.mht.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_profile.*
 
-class ProfilePopupDialog: DialogFragment() {
+class ProfilePopupDialog : DialogFragment() {
     private lateinit var profilePopupDialog: AlertDialog.Builder
     private lateinit var btnOk: TextView
 
