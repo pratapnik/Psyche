@@ -76,6 +76,7 @@ public class EmailPasswordLoginActivity extends AppCompatActivity {
                             }
                             else {
                                 showToast("Wrong email or password");
+                                Utils.hideProgressDialogWithTitle(mProgDiag);
                             }
                         }
                     });

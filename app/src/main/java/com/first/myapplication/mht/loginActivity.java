@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -126,6 +125,7 @@ public class loginActivity extends AppCompatActivity {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -181,18 +181,18 @@ public class loginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
     }
 
-    public void updateUI(FirebaseUser user){
-        if(user != null){
+    public void updateUI(FirebaseUser user) {
+        if (user != null) {
             hideProgressDialogWithTitle(progressDialog);
             Intent i = new Intent(loginActivity.this, themeActivity.class);
             startActivity(i);
         }
     }
 
-    private void sendProblem(){
+    private void sendProblem() {
         Intent problemIntent = new Intent();
         problemIntent.setAction(Intent.ACTION_SEND).
-                setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"),"message/rfc822")
+                setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"), "message/rfc822")
                 .putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
         startActivity(Intent.createChooser(problemIntent, "Choose an Email client:"));
     }
@@ -212,7 +212,7 @@ public class loginActivity extends AppCompatActivity {
         progressDialog.dismiss();
     }
 
-    public void updateRandomFact(String factUrl){
+    public void updateRandomFact(String factUrl) {
         Random random = new Random();
         int randomNumber = random.nextInt(10);
         randomFactsFirebase = new Firebase(factUrl + randomNumber);
@@ -231,5 +231,11 @@ public class loginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "There is some internet error", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
     }
 }

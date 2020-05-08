@@ -16,21 +16,17 @@
 
     <style name="CustomHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:backgroundTint">@color/color_white</item>
-        <item name="android:radius">@dimen/margin_twelve_dp</item>
         <item name="strokeWidth">@dimen/margin_two_dp</item>
         <item name="fontFamily">@font/mbold</item>
         <item name="strokeColor">@color/color_gradient_start</item>
-        <item name="android:paddingTop">@dimen/margin_twelve_dp</item>
-        <item name="android:paddingBottom">@dimen/margin_twelve_dp</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
         <item name="android:textColor">@color/color_gradient_start</item>
     </style>
 
     <style name="CustomFilledButton" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/color_gradient_start</item>
-        <item name="android:radius">@dimen/margin_twelve_dp</item>
         <item name="fontFamily">@font/mbold</item>
-        <item name="android:paddingTop">@dimen/margin_twelve_dp</item>
-        <item name="android:paddingBottom">@dimen/margin_twelve_dp</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
         <item name="android:textColor">@color/color_white</item>
     </style>
 
