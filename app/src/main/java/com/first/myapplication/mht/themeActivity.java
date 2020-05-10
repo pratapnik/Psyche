@@ -30,7 +30,6 @@ import java.util.Locale;
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button timeManagement, anxiety, internet;
-    Toolbar toolbarTheme;
     TextView tvGreetingMessage;
     ImageView ivMenuIcon;
 
@@ -50,7 +49,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement = findViewById(R.id.timeManagement);
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
-//        toolbarTheme = findViewById(R.id.toolbar_theme);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
         ivCloseCovidBar = findViewById(R.id.ivCovidClose);
         clCovid19 = findViewById(R.id.clCovid19);
@@ -66,8 +64,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         String welcomeMessage = updateGreetingMessage(hourOfTheDay);
 
         tvGreetingMessage.setText(welcomeMessage + "\nIt's " + formattedDate + ", " + formattedDay);
-
-//        toolbarTheme.inflateMenu(R.menu.mymenu);
 
         hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
@@ -96,32 +92,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
-
-//        toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem menuItem) {
-//                if (menuItem.getItemId() == R.id.profile) {
-//                    openProfileDialog();
-//                    return true;
-//                } else if (menuItem.getItemId() == R.id.about) {
-//                    Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
-//                    startActivity(i);
-//                    return true;
-//                } else if (menuItem.getItemId() == R.id.scale) {
-//                    Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
-//                    startActivity(i);
-//                    return true;
-//                } else if (menuItem.getItemId() == R.id.menuItemExercise) {
-//                    Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
-//                    startActivity(i);
-//                    return true;
-//                } else if (menuItem.getItemId() == R.id.signout) {
-//                    logoutOrCancel();
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
 
         ivMenuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
