@@ -7,33 +7,53 @@
     tools:context=".themeActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_theme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_gradient_start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Select an Issue"
-        app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_toolbar_title" />
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar_theme"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/color_gradient_start"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:title="Select an Issue"-->
+<!--        app:titleTextAppearance="@style/mBoldAppearnace"-->
+<!--        app:titleTextColor="@color/color_toolbar_title" />-->
 
     <TextView
         android:id="@+id/tvGreetingMessage"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_twelve_dp"
+        android:layout_margin="@dimen/margin_sixteen_dp"
         android:fontFamily="@font/mbold"
         android:lineSpacingExtra="@dimen/padding_four_dp"
-        android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/text_sixteen_sp"
         app:layout_constraintBottom_toTopOf="@id/cv_time_management"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivMenuIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_theme"
+        app:layout_constraintTop_toBottomOf="@id/ivMenuIcon"
         tools:text="Hello" />
+
+    <ImageView
+        android:id="@+id/ivAppIconTheme"
+        android:layout_width="@dimen/margin_twenty_four_dp"
+        android:layout_height="@dimen/margin_twenty_four_dp"
+        android:src="@drawable/psychosplash"
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivMenuIcon"
+        app:layout_constraintBottom_toBottomOf="@id/ivMenuIcon"
+        />
+
+    <ImageView
+        android:id="@+id/ivMenuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_menu"
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_time_management"
