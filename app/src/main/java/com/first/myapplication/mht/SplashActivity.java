@@ -1,21 +1,15 @@
 package com.first.myapplication.mht;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.firebase.client.DataSnapshot;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -37,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.slide_up);
         constraintLayoutSplash.setAnimation(animation);
 
-        mAuth= FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -45,15 +39,15 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 updateUI(user);
             }
-        },1500);
+        }, 1500);
 
     }
-    public void updateUI(FirebaseUser user){
-        if(user != null){
+
+    public void updateUI(FirebaseUser user) {
+        if (user != null) {
             Intent i = new Intent(SplashActivity.this, themeActivity.class);
             startActivity(i);
-        }
-        else{
+        } else {
             Intent i = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(i);
             finish();

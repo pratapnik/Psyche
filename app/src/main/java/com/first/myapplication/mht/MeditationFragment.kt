@@ -2,12 +2,10 @@ package com.first.myapplication.mht
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 class MeditationFragment : Fragment() {
 
@@ -18,6 +16,8 @@ class MeditationFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_meditation, container, false)
 
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         tvTimer = view.findViewById(R.id.tvCountDownTimer)
         startButton = view.findViewById(R.id.btnStartExercise)
 
@@ -27,8 +27,7 @@ class MeditationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startButton.setOnClickListener {
-            startButton.isClickable = false
-            startButton.alpha = 0.5F
+            startButton.visibility = View.GONE
             val timer = object : CountDownTimer(60000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     tvTimer.textSize = 32F
@@ -36,11 +35,10 @@ class MeditationFragment : Fragment() {
                 }
 
                 override fun onFinish() {
-                    startButton.isClickable = true
-                    startButton.alpha = 1F
-                    startButton.text = "START AGAIN"
+                    startButton.visibility = View.VISIBLE
+                    startButton.text = resources.getString(R.string.label_start_again_button_title)
                     tvTimer.textSize = 24F
-                    tvTimer.text = "One minute meditation is successfully completed"
+                    tvTimer.text = resources.getString(R.string.label_meditation_completed_message)
                 }
             }
             timer.start()

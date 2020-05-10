@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ExercisesActivity">
 
-
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarExercises"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,14 +19,14 @@
         app:titleTextAppearance="@style/mBoldAppearnace"
         app:titleTextColor="@color/color_toolbar_title" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glHorizontalUpper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glHorizontalMiddle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +49,6 @@
         android:paddingEnd="@dimen/margin_twenty_dp"
         android:paddingRight="@dimen/margin_twenty_dp"
         android:paddingBottom="@dimen/padding_four_dp"
-        app:layout_constraintEnd_toStartOf="@id/llYoga"
         app:layout_constraintBottom_toBottomOf="@id/glHorizontalUpper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarExercises">
@@ -80,6 +78,7 @@
         android:clickable="true"
         android:elevation="@dimen/padding_eight_dp"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_marginStart="@dimen/margin_twelve_dp"
         android:layout_marginEnd="@dimen/margin_twelve_dp"
         android:orientation="vertical"
@@ -120,6 +119,7 @@
         android:elevation="@dimen/padding_eight_dp"
         android:gravity="center"
         android:orientation="vertical"
+        android:visibility="gone"
         android:layout_marginStart="@dimen/margin_twelve_dp"
         android:layout_marginEnd="@dimen/margin_twelve_dp"
         android:paddingStart="@dimen/margin_twenty_dp"
@@ -150,4 +150,17 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_exercises_note"
+        android:fontFamily="@font/mregular"
+        android:textSize="@dimen/text_twelve_sp"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

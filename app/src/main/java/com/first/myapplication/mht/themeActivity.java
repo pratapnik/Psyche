@@ -2,10 +2,6 @@ package com.first.myapplication.mht;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -14,6 +10,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,14 +30,16 @@ import java.util.Locale;
 public class themeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button timeManagement, anxiety, internet;
-    Toolbar toolbarTheme;
     TextView tvGreetingMessage;
+    ImageView ivMenuIcon;
 
     GoogleSignInAccount googleSignInAccount;
     ImageView ivCloseCovidBar;
     ConstraintLayout clCovid19;
 
     private int hourOfTheDay;
+
+    private ProfilePopupDialog profilePopupDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +49,12 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement = findViewById(R.id.timeManagement);
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
-        toolbarTheme = findViewById(R.id.toolbar_theme);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
         ivCloseCovidBar = findViewById(R.id.ivCovidClose);
         clCovid19 = findViewById(R.id.clCovid19);
+        ivMenuIcon = findViewById(R.id.ivMenuIcon);
 
+        profilePopupDialog = new ProfilePopupDialog();
         Date calendarDate = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
@@ -57,8 +64,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         String welcomeMessage = updateGreetingMessage(hourOfTheDay);
 
         tvGreetingMessage.setText(welcomeMessage + "\nIt's " + formattedDate + ", " + formattedDay);
-
-        toolbarTheme.inflateMenu(R.menu.mymenu);
 
         hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
@@ -88,30 +93,40 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
 
-        toolbarTheme.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        ivMenuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                if (menuItem.getItemId() == R.id.profile) {
-                    Intent i = new Intent(themeActivity.this, ProfileActivity.class);
-                    startActivity(i);
-                    return true;
-                } else if (menuItem.getItemId() == R.id.about) {
-                    Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
-                    startActivity(i);
-                    return true;
-                } else if (menuItem.getItemId() == R.id.scale) {
-                    Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
-                    startActivity(i);
-                    return true;
-                } else if (menuItem.getItemId() == R.id.menuItemExercise) {
-                    Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
-                    startActivity(i);
-                    return true;
-                } else if (menuItem.getItemId() == R.id.signout) {
-                    logoutOrCancel();
-                    return true;
-                }
-                return false;
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(themeActivity.this, ivMenuIcon);
+
+                popup.getMenuInflater().inflate(R.menu.mymenu, popup.getMenu());
+
+                //registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getItemId() == R.id.profile) {
+                            openProfileDialog();
+                            return true;
+                        } else if (menuItem.getItemId() == R.id.about) {
+                            Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
+                            startActivity(i);
+                            return true;
+                        } else if (menuItem.getItemId() == R.id.scale) {
+                            Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
+                            startActivity(i);
+                            return true;
+                        } else if (menuItem.getItemId() == R.id.menuItemExercise) {
+                            Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
+                            startActivity(i);
+                            return true;
+                        } else if (menuItem.getItemId() == R.id.signout) {
+                            logoutOrCancel();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+
+                popup.show();//showing popup menu
             }
         });
     }
@@ -184,28 +199,12 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         return greetingMessage;
     }
 
-
-//    public Boolean updateCovidLayout() {
-//        final boolean[] isCovidVisible = {false};
-//        firebase = new Firebase("https://mental-health-tracker-bb023.firebaseio.com/covidFlag");
-//        firebase.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                String covidFlag = dataSnapshot.getValue(String.class);
-//                if (covidFlag.equals("1")) {
-//                    isCovidVisible[0] = true;
-//                } else {
-//                    isCovidVisible[0] = false;
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
-//        return isCovidVisible[0];
-//    }
-//
-
+    public void openProfileDialog() {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.addToBackStack(null);
+        profilePopupDialog.show(
+                fragmentTransaction,
+                getResources().getString(R.string.label_profile_popup_dialog)
+        );
+    }
 }

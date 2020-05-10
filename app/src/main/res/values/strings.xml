@@ -33,6 +33,13 @@
     <string name="label_facing_problem">Facing problem?</string>
     <string name="label_forgot_password">Forgot Password?</string>
     <string name="label_log_in_title">Log in</string>
+    <string name="label_popup_dialog_title">Your Email</string>
+    <string name="label_ok">OK</string>
+    <string name="label_profile_popup_dialog">Profile_Popup</string>
+    <string name="label_exercises_note">Note: More Exercises will be added soon</string>
+    <string name="label_exercises_title">EXERCISES</string>
+    <string name="label_meditation_completed_message">One minute meditation is successfully completed</string>
+    <string name="label_start_again_button_title">START AGAIN</string>
 
 
 </resources>

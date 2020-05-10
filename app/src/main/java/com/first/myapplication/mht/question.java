@@ -3,8 +3,6 @@ package com.first.myapplication.mht;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,7 +11,9 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -161,7 +161,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 7) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -176,7 +176,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 17) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -191,7 +191,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 22) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackground(getResources().getDrawable(R.drawable.custom_button));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();

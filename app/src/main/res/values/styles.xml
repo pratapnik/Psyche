@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_gradient_start</item>
         <item name="colorPrimaryDark">@color/color_gradient_start</item>
@@ -12,6 +12,22 @@
     <style name="mBoldAppearnace">
         <item name="android:fontFamily">@font/mbold</item>
         <item name="android:background">@color/color_gradient_start</item>
+    </style>
+
+    <style name="CustomHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="strokeWidth">@dimen/margin_two_dp</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="strokeColor">@color/color_gradient_start</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/color_gradient_start</item>
+    </style>
+
+    <style name="CustomFilledButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/color_gradient_start</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/color_white</item>
     </style>
 
 

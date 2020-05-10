@@ -1,10 +1,8 @@
 package com.first.myapplication.mht
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_exercises.*
 
 class ExercisesActivity : AppCompatActivity() {
@@ -28,9 +26,9 @@ class ExercisesActivity : AppCompatActivity() {
         }
     }
 
-    fun loadExcercise(exerciseBundle: Bundle){
-         val displayExcerciseIntent = Intent(this, DisplayExcercise::class.java)
-         displayExcerciseIntent.putExtra("exTypeBundle", exerciseBundle)
-         startActivity(displayExcerciseIntent)
+    fun loadExcercise(exerciseBundle: Bundle) {
+        val displayExcerciseIntent = Intent(this, DisplayExcercise::class.java)
+        displayExcerciseIntent.putExtra("exTypeBundle", exerciseBundle)
+        startActivity(displayExcerciseIntent)
     }
 }

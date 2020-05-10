@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".question">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_question_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,14 +118,11 @@
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_hollow_stroke"
         android:textSize="@dimen/text_twenty_sp"
         android:tooltipText="Go to next question"
-        android:textColor="@color/color_gradient_start"
-        android:fontFamily="@font/mbold"
+        style="@style/CustomHollowButton"
         android:text="NEXT"
         android:elevation="@dimen/margin_sixteen_dp"
-        android:padding="@dimen/margin_twelve_dp"
         android:layout_marginTop="@dimen/margin_twenty_four_dp"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/rg_five_options"
@@ -135,4 +132,4 @@
         />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
