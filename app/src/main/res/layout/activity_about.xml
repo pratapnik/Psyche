@@ -45,9 +45,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_about"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/nikhilprofileimage"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         app:civ_border_width="@dimen/padding_four_dp"
         android:layout_marginTop="@dimen/margin_twenty_dp"
         app:civ_border_color="@color/color_gradient_start"
