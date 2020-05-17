@@ -23,9 +23,9 @@
 
     <ImageView
         android:id="@+id/ivAppIconTheme"
-        android:layout_width="@dimen/margin_twenty_four_dp"
-        android:layout_height="@dimen/margin_twenty_four_dp"
-        android:src="@drawable/psychosplash"
+        android:layout_width="@dimen/margin_thirty_two_dp"
+        android:layout_height="@dimen/margin_thirty_two_dp"
+        android:src="@drawable/ic_psyche_logo"
         android:layout_margin="@dimen/margin_sixteen_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnMenu"
