@@ -163,4 +163,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnGetNameAge"
+        android:layout_margin="@dimen/margin_twenty_four_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Enter Name"
+        />
+
+    <Button
+        android:id="@+id/btnGetNameAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Name Age"
+        app:layout_constraintBottom_toTopOf="@id/tvNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glHorizontalMiddle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
