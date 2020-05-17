@@ -38,5 +38,15 @@
         <item name="android:textColor">@color/color_gradient_start</item>
     </style>
 
+    <style name="BoldTextStyleWhite" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="BoldTextStylePrimaryColor" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_gradient_start</item>
+    </style>
+
 
 </resources>
