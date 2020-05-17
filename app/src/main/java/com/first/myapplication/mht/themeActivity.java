@@ -31,7 +31,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
     Button timeManagement, anxiety, internet;
     TextView tvGreetingMessage;
-    ImageView ivMenuIcon;
+    Button menuButton;
 
     GoogleSignInAccount googleSignInAccount;
     ImageView ivCloseCovidBar;
@@ -52,7 +52,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
         ivCloseCovidBar = findViewById(R.id.ivCovidClose);
         clCovid19 = findViewById(R.id.clCovid19);
-        ivMenuIcon = findViewById(R.id.ivMenuIcon);
+        menuButton = findViewById(R.id.btnMenu);
 
         profilePopupDialog = new ProfilePopupDialog();
         Date calendarDate = Calendar.getInstance().getTime();
@@ -93,10 +93,10 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
 
-        ivMenuIcon.setOnClickListener(new View.OnClickListener() {
+        menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(themeActivity.this, ivMenuIcon);
+                PopupMenu popup = new PopupMenu(themeActivity.this, menuButton);
 
                 popup.getMenuInflater().inflate(R.menu.mymenu, popup.getMenu());
 

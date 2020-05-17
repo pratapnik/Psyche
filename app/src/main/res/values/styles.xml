@@ -30,5 +30,13 @@
         <item name="android:textColor">@color/color_white</item>
     </style>
 
+    <style name="CustomNormalHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="strokeWidth">@dimen/margin_two_dp</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="strokeColor">@color/color_gradient_start</item>
+        <item name="android:textColor">@color/color_gradient_start</item>
+    </style>
+
 
 </resources>

@@ -40,6 +40,7 @@
     <string name="label_exercises_title">EXERCISES</string>
     <string name="label_meditation_completed_message">One minute meditation is successfully completed</string>
     <string name="label_start_again_button_title">START AGAIN</string>
+    <string name="label_menu">MENU</string>
 
 
 </resources>

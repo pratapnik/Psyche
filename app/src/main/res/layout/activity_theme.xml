@@ -16,9 +16,9 @@
         android:textColor="@color/textColor"
         android:textSize="@dimen/text_sixteen_sp"
         app:layout_constraintBottom_toTopOf="@id/cv_time_management"
-        app:layout_constraintEnd_toStartOf="@id/ivMenuIcon"
+        app:layout_constraintEnd_toStartOf="@id/btnMenu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivMenuIcon"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu"
         tools:text="Hello" />
 
     <ImageView
@@ -28,15 +28,16 @@
         android:src="@drawable/psychosplash"
         android:layout_margin="@dimen/margin_sixteen_dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ivMenuIcon"
-        app:layout_constraintBottom_toBottomOf="@id/ivMenuIcon"
+        app:layout_constraintTop_toTopOf="@id/btnMenu"
+        app:layout_constraintBottom_toBottomOf="@id/btnMenu"
         />
 
-    <ImageView
-        android:id="@+id/ivMenuIcon"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_menu"
+        android:text="@string/label_menu"
+        style="@style/CustomNormalHollowButton"
         android:layout_margin="@dimen/margin_sixteen_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
