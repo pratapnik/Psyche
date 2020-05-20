@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.wajahatkarim3.easyflipviewpager.BookFlipPageTransformer;
+import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer;
+
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mSlideViewPager;
@@ -31,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         sliderAdapter = new SliderAdapter(this);
         mSlideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
+
+        CardFlipPageTransformer cardFlipPageTransformer = new CardFlipPageTransformer();
+        cardFlipPageTransformer.setScalable(false);
+        mSlideViewPager.setPageTransformer(true, cardFlipPageTransformer);
+
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
         buttonGetStarted = findViewById(R.id.btn_get_started);
