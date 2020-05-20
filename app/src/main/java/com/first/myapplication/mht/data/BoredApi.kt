@@ -4,7 +4,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Url
 
-interface NameAgeApi {
+interface BoredApi {
     @GET
-    fun getNamesAge(@Url url: String): Single<NamesAgeDataModel>
+    fun getActivities(@Url url: String): Single<BoredApiDataModel>
 }

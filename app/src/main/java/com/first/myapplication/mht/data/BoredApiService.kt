@@ -2,24 +2,23 @@ package com.first.myapplication.mht.data
 
 import android.util.Log
 import io.reactivex.Single
-import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class NameAgeApiService constructor(){
+class BoredApiService constructor(){
 
 
 
-    fun getAge(name: String): Single<NamesAgeDataModel> {
-        val BASE_URL = "https://api.agify.io/?name=".plus(name)
+    fun getAge(name: String): Single<BoredApiDataModel> {
+        val BASE_URL = "http://www.boredapi.com/api/activity/"
         val api = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
-                .create(NameAgeApi::class.java)
+                .create(BoredApi::class.java)
         Log.d("nikhil", BASE_URL)
-        return api.getNamesAge(BASE_URL)
+        return api.getActivities(BASE_URL)
     }
 }

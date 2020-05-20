@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:text="@string/label_exercises_title"
+        android:text="@string/label_activities_title"
         android:layout_marginTop="@dimen/margin_twelve_dp"
         style="@style/CustomNormalTextButton"
         android:textAlignment="textStart"
