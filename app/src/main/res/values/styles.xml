@@ -48,5 +48,11 @@
         <item name="android:textColor">@color/color_gradient_start</item>
     </style>
 
+    <style name="CustomNormalTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_gradient_start</item>
+    </style>
+
 
 </resources>

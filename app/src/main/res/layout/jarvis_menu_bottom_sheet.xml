@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/margin_sixteen_dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivCloseBottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_gravity="end"
+        android:padding="@dimen/margin_twelve_dp"
+        />
+
+    <Button
+        android:id="@+id/btnExercises"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="@string/label_exercises_title"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        style="@style/CustomNormalTextButton"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        android:focusable="true" />
+
+    <Button
+        android:id="@+id/btnScale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:text="@string/label_scale_title"
+        style="@style/CustomNormalTextButton"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        />
+
+    <Button
+        android:id="@+id/btnProfileItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:text="@string/label_profile_title"
+        style="@style/CustomNormalTextButton"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        />
+
+    <Button
+        android:id="@+id/btnAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:text="@string/label_about_us_title"
+        style="@style/CustomNormalTextButton"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:text="@string/label_sign_out"
+        style="@style/CustomNormalTextButton"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        />
+
+</LinearLayout>

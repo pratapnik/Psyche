@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
                 }
-            }, 1000);
+            }, 700);
         }
         else{
             tvNoInternet.setVisibility(View.VISIBLE);

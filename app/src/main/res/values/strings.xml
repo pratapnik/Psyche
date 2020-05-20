@@ -43,6 +43,11 @@
     <string name="label_menu">MENU</string>
     <string name="label_no_internet">No internet available</string>
     <string name="label_refresh_button">Refresh</string>
+    <string name="label_bottom_sheet_tag">add_menu_bottom_sheet_fragment</string>
+    <string name="label_scale_title">Scale</string>
+    <string name="label_profile_title">Profile</string>
+    <string name="label_about_us_title">About us</string>
+    <string name="label_sign_out">Sign out</string>
 
 
 </resources>

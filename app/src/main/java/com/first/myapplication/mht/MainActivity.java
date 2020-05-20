@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.wajahatkarim3.easyflipviewpager.BookFlipPageTransformer;
 import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void addDotsIndicator(int position){
+    public void addDotsIndicator(int position) {
         mDots = new TextView[3];
         mDotLayout.removeAllViews();
-        for(int i =0;i<mDots.length;i++){
+        for (int i = 0; i < mDots.length; i++) {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
             mDots[i].setTextSize(35);
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             mDotLayout.addView(mDots[i]);
         }
 
-        if(mDots.length > 0){
+        if (mDots.length > 0) {
             mDots[position].setTextColor(getResources().getColor(R.color.color_gradient_start));
         }
     }
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int i) {
-               addDotsIndicator(i);
+            addDotsIndicator(i);
         }
 
         @Override
