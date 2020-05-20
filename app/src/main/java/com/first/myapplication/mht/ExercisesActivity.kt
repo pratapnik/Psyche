@@ -35,17 +35,15 @@ class ExercisesActivity : AppCompatActivity() {
         }
 
         btnGetNameAge.setOnClickListener {
-            val enteredName = etName.text.toString()
-
-            val result = namesAgeApiService.getAge(enteredName)
+            val result = namesAgeApiService.getActivity()
 
             result.subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(object : DisposableSingleObserver<BoredApiDataModel>() {
                         override fun onSuccess(boredApiFromApi: BoredApiDataModel) {
-                            Log.d("nikhil", boredApiFromApi.activityRefLink )
-                            val snackbar = Snackbar.make(it, boredApiFromApi.accessibility.toString()
-                                    .plus(boredApiFromApi.activityRefLink) , Snackbar.LENGTH_LONG)
+                            Log.d("nikhil", boredApiFromApi.jokeId.toString() )
+                            val snackbar = Snackbar.make(it, boredApiFromApi.jokeSetup
+                                    .plus(boredApiFromApi.jokePunchline) , Snackbar.LENGTH_LONG)
                             snackbar.show()
                         }
 

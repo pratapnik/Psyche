@@ -10,8 +10,8 @@ class BoredApiService constructor(){
 
 
 
-    fun getAge(name: String): Single<BoredApiDataModel> {
-        val BASE_URL = "http://www.boredapi.com/api/activity/"
+    fun getActivity(): Single<BoredApiDataModel> {
+        val BASE_URL = "https://official-joke-api.appspot.com"
         val api = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -19,6 +19,7 @@ class BoredApiService constructor(){
                 .build()
                 .create(BoredApi::class.java)
         Log.d("nikhil", BASE_URL)
-        return api.getActivities(BASE_URL)
+
+        return api.getActivities()
     }
 }

@@ -3,18 +3,13 @@ package com.first.myapplication.mht.data
 import com.google.gson.annotations.SerializedName
 
 data class BoredApiDataModel(
-        @SerializedName("activity")
-        val activityName: String?,
-        @SerializedName("accessibility")
-        val accessibility: Double?,
+        @SerializedName("id")
+        val jokeId: Long?,
         @SerializedName("type")
-        val activityType: String?,
-        @SerializedName("participants")
-        val numberOfParticipants: Long?,
-        @SerializedName("price")
-        val activityPrice: Double?,
-        @SerializedName("link")
-        val activityRefLink: String?,
-        @SerializedName("key")
-        val activityKey: String?
+        val jokeType: String?,
+        @SerializedName("setup")
+        val jokeSetup: String?,
+        @SerializedName("punchline")
+        val jokePunchline: String?
+
 )
