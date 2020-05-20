@@ -26,7 +26,8 @@ class AboutUsActivity : AppCompatActivity() {
         firebase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val url = dataSnapshot.getValue(String::class.java)
-                Glide.with(applicationContext).load(url).centerCrop().placeholder(getProgressDrawable(iv_about.context)).into(iv_about);
+                Glide.with(applicationContext).load(url).centerCrop().
+                placeholder(getProgressDrawable(this@AboutUsActivity)).into(iv_about);
             }
 
             override fun onCancelled(firebaseError: FirebaseError) {

@@ -1,11 +1,10 @@
 package com.first.myapplication.mht.widgets
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.first.myapplication.mht.BottomSheetAction
+import com.first.myapplication.mht.actions.BottomSheetAction
 import com.first.myapplication.mht.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.jarvis_menu_bottom_sheet.*

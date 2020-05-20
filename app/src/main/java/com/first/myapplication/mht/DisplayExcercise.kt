@@ -3,6 +3,7 @@ package com.first.myapplication.mht
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.first.myapplication.mht.fragments.MeditationFragment
 import kotlinx.android.synthetic.main.activity_display_excercise.*
 
 class DisplayExcercise : AppCompatActivity() {

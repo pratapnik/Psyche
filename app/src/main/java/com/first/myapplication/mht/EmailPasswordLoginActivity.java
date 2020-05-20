@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import static com.first.myapplication.mht.utils.UtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.UtilsKt.showProgressDialogWithTitle;
+
 public class EmailPasswordLoginActivity extends AppCompatActivity {
     private EditText mEmail, mPassword;
     private Button mSignUp, mSignIn;
@@ -62,13 +65,13 @@ public class EmailPasswordLoginActivity extends AppCompatActivity {
         String password = mPassword.getText().toString();
 
         if (isDataValid(email, password)) {
-            Utils.showProgressDialogWithTitle("Signing in", mProgDiag);
+            showProgressDialogWithTitle("Signing in", mProgDiag);
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Utils.hideProgressDialogWithTitle(mProgDiag);
+                                hideProgressDialogWithTitle(mProgDiag);
                                 showToast("Successfully signed in");
                                 Intent intent = new Intent(EmailPasswordLoginActivity.this, themeActivity.class);
                                 startActivity(intent);
@@ -76,7 +79,7 @@ public class EmailPasswordLoginActivity extends AppCompatActivity {
                             }
                             else {
                                 showToast("Wrong email or password");
-                                Utils.hideProgressDialogWithTitle(mProgDiag);
+                                hideProgressDialogWithTitle(mProgDiag);
                             }
                         }
                     });

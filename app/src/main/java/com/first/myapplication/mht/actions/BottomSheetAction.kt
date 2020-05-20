@@ -1,4 +1,4 @@
-package com.first.myapplication.mht
+package com.first.myapplication.mht.actions
 
 enum class BottomSheetAction {
     OPEN_PROFILE,

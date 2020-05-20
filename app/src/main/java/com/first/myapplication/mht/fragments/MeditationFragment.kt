@@ -1,4 +1,4 @@
-package com.first.myapplication.mht
+package com.first.myapplication.mht.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.first.myapplication.mht.R
 
 class MeditationFragment : Fragment() {
 

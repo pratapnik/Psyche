@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import static com.first.myapplication.mht.utils.UtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.UtilsKt.showProgressDialogWithTitle;
+
 public class EmailPasswordSignUpActivity extends AppCompatActivity {
 
     private EditText mFullName, mEmail, mPassword;
@@ -66,13 +69,13 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
         String password = mPassword.getText().toString();
 
         if (isDataValid(fullName, email, password)) {
-            Utils.showProgressDialogWithTitle("Creating account", mProgDiag);
+            showProgressDialogWithTitle("Creating account", mProgDiag);
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Utils.hideProgressDialogWithTitle(mProgDiag);
+                                hideProgressDialogWithTitle(mProgDiag);
                                 showToast("Account created successfully.");
                                 Intent intent = new Intent(EmailPasswordSignUpActivity.this, themeActivity.class);
                                 startActivity(intent);
