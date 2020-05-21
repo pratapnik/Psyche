@@ -30,6 +30,12 @@
         <item name="android:textColor">@color/color_white</item>
     </style>
 
+    <style name="CustomFilledNormalButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/color_custom_button</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
     <style name="CustomNormalHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:backgroundTint">@color/color_white</item>
         <item name="strokeWidth">@dimen/margin_two_dp</item>
@@ -53,6 +59,11 @@
     <style name="BoldTextStylePrimaryColor" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/mbold</item>
         <item name="android:textColor">@color/color_app_theme_accent</item>
+    </style>
+
+    <style name="BoldTextStyleBlackColor" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="CustomNormalTextButton" parent="Widget.MaterialComponents.Button.TextButton">
