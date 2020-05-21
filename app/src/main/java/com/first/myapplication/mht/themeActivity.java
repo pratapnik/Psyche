@@ -35,8 +35,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     Button menuButton;
 
     GoogleSignInAccount googleSignInAccount;
-    ImageView ivCloseCovidBar;
-    ConstraintLayout clCovid19;
 
     private int hourOfTheDay;
 
@@ -52,8 +50,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
-        ivCloseCovidBar = findViewById(R.id.ivCovidClose);
-        clCovid19 = findViewById(R.id.clCovid19);
         menuButton = findViewById(R.id.btnMenu);
 
         profilePopupDialog = new ProfilePopupDialog();
@@ -78,21 +74,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         internet.setAnimation(animation);
         timeManagement.setAnimation(animation);
         anxiety.setAnimation(animation);
-
-        ivCloseCovidBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clCovid19.setVisibility(View.GONE);
-            }
-        });
-
-        clCovid19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent covidIntent = new Intent(themeActivity.this, Covid.class);
-                startActivity(covidIntent);
-            }
-        });
 
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
@@ -207,6 +188,10 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case OPEN_SIGN_OUT:
                 logoutOrCancel();
+                break;
+            case OPEN_COVID_STATS:
+                actionIntent = new Intent(themeActivity.this, Covid.class);
+                startActivity(actionIntent);
                 break;
         }
     }

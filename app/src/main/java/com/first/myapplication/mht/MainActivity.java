@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (mDots.length > 0) {
-            mDots[position].setTextColor(getResources().getColor(R.color.color_gradient_start));
+            mDots[position].setTextColor(getResources().getColor(R.color.color_app_theme_accent));
         }
     }
 

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:title="@string/label_question_title"
         app:navigationIcon="@drawable/ic_back"
-        android:background="@color/color_gradient_start"
+        android:background="@color/color_app_theme_accent"
         app:titleTextColor="@color/color_toolbar_title"
         app:titleTextAppearance="@style/mBoldAppearnace"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,5 +5,6 @@ enum class BottomSheetAction {
     OPEN_ABOUT_US,
     OPEN_SIGN_OUT,
     OPEN_EXERCISES,
-    OPEN_SCALE
+    OPEN_SCALE,
+    OPEN_COVID_STATS
 }

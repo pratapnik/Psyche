@@ -25,23 +25,21 @@
         android:id="@+id/ivAppIconTheme"
         android:layout_width="@dimen/margin_thirty_two_dp"
         android:layout_height="@dimen/margin_thirty_two_dp"
-        android:src="@drawable/ic_psyche_logo"
         android:layout_margin="@dimen/margin_sixteen_dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnMenu"
+        android:src="@drawable/ic_psyche_logo"
         app:layout_constraintBottom_toBottomOf="@id/btnMenu"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnMenu" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMenu"
+        style="@style/CustomNormalHollowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_menu"
-        style="@style/CustomNormalHollowButton"
         android:layout_margin="@dimen/margin_sixteen_dp"
+        android:text="@string/label_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_time_management"
@@ -90,9 +88,9 @@
 
             <Button
                 android:id="@+id/timeManagement"
+                style="@style/CustomHollowButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CustomHollowButton"
                 android:fontFamily="@font/mbold"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
@@ -157,6 +155,7 @@
 
             <Button
                 android:id="@+id/anxiety"
+                style="@style/CustomHollowButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mbold"
@@ -164,7 +163,6 @@
                 android:minHeight="0dp"
                 android:padding="@dimen/margin_twelve_dp"
                 android:text="START"
-                style="@style/CustomHollowButton"
                 android:textSize="@dimen/text_twelve_sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -224,6 +222,7 @@
 
             <Button
                 android:id="@+id/internet"
+                style="@style/CustomHollowButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mbold"
@@ -232,7 +231,6 @@
                 android:padding="@dimen/margin_twelve_dp"
                 android:text="START"
                 android:textSize="@dimen/text_twelve_sp"
-                style="@style/CustomHollowButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tvInternetDescription"
@@ -241,54 +239,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clCovid19"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_twelve_dp"
-        android:background="@drawable/button_hollow_stroke"
-        android:clickable="true"
-        android:orientation="vertical"
-        android:padding="@dimen/margin_twelve_dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/ivCovidClose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_close"
-            app:layout_constraintBottom_toBottomOf="@id/tvCovidTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvCovidTitle" />
-
-        <TextView
-            android:id="@+id/tvCovidTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/mbold"
-            android:text="COVID-19, Stay Home and Stay Safe"
-            android:textColor="@color/color_maroon"
-            android:textSize="@dimen/text_sixteen_sp"
-            app:layout_constraintBottom_toTopOf="@id/tvCovidDescription"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvCovidDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/mbold"
-            android:text="Click here to check Covid-19 Stats"
-            android:textColor="@color/text_color_grey"
-            android:textSize="@dimen/text_twelve_sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvCovidTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvCovidTitle" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

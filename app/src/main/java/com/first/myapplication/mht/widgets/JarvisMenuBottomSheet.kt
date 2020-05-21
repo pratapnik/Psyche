@@ -46,6 +46,10 @@ class JarvisMenuBottomSheet : BottomSheetDialogFragment() {
         btnSignOut.setOnClickListener {
             actionListener?.onActionListener(BottomSheetAction.OPEN_SIGN_OUT)
         }
+
+        btnCovid19.setOnClickListener {
+            actionListener?.onActionListener(BottomSheetAction.OPEN_COVID_STATS)
+        }
     }
 
     fun addOnActionClickListener(onActionClickListener: ActionListener) {

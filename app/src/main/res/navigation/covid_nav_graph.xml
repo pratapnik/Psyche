@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/covid_nav_graph"
+    app:startDestination="@id/indiaCovidFragment">
+
+    <fragment
+        android:id="@+id/indiaCovidFragment"
+        android:name="com.first.myapplication.mht.fragments.covid.IndiaCovidFragment"
+        android:label="fragment_india_covid"
+        tools:layout="@layout/fragment_india_covid" >
+        <action
+            android:id="@+id/action_indiaCovidFragment_to_worldCovidFragmet"
+            app:destination="@id/worldCovidFragmet"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/worldCovidFragmet"
+        android:name="com.first.myapplication.mht.fragments.covid.WorldCovidFragmet"
+        android:label="fragment_world_covid_fragmet"
+        tools:layout="@layout/fragment_world_covid_fragmet" >
+        <action
+            android:id="@+id/action_worldCovidFragmet_to_indiaCovidFragment"
+            app:destination="@id/indiaCovidFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+    </fragment>
+</navigation>

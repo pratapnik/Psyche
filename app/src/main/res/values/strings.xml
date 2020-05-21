@@ -48,6 +48,9 @@
     <string name="label_profile_title">Profile</string>
     <string name="label_about_us_title">About us</string>
     <string name="label_sign_out">Sign out</string>
+    <string name="label_covid_menu_title">Covid-19 Stats</string>
+    <string name="label_world_covid_button_title">World covid-19 stats</string>
+    <string name="label_button_india_covid">India Covid-19 Stats</string>
 
 
 </resources>

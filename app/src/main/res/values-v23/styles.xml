@@ -6,6 +6,6 @@
         <item name="android:textSize">@dimen/text_twenty_eight_sp</item>
         <item name="android:padding">@dimen/padding_eight_dp</item>
         <item name="android:titleTextColor">@color/color_toolbar_title</item>
-        <item name="android:background">@color/color_gradient_start</item>
+        <item name="android:background">@color/color_app_theme_accent</item>
     </style>
 </resources>

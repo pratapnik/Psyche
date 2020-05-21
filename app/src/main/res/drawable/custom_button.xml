@@ -27,7 +27,7 @@
     <item>
         <shape android:shape="rectangle">
 
-            <gradient android:startColor="@color/color_gradient_start"
+            <gradient android:startColor="@color/color_app_theme_accent"
                 android:endColor="@color/color_gradient_end" android:type="linear"
                 />
 

@@ -1,7 +1,6 @@
 package com.first.myapplication.mht;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -161,7 +160,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 7) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_app_theme_accent));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -176,7 +175,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 17) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_app_theme_accent));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();
@@ -191,7 +190,7 @@ public class question extends AppCompatActivity {
                 if (mQuestionNo == 22) {
                     mNext.setText("SUBMIT");
                     mNext.setTextColor(getResources().getColor(R.color.color_white));
-                    mNext.setBackgroundColor(getResources().getColor(R.color.color_gradient_start));
+                    mNext.setBackgroundColor(getResources().getColor(R.color.color_app_theme_accent));
                 }
                 mQuestionNo++;
                 mOptionsRG.clearCheck();

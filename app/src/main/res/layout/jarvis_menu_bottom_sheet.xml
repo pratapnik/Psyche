@@ -79,4 +79,19 @@
         android:textSize="@dimen/text_twenty_sp"
         />
 
+    <Button
+        android:id="@+id/btnCovid19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/margin_twelve_dp"
+        android:text="@string/label_covid_menu_title"
+        android:textAllCaps="false"
+        style="@style/CustomFilledButtonAlert"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/text_twenty_sp"
+        />
+
+
 </LinearLayout>
