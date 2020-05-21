@@ -58,7 +58,15 @@
     <style name="CustomNormalTextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:backgroundTint">@color/color_white</item>
         <item name="fontFamily">@font/mbold</item>
-        <item name="android:textColor">@color/color_app_theme_accent</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="CustomFilledCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/color_app_theme_accent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardElevation">@dimen/padding_eight_dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
 

@@ -89,7 +89,7 @@
         android:text="@string/label_covid_menu_title"
         android:textAllCaps="false"
         style="@style/CustomFilledButtonAlert"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textSize="@dimen/text_twenty_sp"
         />
 

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-<!--    <color name="colorPrimaryDark">#164EB4</color>-->
-<!--    <color name="color_gradient_start">#164EB4</color>-->
-    <color name="colorPrimaryDark">#008FFF</color>
-    <color name="color_app_theme_accent">#2B2D35</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#5454AF</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="color_app_theme_accent">@color/colorPrimary</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="color_custom_button">#5454AF</color>
     <color name="textColor">#333333</color>
     <color name="normalTextColor">#808080</color>
-    <color name="color_custom_button">#26A470</color>
     <color name="buttonColor">#01579B</color>
     <color name="red">#ff0033</color>
     <color name="subtleRed">#E74C3C</color>

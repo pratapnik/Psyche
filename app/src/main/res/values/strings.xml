@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Psyche</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_logout_description">Oh no! You\'re leaving...</string>
     <string name="label_are_you_sure">Are you sure?</string>
@@ -49,8 +48,9 @@
     <string name="label_about_us_title">About us</string>
     <string name="label_sign_out">Sign out</string>
     <string name="label_covid_menu_title">Covid-19 Stats</string>
-    <string name="label_world_covid_button_title">World covid-19 stats</string>
-    <string name="label_button_india_covid">India Covid-19 Stats</string>
+    <string name="label_world_covid_button_title">Check out World covid-19 stats</string>
+    <string name="label_button_india_covid">Check out India Covid-19 Stats</string>
+    <string name="label_meditation_title">Meditation</string>
 
 
 </resources>
