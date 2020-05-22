@@ -1,45 +1,48 @@
 package com.first.myapplication.mht;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.first.myapplication.mht.actions.BottomSheetAction;
+import com.first.myapplication.mht.widgets.JarvisMenuBottomSheet;
 import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class themeActivity extends AppCompatActivity implements View.OnClickListener {
+public class themeActivity extends AppCompatActivity implements View.OnClickListener, JarvisMenuBottomSheet.ActionListener {
 
     Button timeManagement, anxiety, internet;
     TextView tvGreetingMessage;
-    ImageView ivMenuIcon;
+    ExtendedFloatingActionButton menuButton;
 
     GoogleSignInAccount googleSignInAccount;
-    ImageView ivCloseCovidBar;
-    ConstraintLayout clCovid19;
 
     private int hourOfTheDay;
 
     private ProfilePopupDialog profilePopupDialog;
+    private JarvisMenuBottomSheet jarvisMenuBottomSheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,22 +53,25 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         anxiety = findViewById(R.id.anxiety);
         internet = findViewById(R.id.internet);
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
-        ivCloseCovidBar = findViewById(R.id.ivCovidClose);
-        clCovid19 = findViewById(R.id.clCovid19);
-        ivMenuIcon = findViewById(R.id.ivMenuIcon);
+        menuButton = findViewById(R.id.btnMenu);
 
         profilePopupDialog = new ProfilePopupDialog();
+        jarvisMenuBottomSheet = new JarvisMenuBottomSheet();
+        jarvisMenuBottomSheet.addOnActionClickListener(this);
+
         Date calendarDate = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
         String formattedDate = dateFormat.format(calendarDate);
         String formattedDay = dayFormat.format(calendarDate);
 
+
+
+        hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
         String welcomeMessage = updateGreetingMessage(hourOfTheDay);
 
         tvGreetingMessage.setText(welcomeMessage + "\nIt's " + formattedDate + ", " + formattedDay);
-
-        hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
@@ -74,59 +80,14 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         timeManagement.setAnimation(animation);
         anxiety.setAnimation(animation);
 
-        ivCloseCovidBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clCovid19.setVisibility(View.GONE);
-            }
-        });
-
-        clCovid19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent covidIntent = new Intent(themeActivity.this, Covid.class);
-                startActivity(covidIntent);
-            }
-        });
-
         internet.setOnClickListener((View.OnClickListener) this);
         timeManagement.setOnClickListener((View.OnClickListener) this);
         anxiety.setOnClickListener((View.OnClickListener) this);
 
-        ivMenuIcon.setOnClickListener(new View.OnClickListener() {
+        menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(themeActivity.this, ivMenuIcon);
-
-                popup.getMenuInflater().inflate(R.menu.mymenu, popup.getMenu());
-
-                //registering popup with OnMenuItemClickListener
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        if (menuItem.getItemId() == R.id.profile) {
-                            openProfileDialog();
-                            return true;
-                        } else if (menuItem.getItemId() == R.id.about) {
-                            Intent i = new Intent(themeActivity.this, AboutUsActivity.class);
-                            startActivity(i);
-                            return true;
-                        } else if (menuItem.getItemId() == R.id.scale) {
-                            Intent i = new Intent(themeActivity.this, ScaleDisplayActivity.class);
-                            startActivity(i);
-                            return true;
-                        } else if (menuItem.getItemId() == R.id.menuItemExercise) {
-                            Intent i = new Intent(themeActivity.this, ExercisesActivity.class);
-                            startActivity(i);
-                            return true;
-                        } else if (menuItem.getItemId() == R.id.signout) {
-                            logoutOrCancel();
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-                popup.show();//showing popup menu
+                openMenuBottomSheet();
             }
         });
     }
@@ -190,11 +151,13 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     private String updateGreetingMessage(int hour) {
         String greetingMessage;
         if (hour < 12 && hour >= 5)
-            greetingMessage = "Hey, Good Morning";
+            greetingMessage = "Good Morning";
         else if (hour >= 12 && hour < 16)
-            greetingMessage = "Hey, Good Afternoon";
+            greetingMessage = "Good Afternoon";
+        else if(hour>= 16 && hour<21)
+            greetingMessage = "Good Evening";
         else
-            greetingMessage = "Hey, Good Evening";
+            greetingMessage = "It's Night Time";
 
         return greetingMessage;
     }
@@ -207,4 +170,37 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 getResources().getString(R.string.label_profile_popup_dialog)
         );
     }
+
+    private void openMenuBottomSheet() {
+        jarvisMenuBottomSheet.show(getSupportFragmentManager(), getString(R.string.label_bottom_sheet_tag));
+    }
+
+    @Override
+    public void onActionListener(@NotNull BottomSheetAction action) {
+        Intent actionIntent;
+        switch (action) {
+            case OPEN_EXERCISES:
+                actionIntent = new Intent(themeActivity.this, ExercisesActivity.class);
+                startActivity(actionIntent);
+                break;
+            case OPEN_SCALE:
+                actionIntent = new Intent(themeActivity.this, ScaleDisplayActivity.class);
+                startActivity(actionIntent);
+                break;
+            case OPEN_PROFILE:
+                openProfileDialog();
+                break;
+            case OPEN_ABOUT_US:
+                break;
+            case OPEN_SIGN_OUT:
+                logoutOrCancel();
+                break;
+            case OPEN_COVID_STATS:
+                actionIntent = new Intent(themeActivity.this, Covid.class);
+                startActivity(actionIntent);
+                break;
+        }
+    }
 }
+
+

@@ -7,23 +7,17 @@
     tools:context=".Covid">
 
 
-    <WebView
-        android:id="@+id/wvCovidWebsite"
+    <fragment
+        android:id="@+id/fragmentCovid"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-    <ProgressBar
-        android:id="@+id/pbCovid19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="@dimen/margin_fourty_eight_dp"
-        android:minHeight="@dimen/margin_fourty_eight_dp"
-        android:progressTint="@color/color_gradient_start"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/covid_nav_graph" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
 
         <solid android:color="@color/color_button_pressed"/>
 
-        <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
+        <stroke android:color="@color/color_app_theme_accent" android:width="@dimen/margin_two_dp"/>
 
         <corners android:radius="@dimen/padding_eight_dp"/>
 
@@ -20,7 +20,7 @@
 
         <solid android:color="@color/color_button_pressed"/>
 
-        <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
+        <stroke android:color="@color/color_app_theme_accent" android:width="@dimen/margin_two_dp"/>
 
         <corners android:radius="@dimen/padding_eight_dp"/>
 
@@ -32,7 +32,7 @@
 
         <solid android:color="@color/color_white"/>
 
-        <stroke android:color="@color/color_gradient_start" android:width="@dimen/margin_two_dp"/>
+        <stroke android:color="@color/color_app_theme_accent" android:width="@dimen/margin_two_dp"/>
 
         <corners android:radius="@dimen/padding_eight_dp"/>
 

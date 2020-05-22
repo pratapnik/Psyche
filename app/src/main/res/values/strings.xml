@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Psyche</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_logout_description">Oh no! You\'re leaving...</string>
     <string name="label_are_you_sure">Are you sure?</string>
@@ -36,10 +35,26 @@
     <string name="label_popup_dialog_title">Your Email</string>
     <string name="label_ok">OK</string>
     <string name="label_profile_popup_dialog">Profile_Popup</string>
+    <string name="label_joke_popup_dialog">Joke_Popup</string>
     <string name="label_exercises_note">Note: More Exercises will be added soon</string>
-    <string name="label_exercises_title">EXERCISES</string>
+    <string name="label_activities_title">Activities</string>
     <string name="label_meditation_completed_message">One minute meditation is successfully completed</string>
     <string name="label_start_again_button_title">START AGAIN</string>
+    <string name="label_menu">MENU</string>
+    <string name="label_no_internet">No internet available</string>
+    <string name="label_refresh_button">Refresh</string>
+    <string name="label_bottom_sheet_tag">add_menu_bottom_sheet_fragment</string>
+    <string name="label_scale_title">Scale</string>
+    <string name="label_profile_title">Profile</string>
+    <string name="label_about_us_title">About us</string>
+    <string name="label_sign_out">Sign out</string>
+    <string name="label_covid_menu_title">Covid-19 Stats</string>
+    <string name="label_world_covid_button_title">Check out World covid-19 stats</string>
+    <string name="label_button_india_covid">Check out India Covid-19 Stats</string>
+    <string name="label_meditation_title">Meditation</string>
+    <string name="label_exercises_title">Exercises</string>
+    <string name="label_joke_title">Joke It</string>
+    <string name="label_copy_joke">Copy Joke</string>
 
 
 </resources>

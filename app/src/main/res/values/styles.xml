@@ -3,31 +3,81 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/color_gradient_start</item>
-        <item name="colorPrimaryDark">@color/color_gradient_start</item>
-        <item name="colorAccent">@color/color_gradient_start</item>
+        <item name="colorPrimary">@color/color_app_theme_accent</item>
+        <item name="colorPrimaryDark">@color/color_app_theme_accent</item>
+        <item name="colorAccent">@color/color_app_theme_accent</item>
         <item name="android:textColorSecondary">@color/color_white</item>
     </style>
 
     <style name="mBoldAppearnace">
         <item name="android:fontFamily">@font/mbold</item>
-        <item name="android:background">@color/color_gradient_start</item>
+        <item name="android:background">@color/color_app_theme_accent</item>
     </style>
 
     <style name="CustomHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:backgroundTint">@color/color_white</item>
         <item name="strokeWidth">@dimen/margin_two_dp</item>
         <item name="fontFamily">@font/mbold</item>
-        <item name="strokeColor">@color/color_gradient_start</item>
+        <item name="strokeColor">@color/color_custom_button</item>
         <item name="android:minHeight">@dimen/button_min_height</item>
-        <item name="android:textColor">@color/color_gradient_start</item>
+        <item name="android:textColor">@color/color_custom_button</item>
     </style>
 
     <style name="CustomFilledButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:backgroundTint">@color/color_gradient_start</item>
+        <item name="android:backgroundTint">@color/color_custom_button</item>
         <item name="fontFamily">@font/mbold</item>
         <item name="android:minHeight">@dimen/button_min_height</item>
         <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="CustomFilledNormalButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/color_custom_button</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="CustomNormalHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="strokeWidth">@dimen/margin_two_dp</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="strokeColor">@color/color_custom_button</item>
+        <item name="android:textColor">@color/color_custom_button</item>
+    </style>
+
+    <style name="CustomFilledButtonAlert" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/subtleRed</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="BoldTextStyleWhite" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="BoldTextStylePrimaryColor" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_app_theme_accent</item>
+    </style>
+
+    <style name="BoldTextStyleBlackColor" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="CustomNormalTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="CustomFilledCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/color_app_theme_accent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardElevation">@dimen/padding_eight_dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
 

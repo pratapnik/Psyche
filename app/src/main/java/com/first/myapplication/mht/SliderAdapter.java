@@ -21,17 +21,17 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     public int[] slide_images = {
-            R.drawable.one, R.drawable.two, R.drawable.three
+            R.drawable.ic_vp_login, R.drawable.ic_vp_answer, R.drawable.ic_vp_analyze
     };
 
     public String[] slide_headings = {
-            "Be Positive", "Be Strong", "Be optimistic"
+            "LOGIN", "ANSWER", "ANALYZE"
     };
 
     public String[] slide_descs = {
-            "It is not primarily our physical selves that limit us but rather our mindset about our physical limits",
-            "With the new day comes new strength and new thoughts",
-            "The past cannot be changed. The future is yet in your power"
+            "Login using Google account or using Email",
+            "Answer few questions to get your Results",
+            "Analyze your Mental Health with the help of your results"
     };
 
 
