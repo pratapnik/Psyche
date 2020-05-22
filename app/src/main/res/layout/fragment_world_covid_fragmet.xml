@@ -8,11 +8,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnIndiaStats"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_button_india_covid"
         style="@style/CustomFilledButton"
         android:layout_margin="@dimen/margin_sixteen_dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/wvCovidWorldWebsite"

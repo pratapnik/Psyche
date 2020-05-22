@@ -6,12 +6,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.first.myapplication.mht.actions.BottomSheetAction;
@@ -19,6 +17,8 @@ import com.first.myapplication.mht.widgets.JarvisMenuBottomSheet;
 import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +32,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
     Button timeManagement, anxiety, internet;
     TextView tvGreetingMessage;
-    Button menuButton;
+    ExtendedFloatingActionButton menuButton;
 
     GoogleSignInAccount googleSignInAccount;
 
@@ -62,11 +62,13 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         String formattedDate = dateFormat.format(calendarDate);
         String formattedDay = dayFormat.format(calendarDate);
 
+
+
+        hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
         String welcomeMessage = updateGreetingMessage(hourOfTheDay);
 
         tvGreetingMessage.setText(welcomeMessage + "\nIt's " + formattedDate + ", " + formattedDay);
-
-        hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
@@ -146,11 +148,13 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     private String updateGreetingMessage(int hour) {
         String greetingMessage;
         if (hour < 12 && hour >= 5)
-            greetingMessage = "Hey, Good Morning";
+            greetingMessage = "Good Morning";
         else if (hour >= 12 && hour < 16)
-            greetingMessage = "Hey, Good Afternoon";
+            greetingMessage = "Good Afternoon";
+        else if(hour>= 16 && hour<21)
+            greetingMessage = "Good Evening";
         else
-            greetingMessage = "Hey, Good Evening";
+            greetingMessage = "It's Night Time";
 
         return greetingMessage;
     }
@@ -172,7 +176,8 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     public void onActionListener(@NotNull BottomSheetAction action) {
         Intent actionIntent;
         switch (action) {
-            case OPEN_EXERCISES: actionIntent = new Intent(themeActivity.this, ExercisesActivity.class);
+            case OPEN_EXERCISES:
+                actionIntent = new Intent(themeActivity.this, ExercisesActivity.class);
                 startActivity(actionIntent);
                 break;
             case OPEN_SCALE:

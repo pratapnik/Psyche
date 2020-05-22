@@ -14,7 +14,7 @@
         android:fontFamily="@font/mbold"
         android:lineSpacingExtra="@dimen/padding_four_dp"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/text_sixteen_sp"
+        android:textSize="@dimen/text_twenty_eight_sp"
         app:layout_constraintBottom_toTopOf="@id/cv_time_management"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -229,13 +229,17 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.button.MaterialButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/btnMenu"
         style="@style/CustomFilledButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_menu"
-        android:layout_margin="@dimen/padding_eight_dp"
+        android:layout_margin="@dimen/margin_sixteen_dp"
+        app:icon="@drawable/ic_menu_icon"
+        app:iconSize="@dimen/margin_sixteen_dp"
+        android:padding="@dimen/padding_four_dp"
+        android:elevation="@dimen/padding_eight_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
