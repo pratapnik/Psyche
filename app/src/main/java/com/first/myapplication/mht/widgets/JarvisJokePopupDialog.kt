@@ -2,9 +2,11 @@ package com.first.myapplication.mht.widgets
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.first.myapplication.mht.R
@@ -19,7 +21,8 @@ class JarvisJokePopupDialog : DialogFragment() {
     lateinit var jokeSetupTextView: TextView
     lateinit var jokePunchlineTextView: TextView
     lateinit var jokeCopyButton: Button
-    lateinit var jokeOkButton: Button
+    lateinit var jokeShareButton: Button
+    lateinit var jokeCloseImageView: ImageView
 
     fun setJokes(jokes: JokesFormatClass) {
         this.jokesFormatClass = jokes
@@ -32,9 +35,10 @@ class JarvisJokePopupDialog : DialogFragment() {
         val view = layoutInflater?.inflate(R.layout.jarvis_joke_popup_dialog, null)
 
         jokeSetupTextView = view?.findViewById(R.id.tvJokeSetup)!!
-        jokePunchlineTextView = view.findViewById(R.id.tvJokeDescription)!!
-        jokeCopyButton = view.findViewById(R.id.btnCopyJoke)!!
-        jokeOkButton = view.findViewById(R.id.btnOkJoke)!!
+        jokePunchlineTextView = view.findViewById(R.id.tvJokeDescription)
+        jokeCopyButton = view.findViewById(R.id.btnCopyJoke)
+        jokeShareButton = view.findViewById(R.id.btnShareJoke)
+        jokeCloseImageView = view.findViewById(R.id.ivJokeClose)
 
         jokePopupDialog = AlertDialog.Builder(activity)
         jokePopupDialog.setView(view)
@@ -44,7 +48,11 @@ class JarvisJokePopupDialog : DialogFragment() {
 
         val fullJokeText = jokesFormatClass.jokeSetup.plus("\n").plus(jokesFormatClass.jokePunchline)
 
-        jokeOkButton.setOnClickListener {
+        jokeShareButton.setOnClickListener {
+            actionListener?.onShareJokeListener(fullJokeText)
+        }
+
+        jokeCloseImageView.setOnClickListener {
             dismiss()
         }
 
@@ -58,6 +66,7 @@ class JarvisJokePopupDialog : DialogFragment() {
 
     interface ActionListener{
         fun onCopyListener(jokeText: String)
+        fun onShareJokeListener(jokeText: String)
     }
 
 }
