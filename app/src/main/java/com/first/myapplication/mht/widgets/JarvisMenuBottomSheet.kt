@@ -31,12 +31,6 @@ class JarvisMenuBottomSheet : BottomSheetDialogFragment() {
 
         btnScale.setOnClickListener {
             actionListener?.onActionListener(BottomSheetAction.OPEN_SCALE)
-
-        }
-
-        btnAboutUs.setOnClickListener {
-            actionListener?.onActionListener(BottomSheetAction.OPEN_ABOUT_US)
-
         }
 
         btnExercises.setOnClickListener {
