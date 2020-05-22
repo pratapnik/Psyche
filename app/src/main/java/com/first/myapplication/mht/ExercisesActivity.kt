@@ -50,7 +50,6 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
         btnRandomJoke.setOnClickListener {
             showProgressDialogWithTitle("Getting Joke", progressDialog)
             val result = namesAgeApiService.getActivity()
-            var snackBar:Snackbar
             result.subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(object : DisposableSingleObserver<BoredApiDataModel>() {
@@ -60,8 +59,7 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
                         }
 
                         override fun onError(e: Throwable) {
-                            snackBar = Snackbar.make(it, "There is some problem", Snackbar.LENGTH_LONG)
-                            snackBar.show()
+                            clExercise.showSnackBar(getString(R.string.label_error_message))
                             e.printStackTrace()
                         }
                     })

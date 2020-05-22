@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="@dimen/margin_sixteen_dp"
@@ -10,7 +9,7 @@
         android:id="@+id/ivCloseBottomSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_close"
+        android:src="@drawable/ic_close_white"
         android:layout_gravity="end"
         android:padding="@dimen/margin_twelve_dp"
         />
@@ -22,7 +21,7 @@
         android:clickable="true"
         android:text="@string/label_activities_title"
         android:layout_marginTop="@dimen/margin_twelve_dp"
-        style="@style/CustomNormalTextButton"
+        style="@style/NormalTextButtonPrimaryAccent"
         android:textAlignment="textStart"
         android:textSize="@dimen/text_twenty_sp"
         android:focusable="true" />
@@ -35,7 +34,7 @@
         android:focusable="true"
         android:layout_marginTop="@dimen/margin_twelve_dp"
         android:text="@string/label_scale_title"
-        style="@style/CustomNormalTextButton"
+        style="@style/NormalTextButtonPrimaryAccent"
         android:textAlignment="textStart"
         android:textSize="@dimen/text_twenty_sp"
         />
@@ -48,7 +47,7 @@
         android:focusable="true"
         android:layout_marginTop="@dimen/margin_twelve_dp"
         android:text="@string/label_profile_title"
-        style="@style/CustomNormalTextButton"
+        style="@style/NormalTextButtonPrimaryAccent"
         android:textAlignment="textStart"
         android:textSize="@dimen/text_twenty_sp"
         />
@@ -61,7 +60,7 @@
         android:focusable="true"
         android:layout_marginTop="@dimen/margin_twelve_dp"
         android:text="@string/label_sign_out"
-        style="@style/CustomNormalTextButton"
+        style="@style/NormalTextButtonPrimaryAccent"
         android:textAlignment="textStart"
         android:textSize="@dimen/text_twenty_sp"
         />

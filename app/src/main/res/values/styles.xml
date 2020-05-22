@@ -7,11 +7,21 @@
         <item name="colorPrimaryDark">@color/color_app_theme_accent</item>
         <item name="colorAccent">@color/color_app_theme_accent</item>
         <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
     <style name="mBoldAppearnace">
         <item name="android:fontFamily">@font/mbold</item>
         <item name="android:background">@color/color_app_theme_accent</item>
+    </style>
+
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/custom_bottom_sheet</item>
     </style>
 
     <style name="CustomHollowButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -70,6 +80,12 @@
         <item name="android:backgroundTint">@color/color_white</item>
         <item name="fontFamily">@font/mbold</item>
         <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="NormalTextButtonPrimaryAccent" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="fontFamily">@font/mbold</item>
+        <item name="android:textColor">@color/color_white</item>
     </style>
 
     <style name="CustomFilledCardStyle" parent="Widget.MaterialComponents.CardView">
