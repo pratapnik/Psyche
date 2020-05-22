@@ -191,8 +191,6 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 openProfileDialog();
                 break;
             case OPEN_ABOUT_US:
-                actionIntent = new Intent(themeActivity.this, AboutUsActivity.class);
-                startActivity(actionIntent);
                 break;
             case OPEN_SIGN_OUT:
                 logoutOrCancel();
