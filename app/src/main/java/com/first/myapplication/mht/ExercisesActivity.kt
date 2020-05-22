@@ -83,6 +83,14 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
         clExercise.showSnackBar("Joke is copied to clipboard")
     }
 
+    private fun sendJoke(text: String){
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text)
+        shareIntent.type = "text/plain"
+        val sendIntent = Intent.createChooser(shareIntent, "Send Joke")
+        startActivity(sendIntent)
+    }
+
     fun openJokeDialog(jokesFormatClass: JokesFormatClass){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack(null)
@@ -97,5 +105,9 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
 
     override fun onCopyListener(jokeText: String) {
         copyText(jokeText)
+    }
+
+    override fun onShareJokeListener(jokeText: String) {
+        sendJoke(jokeText)
     }
 }
