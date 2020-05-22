@@ -1,14 +1,19 @@
 package com.first.myapplication.mht
 
 import android.app.ProgressDialog
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.first.myapplication.mht.data.BoredApiDataModel
 import com.first.myapplication.mht.data.BoredApiService
 import com.first.myapplication.mht.data.JokesFormatClass
 import com.first.myapplication.mht.utils.hideProgressDialogWithTitle
 import com.first.myapplication.mht.utils.showProgressDialogWithTitle
+import com.first.myapplication.mht.utils.showSnackBar
 import com.first.myapplication.mht.widgets.JarvisJokePopupDialog
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +21,7 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_exercises.*
 
-class ExercisesActivity : AppCompatActivity() {
+class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListener {
 
     lateinit var exerciseBundle: Bundle
     lateinit var jokePopupDialog: JarvisJokePopupDialog
@@ -31,7 +36,6 @@ class ExercisesActivity : AppCompatActivity() {
         toolbarExercises.setNavigationOnClickListener {
             onBackPressed()
         }
-
 
         progressDialog = ProgressDialog(this)
         exerciseBundle = Bundle()
@@ -71,6 +75,14 @@ class ExercisesActivity : AppCompatActivity() {
         startActivity(displayExerciseIntent)
     }
 
+    private fun copyText(text: String) {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("joke", text)
+        clipboard.setPrimaryClip(clip)
+
+        clExercise.showSnackBar("Joke is copied to clipboard")
+    }
+
     fun openJokeDialog(jokesFormatClass: JokesFormatClass){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack(null)
@@ -79,7 +91,11 @@ class ExercisesActivity : AppCompatActivity() {
                 fragmentTransaction,
                 resources.getString(R.string.label_joke_popup_dialog)
         )
-
+        jokePopupDialog.actionListener = this
         hideProgressDialogWithTitle(progressDialog)
+    }
+
+    override fun onCopyListener(jokeText: String) {
+        copyText(jokeText)
     }
 }
