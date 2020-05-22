@@ -56,6 +56,7 @@
     <string name="label_joke_title">Joke It</string>
     <string name="label_copy_joke">Copy</string>
     <string name="label_share_button">Share</string>
+    <string name="label_random_joke">Random Joke</string>
 
 
 </resources>
