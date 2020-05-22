@@ -13,11 +13,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.android.material.snackbar.Snackbar;
 
 public class question extends AppCompatActivity {
 
@@ -30,6 +32,7 @@ public class question extends AppCompatActivity {
     private Intent mIntent = new Intent();
     private int type;
     private boolean reverse = false;
+    private ConstraintLayout clQuestion;
 
     loginActivity loginActivity = new loginActivity();
 
@@ -53,6 +56,7 @@ public class question extends AppCompatActivity {
         mOptionsRG = findViewById(R.id.rg_five_options);
         mNext = findViewById(R.id.btn_next);
         toolbarQuestion = findViewById(R.id.toolbar_question_activity);
+        clQuestion = findViewById(R.id.clQuestion);
 
         progressDialog = new ProgressDialog(this);
         loginActivity.showProgressDialogWithTitle("Loading the questions..", progressDialog);
@@ -146,7 +150,7 @@ public class question extends AppCompatActivity {
                 setLeaveAnimation();
                 break;
             case -1:
-                Toast.makeText(this, "MARK ATLEAST ONE CHOICE", Toast.LENGTH_LONG).show();
+                showSnackBar(getString(R.string.label_select_answer_error_message));
                 break;
         }
 
@@ -156,6 +160,7 @@ public class question extends AppCompatActivity {
                 i.putExtra("score", mScore);
                 i.putExtra("type",type);
                 startActivity(i);
+                finish();
             } else {
                 if (mQuestionNo == 7) {
                     mNext.setText("SUBMIT");
@@ -171,6 +176,7 @@ public class question extends AppCompatActivity {
                 i.putExtra("score", mScore);
                 i.putExtra("type",type);
                 startActivity(i);
+                finish();
             } else {
                 if (mQuestionNo == 17) {
                     mNext.setText("SUBMIT");
@@ -186,6 +192,7 @@ public class question extends AppCompatActivity {
                 i.putExtra("score", mScore);
                 i.putExtra("type",type);
                 startActivity(i);
+                finish();
             } else {
                 if (mQuestionNo == 22) {
                     mNext.setText("SUBMIT");
@@ -197,6 +204,11 @@ public class question extends AppCompatActivity {
                 updateQuestion();
             }
         }
+    }
+
+    private void showSnackBar(String snackBarText){
+        Snackbar snackbar = Snackbar.make(clQuestion, snackBarText, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     private void setLeaveAnimation(){

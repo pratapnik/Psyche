@@ -58,6 +58,7 @@
     <string name="label_share_button">Share</string>
     <string name="label_random_joke">Random Joke</string>
     <string name="label_error_message">There is some problem</string>
+    <string name="label_select_answer_error_message">Please select an answer</string>
 
 
 </resources>

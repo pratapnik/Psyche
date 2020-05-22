@@ -42,7 +42,6 @@ class FinalScoreActivity : AppCompatActivity() {
 
     }
 
-
     fun getYourScoreValue(): Int {
         scoreIntent = intent
         return scoreIntent.getIntExtra("score", 0)
