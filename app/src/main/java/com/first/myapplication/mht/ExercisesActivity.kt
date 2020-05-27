@@ -6,7 +6,6 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.first.myapplication.mht.data.BoredApiDataModel
 import com.first.myapplication.mht.data.BoredApiService
@@ -15,7 +14,6 @@ import com.first.myapplication.mht.utils.hideProgressDialogWithTitle
 import com.first.myapplication.mht.utils.showProgressDialogWithTitle
 import com.first.myapplication.mht.utils.showSnackBar
 import com.first.myapplication.mht.widgets.JarvisJokePopupDialog
-import com.google.android.material.snackbar.Snackbar
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
@@ -77,11 +75,10 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("joke", text)
         clipboard.setPrimaryClip(clip)
-
         clExercise.showSnackBar("Joke is copied to clipboard")
     }
 
-    private fun sendJoke(text: String){
+    private fun sendJoke(text: String) {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.putExtra(Intent.EXTRA_TEXT, text)
         shareIntent.type = "text/plain"
@@ -89,7 +86,7 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
         startActivity(sendIntent)
     }
 
-    fun openJokeDialog(jokesFormatClass: JokesFormatClass){
+    fun openJokeDialog(jokesFormatClass: JokesFormatClass) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack(null)
         jokePopupDialog.setJokes(jokesFormatClass)

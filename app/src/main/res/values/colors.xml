@@ -28,4 +28,6 @@
     <color name="color_yellow_lime">#eeff41</color>
     <color name="color_text_light">#AFC3DC</color>
     <color name="color_toolbar_title">#FFFFFF</color>
+    <color name="color_background_bottom_curved">@color/colorPrimary</color>
+
 </resources>

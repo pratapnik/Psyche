@@ -1,11 +1,9 @@
 package com.first.myapplication.mht;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -21,7 +19,6 @@ import com.first.myapplication.mht.widgets.ProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
@@ -59,12 +56,14 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         jarvisMenuBottomSheet = new JarvisMenuBottomSheet();
         jarvisMenuBottomSheet.addOnActionClickListener(this);
 
+        Window window = getWindow();
+        window.setStatusBarColor(getResources().getColor(R.color.color_background_bottom_curved));
+
         Date calendarDate = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
         String formattedDate = dateFormat.format(calendarDate);
         String formattedDay = dayFormat.format(calendarDate);
-
 
 
         hourOfTheDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
@@ -154,7 +153,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
             greetingMessage = "Good Morning";
         else if (hour >= 12 && hour < 16)
             greetingMessage = "Good Afternoon";
-        else if(hour>= 16 && hour<21)
+        else if (hour >= 16 && hour < 21)
             greetingMessage = "Good Evening";
         else
             greetingMessage = "It's Night Time";

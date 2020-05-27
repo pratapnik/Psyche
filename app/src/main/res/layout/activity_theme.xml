@@ -6,29 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".themeActivity">
 
-    <TextView
-        android:id="@+id/tvGreetingMessage"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/llThemeText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_sixteen_dp"
-        android:fontFamily="@font/mbold"
-        android:lineSpacingExtra="@dimen/padding_four_dp"
-        android:textColor="@color/textColor"
-        android:textSize="@dimen/text_twenty_eight_sp"
-        app:layout_constraintBottom_toTopOf="@id/cv_time_management"
+        android:orientation="vertical"
+        android:elevation="@dimen/margin_sixteen_dp"
+        android:background="@drawable/jarvis_custom_background_yellow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivAppIconTheme"
-        tools:text="Hello" />
+        >
 
-    <ImageView
-        android:id="@+id/ivAppIconTheme"
-        android:layout_width="@dimen/margin_thirty_two_dp"
-        android:layout_height="@dimen/margin_thirty_two_dp"
-        android:layout_margin="@dimen/margin_sixteen_dp"
-        android:src="@drawable/ic_psyche_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvGreetingMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_sixteen_dp"
+            android:fontFamily="@font/mbold"
+            android:lineSpacingExtra="@dimen/padding_four_dp"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_twenty_eight_sp"
+            tools:text="Hello" />
+
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_time_management"
@@ -38,10 +39,11 @@
         android:layout_marginRight="@dimen/margin_twelve_dp"
         app:cardCornerRadius="@dimen/padding_eight_dp"
         app:cardElevation="@dimen/padding_eight_dp"
+        android:layout_marginTop="@dimen/margin_thirty_two_dp"
         app:layout_constraintBottom_toTopOf="@id/cv_anxiety"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvGreetingMessage">
+        app:layout_constraintTop_toBottomOf="@id/llThemeText">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -232,7 +234,7 @@
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/btnMenu"
         style="@style/CustomFilledButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_menu"
         android:layout_margin="@dimen/margin_sixteen_dp"
@@ -240,6 +242,7 @@
         app:iconSize="@dimen/margin_sixteen_dp"
         android:padding="@dimen/padding_four_dp"
         android:elevation="@dimen/padding_eight_dp"
+        app:iconGravity="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
