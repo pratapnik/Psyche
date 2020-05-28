@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.first.myapplication.mht.R
 import kotlinx.android.synthetic.main.fragment_meditation.*
 
+//Created new branch JARVIS
 class MeditationFragment : Fragment() {
 
     lateinit var tvTimer: TextView
