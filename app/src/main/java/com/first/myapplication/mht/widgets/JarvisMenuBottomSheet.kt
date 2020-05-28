@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.first.myapplication.mht.actions.JarvisBottomSheetAction
 import com.first.myapplication.mht.R
+import com.first.myapplication.mht.actions.JarvisBottomSheetAction
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.jarvis_menu_bottom_sheet.*
 
@@ -50,7 +50,7 @@ class JarvisMenuBottomSheet : BottomSheetDialogFragment() {
         this.actionListener = onActionClickListener
     }
 
-    fun closeBottomSheet(){
+    fun closeBottomSheet() {
         dismiss()
     }
 
