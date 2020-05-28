@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/covid_nav_graph" />
+        app:navGraph="@navigation/jarvis_covid_nav_graph" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

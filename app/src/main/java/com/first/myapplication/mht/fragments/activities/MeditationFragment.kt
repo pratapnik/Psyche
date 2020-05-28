@@ -6,7 +6,9 @@ import android.view.*
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.first.myapplication.mht.R
+import kotlinx.android.synthetic.main.fragment_meditation.*
 
 class MeditationFragment : Fragment() {
 
@@ -27,6 +29,7 @@ class MeditationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         startButton.setOnClickListener {
             startButton.visibility = View.GONE
             val timer = object : CountDownTimer(60000, 1000) {

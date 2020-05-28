@@ -7,151 +7,27 @@
     android:id="@+id/clExercise"
     tools:context=".ExercisesActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarExercises"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/ivExerciseBack"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/color_app_theme_accent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        android:layout_margin="@dimen/margin_sixteen_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_back"
-        app:title="@string/label_activities_title"
-        app:titleTextAppearance="@style/mBoldAppearnace"
-        app:titleTextColor="@color/color_toolbar_title" />
+        />
 
-    <ScrollView
+    <fragment
+        android:id="@+id/fragmentActivities"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scrollbarSize="@dimen/padding_eight_dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercises"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tvExercisesTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                style="@style/BoldTextStyleBlackColor"
-                android:text="@string/label_exercises_title"
-                android:textSize="@dimen/text_twenty_four_sp"
-                android:textAllCaps="true"
-                android:layout_margin="@dimen/margin_sixteen_dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/exercise_card_height"
-                android:layout_margin="@dimen/margin_twelve_dp"
-                style="@style/CustomFilledCardStyle"
-                app:layout_constraintBottom_toBottomOf="@id/glHorizontalUpper"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvExercisesTitle"
-                >
-
-                <LinearLayout
-                    android:id="@+id/llMeditation"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    style="@style/CustomFilledCardStyle"
-                    android:paddingStart="@dimen/margin_twenty_dp"
-                    android:paddingLeft="@dimen/margin_twenty_dp"
-                    android:paddingTop="@dimen/padding_four_dp"
-                    android:paddingEnd="@dimen/margin_twenty_dp"
-                    android:paddingRight="@dimen/margin_twenty_dp"
-                    android:paddingBottom="@dimen/padding_four_dp"
-                    >
-
-                    <ImageView
-                        android:id="@+id/ivMeditationIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_meditation" />
-
-                    <TextView
-                        android:id="@+id/tvMeditationTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/padding_eight_dp"
-                        android:fontFamily="@font/mbold"
-                        android:text="@string/label_meditation_title"
-                        android:textColor="@color/color_white" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/glHorizontalUpper"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.4" />
-
-            <TextView
-                android:id="@+id/tvJokeTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                style="@style/BoldTextStyleBlackColor"
-                android:text="@string/label_joke_title"
-                android:textSize="@dimen/text_twenty_four_sp"
-                android:textAllCaps="true"
-                android:layout_margin="@dimen/margin_sixteen_dp"
-                app:layout_constraintTop_toBottomOf="@id/glHorizontalUpper"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnRandomJoke"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomFilledCardStyle"
-                android:layout_margin="@dimen/margin_sixteen_dp"
-                app:layout_constraintTop_toBottomOf="@id/tvJokeTitle"
-                app:layout_constraintStart_toStartOf="@id/tvJokeTitle"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_twenty_four_dp"
-                    android:gravity="center"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Get Random Joke"
-                        style="@style/BoldTextStyleWhite"
-                        android:textSize="@dimen/text_twenty_four_sp"
-                        />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_random_icon"
-                        android:layout_marginStart="@dimen/margin_sixteen_dp"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </ScrollView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivExerciseBack"
+        app:navGraph="@navigation/jarvis_activities_nav_graph" />
 
 
 

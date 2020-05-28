@@ -13,14 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CovidActivity"></activity>
-        <activity android:name=".DisplayExerciseActivity" />
         <activity android:name=".ExercisesActivity" />
         <activity android:name=".EmailPasswordLoginActivity" />
         <activity
             android:name=".EmailPasswordSignUpActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".AboutUsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FinalScoreActivity"
