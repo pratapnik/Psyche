@@ -2,7 +2,6 @@ package com.first.myapplication.mht.widgets
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
@@ -10,12 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.first.myapplication.mht.R
-import com.first.myapplication.mht.data.JokesFormatClass
+import com.first.myapplication.mht.data.JarvisJokesFormatClass
 
 class JarvisJokePopupDialog : DialogFragment() {
 
     private lateinit var jokePopupDialog: AlertDialog.Builder
-    lateinit var jokesFormatClass: JokesFormatClass
+    lateinit var jokesFormatClass: JarvisJokesFormatClass
     var actionListener: ActionListener ?=null
 
     lateinit var jokeSetupTextView: TextView
@@ -24,7 +23,7 @@ class JarvisJokePopupDialog : DialogFragment() {
     lateinit var jokeShareButton: Button
     lateinit var jokeCloseImageView: ImageView
 
-    fun setJokes(jokes: JokesFormatClass) {
+    fun setJokes(jokes: JarvisJokesFormatClass) {
         this.jokesFormatClass = jokes
     }
 

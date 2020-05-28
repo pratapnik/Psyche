@@ -17,7 +17,7 @@ import com.first.myapplication.mht.R
 import kotlinx.android.synthetic.main.fragment_india_covid.*
 import kotlinx.android.synthetic.main.fragment_world_covid_fragmet.*
 
-class WorldCovidFragmet : Fragment() {
+class WorldCovidFragment : Fragment() {
 
     lateinit var webViewWorld: WebView
     lateinit var progressBarWorld: ProgressBar

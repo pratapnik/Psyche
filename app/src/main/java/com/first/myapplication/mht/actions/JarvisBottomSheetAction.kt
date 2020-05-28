@@ -1,6 +1,6 @@
 package com.first.myapplication.mht.actions
 
-enum class BottomSheetAction {
+enum class JarvisBottomSheetAction {
     OPEN_PROFILE,
     OPEN_ABOUT_US,
     OPEN_SIGN_OUT,

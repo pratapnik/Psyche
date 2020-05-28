@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_score.*
+import kotlinx.android.synthetic.main.activity_final_score.*
 
 class FinalScoreActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class FinalScoreActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_score)
+        setContentView(R.layout.activity_final_score)
 
         scoreValue = getYourScoreValue()
         themeType = getYourThemeType()
@@ -31,7 +31,7 @@ class FinalScoreActivity : AppCompatActivity() {
         }
 
         btnHome.setOnClickListener {
-            val themeActivityIntent = Intent(this, themeActivity::class.java)
+            val themeActivityIntent = Intent(this, PsychoThemeActivity::class.java)
             startActivity(themeActivityIntent)
         }
 

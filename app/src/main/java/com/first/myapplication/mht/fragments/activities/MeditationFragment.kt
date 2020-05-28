@@ -1,4 +1,4 @@
-package com.first.myapplication.mht.fragments
+package com.first.myapplication.mht.fragments.activities
 
 import android.os.Bundle
 import android.os.CountDownTimer

@@ -17,8 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import static com.first.myapplication.mht.utils.UtilsKt.hideProgressDialogWithTitle;
-import static com.first.myapplication.mht.utils.UtilsKt.showProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.showProgressDialogWithTitle;
 
 public class EmailPasswordLoginActivity extends AppCompatActivity {
     private EditText mEmail, mPassword;
@@ -73,7 +73,7 @@ public class EmailPasswordLoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 hideProgressDialogWithTitle(mProgDiag);
                                 showToast("Successfully signed in");
-                                Intent intent = new Intent(EmailPasswordLoginActivity.this, themeActivity.class);
+                                Intent intent = new Intent(EmailPasswordLoginActivity.this, PsychoThemeActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

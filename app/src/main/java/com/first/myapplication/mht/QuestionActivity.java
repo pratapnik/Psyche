@@ -9,7 +9,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,7 +20,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.google.android.material.snackbar.Snackbar;
 
-public class question extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
 
     private TextView mQuestion;
     private Button mChoice1, mChoice2, mChoice3, mChoice4, mChoice5, mNext;
@@ -34,7 +33,7 @@ public class question extends AppCompatActivity {
     private boolean reverse = false;
     private ConstraintLayout clQuestion;
 
-    loginActivity loginActivity = new loginActivity();
+    LoginOptionsActivity loginActivity = new LoginOptionsActivity();
 
     ProgressDialog progressDialog;
 
@@ -61,8 +60,8 @@ public class question extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         loginActivity.showProgressDialogWithTitle("Loading the questions..", progressDialog);
 
-        animationLeave = AnimationUtils.loadAnimation(question.this, R.anim.jarvis_leave_left_to_right);
-        animationLeftToRight = AnimationUtils.loadAnimation(question.this, R.anim.lefttoright);
+        animationLeave = AnimationUtils.loadAnimation(QuestionActivity.this, R.anim.jarvis_leave_left_to_right);
+        animationLeftToRight = AnimationUtils.loadAnimation(QuestionActivity.this, R.anim.lefttoright);
 
         toolbarQuestion.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,7 +153,7 @@ public class question extends AppCompatActivity {
                 break;
         }
 
-        Intent i = new Intent(question.this, FinalScoreActivity.class);
+        Intent i = new Intent(QuestionActivity.this, FinalScoreActivity.class);
         if (type == 0 && mOptionsRG.getCheckedRadioButtonId() != -1) {
             if (mQuestionNo == 8) {
                 i.putExtra("score", mScore);

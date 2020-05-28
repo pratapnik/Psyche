@@ -9,7 +9,7 @@ import androidx.fragment.app.DialogFragment
 import com.first.myapplication.mht.R
 import com.google.firebase.auth.FirebaseAuth
 
-class ProfilePopupDialog : DialogFragment() {
+class JarvisProfilePopupDialog : DialogFragment() {
     private lateinit var profilePopupDialog: AlertDialog.Builder
     private lateinit var btnOk: TextView
 

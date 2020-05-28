@@ -18,8 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import static com.first.myapplication.mht.utils.UtilsKt.hideProgressDialogWithTitle;
-import static com.first.myapplication.mht.utils.UtilsKt.showProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.showProgressDialogWithTitle;
 
 public class EmailPasswordSignUpActivity extends AppCompatActivity {
 
@@ -77,7 +77,7 @@ public class EmailPasswordSignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 hideProgressDialogWithTitle(mProgDiag);
                                 showToast("Account created successfully.");
-                                Intent intent = new Intent(EmailPasswordSignUpActivity.this, themeActivity.class);
+                                Intent intent = new Intent(EmailPasswordSignUpActivity.this, PsychoThemeActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {

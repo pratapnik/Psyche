@@ -3,10 +3,10 @@ package com.first.myapplication.mht
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.first.myapplication.mht.fragments.MeditationFragment
+import com.first.myapplication.mht.fragments.activities.MeditationFragment
 import kotlinx.android.synthetic.main.activity_display_excercise.*
 
-class DisplayExcercise : AppCompatActivity() {
+class DisplayExerciseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

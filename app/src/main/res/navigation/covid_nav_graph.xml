@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/worldCovidFragmet"
-        android:name="com.first.myapplication.mht.fragments.covid.WorldCovidFragmet"
+        android:name="com.first.myapplication.mht.fragments.covid.WorldCovidFragment"
         android:label="fragment_world_covid_fragmet"
         tools:layout="@layout/fragment_world_covid_fragmet" >
         <action

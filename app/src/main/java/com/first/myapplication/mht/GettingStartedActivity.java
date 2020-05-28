@@ -13,7 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer;
 
-public class MainActivity extends AppCompatActivity {
+public class GettingStartedActivity extends AppCompatActivity {
 
     private ViewPager mSlideViewPager;
     private LinearLayout mDotLayout;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_getting_started);
 
         mSlideViewPager = findViewById(R.id.slideViewPager);
         mDotLayout = findViewById(R.id.dotlayout);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, loginActivity.class);
+                Intent intent = new Intent(GettingStartedActivity.this, LoginOptionsActivity.class);
                 startActivity(intent);
             }
         });

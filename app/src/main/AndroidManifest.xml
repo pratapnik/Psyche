@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Covid"></activity>
-        <activity android:name=".DisplayExcercise" />
+        <activity android:name=".CovidActivity"></activity>
+        <activity android:name=".DisplayExerciseActivity" />
         <activity android:name=".ExercisesActivity" />
         <activity android:name=".EmailPasswordLoginActivity" />
         <activity
@@ -26,16 +26,16 @@
             android:name=".FinalScoreActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".question"
+            android:name=".QuestionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".themeActivity"
+            android:name=".PsychoThemeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".loginActivity"
+            android:name=".LoginOptionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".GettingStartedActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"

@@ -21,14 +21,6 @@ fun hideProgressDialogWithTitle(progressDialog: ProgressDialog) {
     progressDialog.dismiss()
 }
 
-fun getProgressDrawable(context: Context): CircularProgressDrawable {
-    return CircularProgressDrawable(context).apply {
-        strokeWidth = 10f
-        centerRadius = 50f
-        start()
-    }
-}
-
 fun View.showSnackBar(snackbarText: String){
     val snackbar = Snackbar.make(this, snackbarText, Snackbar.LENGTH_LONG)
     snackbar.show()

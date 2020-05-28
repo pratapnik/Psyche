@@ -9,7 +9,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.first.myapplication.mht.data.BoredApiDataModel
 import com.first.myapplication.mht.data.BoredApiService
-import com.first.myapplication.mht.data.JokesFormatClass
+import com.first.myapplication.mht.data.JarvisJokesFormatClass
 import com.first.myapplication.mht.utils.hideProgressDialogWithTitle
 import com.first.myapplication.mht.utils.showProgressDialogWithTitle
 import com.first.myapplication.mht.utils.showSnackBar
@@ -52,7 +52,7 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(object : DisposableSingleObserver<BoredApiDataModel>() {
                         override fun onSuccess(boredApiFromApi: BoredApiDataModel) {
-                            val jokesFormatClass = JokesFormatClass(boredApiFromApi.jokeSetup, boredApiFromApi.jokePunchline)
+                            val jokesFormatClass = JarvisJokesFormatClass(boredApiFromApi.jokeSetup, boredApiFromApi.jokePunchline)
                             openJokeDialog(jokesFormatClass)
                         }
 
@@ -66,7 +66,7 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
     }
 
     private fun loadExcercise(exerciseBundle: Bundle) {
-        val displayExerciseIntent = Intent(this, DisplayExcercise::class.java)
+        val displayExerciseIntent = Intent(this, DisplayExerciseActivity::class.java)
         displayExerciseIntent.putExtra("exTypeBundle", exerciseBundle)
         startActivity(displayExerciseIntent)
     }
@@ -86,7 +86,7 @@ class ExercisesActivity : AppCompatActivity(), JarvisJokePopupDialog.ActionListe
         startActivity(sendIntent)
     }
 
-    fun openJokeDialog(jokesFormatClass: JokesFormatClass) {
+    fun openJokeDialog(jokesFormatClass: JarvisJokesFormatClass) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack(null)
         jokePopupDialog.setJokes(jokesFormatClass)

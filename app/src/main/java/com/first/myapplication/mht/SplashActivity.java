@@ -8,13 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,10 +63,10 @@ public class SplashActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user) {
         if (user != null) {
-            Intent i = new Intent(SplashActivity.this, themeActivity.class);
+            Intent i = new Intent(SplashActivity.this, PsychoThemeActivity.class);
             startActivity(i);
         } else {
-            Intent i = new Intent(SplashActivity.this, MainActivity.class);
+            Intent i = new Intent(SplashActivity.this, GettingStartedActivity.class);
             startActivity(i);
             finish();
         }

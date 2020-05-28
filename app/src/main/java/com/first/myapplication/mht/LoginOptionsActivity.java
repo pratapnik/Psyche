@@ -37,7 +37,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Random;
 
-public class loginActivity extends AppCompatActivity {
+public class LoginOptionsActivity extends AppCompatActivity {
 
     TextView textView, textViewEmail, textViewDidYouKnow, tvFact;
 
@@ -62,7 +62,7 @@ public class loginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_options);
         Firebase.setAndroidContext(this);
 
         textViewDidYouKnow = findViewById(R.id.tv_did_you_know);
@@ -77,13 +77,13 @@ public class loginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        leftToRightAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.lefttoright);
+        leftToRightAnimation = AnimationUtils.loadAnimation(LoginOptionsActivity.this, R.anim.lefttoright);
 
-        Animation animation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.fadein);
+        Animation animation = AnimationUtils.loadAnimation(LoginOptionsActivity.this, R.anim.fadein);
         textViewDidYouKnow.startAnimation(animation);
         textView.startAnimation(animation);
 
-        Animation slideUpAnimation = AnimationUtils.loadAnimation(loginActivity.this, R.anim.slide_up);
+        Animation slideUpAnimation = AnimationUtils.loadAnimation(LoginOptionsActivity.this, R.anim.slide_up);
         constraintLayout.startAnimation(slideUpAnimation);
 
         btnGoogleSign.setColorScheme(SignInButton.COLOR_DARK);
@@ -114,7 +114,7 @@ public class loginActivity extends AppCompatActivity {
         textViewEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(loginActivity.this, EmailPasswordSignUpActivity.class);
+                Intent intent = new Intent(LoginOptionsActivity.this, EmailPasswordSignUpActivity.class);
                 startActivity(intent);
             }
         });
@@ -135,7 +135,7 @@ public class loginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                Toast.makeText(loginActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginOptionsActivity.this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
                 btnGoogleSign.setVisibility(View.VISIBLE);
                 hideProgressDialogWithTitle(progressDialog);
                 // ...
@@ -156,7 +156,7 @@ public class loginActivity extends AppCompatActivity {
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(loginActivity.this, "Couldn't Sign in",
+                            Toast.makeText(LoginOptionsActivity.this, "Couldn't Sign in",
                                     Toast.LENGTH_SHORT).show();
                             btnGoogleSign.setVisibility(View.VISIBLE);
                             hideProgressDialogWithTitle(progressDialog);
@@ -184,7 +184,7 @@ public class loginActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser user) {
         if (user != null) {
             hideProgressDialogWithTitle(progressDialog);
-            Intent i = new Intent(loginActivity.this, themeActivity.class);
+            Intent i = new Intent(LoginOptionsActivity.this, PsychoThemeActivity.class);
             startActivity(i);
         }
     }

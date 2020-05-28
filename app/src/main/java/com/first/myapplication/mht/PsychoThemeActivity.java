@@ -13,9 +13,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.first.myapplication.mht.actions.BottomSheetAction;
+import com.first.myapplication.mht.actions.JarvisBottomSheetAction;
 import com.first.myapplication.mht.widgets.JarvisMenuBottomSheet;
-import com.first.myapplication.mht.widgets.ProfilePopupDialog;
+import com.first.myapplication.mht.widgets.JarvisProfilePopupDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -28,7 +28,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class themeActivity extends AppCompatActivity implements View.OnClickListener, JarvisMenuBottomSheet.ActionListener {
+public class PsychoThemeActivity extends AppCompatActivity implements View.OnClickListener, JarvisMenuBottomSheet.ActionListener {
 
     Button timeManagement, anxiety, internet;
     TextView tvGreetingMessage;
@@ -38,13 +38,13 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
     private int hourOfTheDay;
 
-    private ProfilePopupDialog profilePopupDialog;
+    private JarvisProfilePopupDialog profilePopupDialog;
     private JarvisMenuBottomSheet jarvisMenuBottomSheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_theme);
+        setContentView(R.layout.activity_psycho_theme);
 
         timeManagement = findViewById(R.id.timeManagement);
         anxiety = findViewById(R.id.anxiety);
@@ -52,7 +52,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         tvGreetingMessage = findViewById(R.id.tvGreetingMessage);
         menuButton = findViewById(R.id.btnMenu);
 
-        profilePopupDialog = new ProfilePopupDialog();
+        profilePopupDialog = new JarvisProfilePopupDialog();
         jarvisMenuBottomSheet = new JarvisMenuBottomSheet();
         jarvisMenuBottomSheet.addOnActionClickListener(this);
 
@@ -74,7 +74,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
         googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
-        Animation animation = AnimationUtils.loadAnimation(themeActivity.this, R.anim.fadein);
+        Animation animation = AnimationUtils.loadAnimation(PsychoThemeActivity.this, R.anim.fadein);
         internet.setAnimation(animation);
         timeManagement.setAnimation(animation);
         anxiety.setAnimation(animation);
@@ -100,7 +100,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(themeActivity.this, question.class);
+        Intent i = new Intent(PsychoThemeActivity.this, QuestionActivity.class);
         switch (v.getId()) {
 
             case R.id.internet:
@@ -122,7 +122,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
         View view = getLayoutInflater().inflate(R.layout.jarvis_log_out_alert_dialog, null);
         Button buttonLogout = view.findViewById(R.id.btnLogout);
         Button buttonCancel = view.findViewById(R.id.btnCancel);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(themeActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PsychoThemeActivity.this);
         alertDialogBuilder.setView(view);
         // create and show the alert dialog
         final AlertDialog dialog = alertDialogBuilder.create();
@@ -132,7 +132,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(themeActivity.this, loginActivity.class);
+                Intent i = new Intent(PsychoThemeActivity.this, LoginOptionsActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 finish();
@@ -175,15 +175,15 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    public void onActionListener(@NotNull BottomSheetAction action) {
+    public void onActionListener(@NotNull JarvisBottomSheetAction action) {
         Intent actionIntent;
         switch (action) {
             case OPEN_EXERCISES:
-                actionIntent = new Intent(themeActivity.this, ExercisesActivity.class);
+                actionIntent = new Intent(PsychoThemeActivity.this, ExercisesActivity.class);
                 startActivity(actionIntent);
                 break;
             case OPEN_SCALE:
-                actionIntent = new Intent(themeActivity.this, ScaleDisplayActivity.class);
+                actionIntent = new Intent(PsychoThemeActivity.this, ScaleDisplayActivity.class);
                 startActivity(actionIntent);
                 break;
             case OPEN_PROFILE:
@@ -195,7 +195,7 @@ public class themeActivity extends AppCompatActivity implements View.OnClickList
                 logoutOrCancel();
                 break;
             case OPEN_COVID_STATS:
-                actionIntent = new Intent(themeActivity.this, Covid.class);
+                actionIntent = new Intent(PsychoThemeActivity.this, CovidActivity.class);
                 startActivity(actionIntent);
                 break;
         }
