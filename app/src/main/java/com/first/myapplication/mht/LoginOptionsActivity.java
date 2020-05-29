@@ -37,6 +37,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Random;
 
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.showProgressDialogWithTitle;
+
 public class LoginOptionsActivity extends AppCompatActivity {
 
     TextView textView, textViewEmail, textViewDidYouKnow, tvFact;
@@ -195,21 +198,6 @@ public class LoginOptionsActivity extends AppCompatActivity {
                 setDataAndType(Uri.parse("nikhil.pratap.singh.581@gmail.com"), "message/rfc822")
                 .putExtra(Intent.EXTRA_SUBJECT, "Problem in PSYCHE");
         startActivity(Intent.createChooser(problemIntent, "Choose an Email client:"));
-    }
-
-    // Method to show Progress bar
-    public void showProgressDialogWithTitle(String substring, ProgressDialog progressDialog) {
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        //Without this user can hide loader by tapping outside screen
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage(substring);
-        progressDialog.show();
-    }
-
-    // Method to hide/ dismiss Progress bar
-    public void hideProgressDialogWithTitle(ProgressDialog progressDialog) {
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.dismiss();
     }
 
     public void updateRandomFact(String factUrl) {

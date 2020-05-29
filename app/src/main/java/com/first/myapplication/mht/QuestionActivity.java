@@ -20,6 +20,9 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.google.android.material.snackbar.Snackbar;
 
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.hideProgressDialogWithTitle;
+import static com.first.myapplication.mht.utils.JarvisUtilsKt.showProgressDialogWithTitle;
+
 public class QuestionActivity extends AppCompatActivity {
 
     private TextView mQuestion;
@@ -58,7 +61,7 @@ public class QuestionActivity extends AppCompatActivity {
         clQuestion = findViewById(R.id.clQuestion);
 
         progressDialog = new ProgressDialog(this);
-        loginActivity.showProgressDialogWithTitle("Loading the questions..", progressDialog);
+        showProgressDialogWithTitle("Loading the questions..", progressDialog);
 
         animationLeave = AnimationUtils.loadAnimation(QuestionActivity.this, R.anim.jarvis_leave_left_to_right);
         animationLeftToRight = AnimationUtils.loadAnimation(QuestionActivity.this, R.anim.lefttoright);
@@ -92,7 +95,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String question = dataSnapshot.getValue(String.class);
                 mQuestion.setText(question);
-                loginActivity.hideProgressDialogWithTitle(progressDialog);
+                hideProgressDialogWithTitle(progressDialog);
                 mOptionsRG.setVisibility(View.VISIBLE);
                 mNext.setVisibility(View.VISIBLE);
                 setLeftToRightAnimation();
