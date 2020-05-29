@@ -43,6 +43,7 @@ public class QuestionActivity extends AppCompatActivity {
     Toolbar toolbarQuestion;
 
     Animation animationLeave, animationLeftToRight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
