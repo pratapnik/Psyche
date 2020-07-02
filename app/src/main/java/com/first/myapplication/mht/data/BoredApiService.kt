@@ -18,8 +18,6 @@ class BoredApiService constructor(){
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
                 .create(BoredApi::class.java)
-        Log.d("nikhil", BASE_URL)
-
         return api.getActivities()
     }
 }

@@ -11,5 +11,4 @@ data class BoredApiDataModel(
         val jokeSetup: String?,
         @SerializedName("punchline")
         val jokePunchline: String?
-
 )

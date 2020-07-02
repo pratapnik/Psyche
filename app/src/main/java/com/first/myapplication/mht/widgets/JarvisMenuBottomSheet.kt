@@ -50,10 +50,6 @@ class JarvisMenuBottomSheet : BottomSheetDialogFragment() {
         this.actionListener = onActionClickListener
     }
 
-    fun closeBottomSheet() {
-        dismiss()
-    }
-
     interface ActionListener {
         fun onActionListener(action: JarvisBottomSheetAction)
     }

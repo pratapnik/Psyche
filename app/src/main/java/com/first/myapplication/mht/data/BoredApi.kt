@@ -8,6 +8,6 @@ import retrofit2.http.Url
 
 interface BoredApi {
 
-    @GET("jokes/random")
+    @GET("random_joke")
     fun getActivities(): Single<BoredApiDataModel>
 }
